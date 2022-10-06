@@ -6,7 +6,7 @@ title: Alerts
 
 With Datafold's alerts you'll be able to quickly monitor the data flowing through your pipelines.&#x20;
 
-![](https://i.imgur.com/uAef9ua.gif)
+![](../../static/img/alerts_gif.gif)
 
 Turn any SQL query into an alert that emails or messages your team. Get faster incident response times with code-free alerting that are customizable to your data.
 
