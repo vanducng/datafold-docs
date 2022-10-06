@@ -11,4 +11,4 @@ Data Diff checks every change to a data pipeline and highlights how the change i
 
 Diffs can run automatically on a new code change and flag potential issues directly in your pull request. Using Datafold, you can easily validate the data changes before merging in any potential issues. Let code reviewers, team leadership, and all stakeholders evaluate the impact of a change at a glance.
 
-![](https://i.imgur.com/AeKgfU7.gif)
+![](../../static/img/diff_overview.gif)
