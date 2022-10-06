@@ -3,11 +3,21 @@ sidebar_position: 1
 title: Snowflake
 description: ""
 ---
-## Basic Configuration
+The following steps will walk you through creating a service account for Datafold to have read-access to your datasets and write-access to a new temporary table.
+
 :::tip
 Datafold will need permissions in your Snowflake dataset in order to read your table data. You will need to be a Snowflake **admin** in order to grant the required permission.
 :::
-### Step 1: Create a user and role for Datafold
+
+**Steps to complete:**
+
+* [Create a user and role for Datafold](snowflake.md#create-a-user-and-role-for-datafold)
+* [Setup password-based](snowflake.md#set-up-password-based-authentication) or [Use key-pair authentication](snowflake.md#use-key-pair-authentication)
+* [Create a temporary schema](snowflake.md#create-schema-for-datafold)
+* [Give the Datafold role access to your warehouse](snowflake.md#give-the-datafold-role-access)
+## Basic Configuration
+
+### Create a user and role for Datafold
 
 > A [full script](/docs/integrations/data_warehouses/content/snowflake#full-script) can be found at the bottom of this page.
 
@@ -26,7 +36,7 @@ GRANT MONITOR EXECUTION ON ACCOUNT TO ROLE DATAFOLDROLE;
 GRANT IMPORTED PRIVILEGES ON DATABASE SNOWFLAKE TO ROLE DATAFOLDROLE;
 ```
 
-### Step 2a: Use password based authentication
+### Set up password-based authentication
 
 Datafold supports username/password authentication, but also key-pair authentication.
 
@@ -36,7 +46,7 @@ ALTER USER DATAFOLD SET PASSWORD = 'SomethingSecret';
 
 You can set the username/password in the Datafold web UI.
 
-#### Step 2b: Use key-pair authentication
+#### Use key-pair authentication
 
 If you want to use key-pair authentication, please [follow the steps of Snowflake](https://docs.snowflake.com/en/user-guide/key-pair-auth.html). The public key will be set to the Snowflake user:
 
@@ -46,7 +56,7 @@ ALTER USER DATAFOLD SET rsa_public_key='abc..'
 
 The private key needs to be uploaded to Datafold, and the optional passphrase of the private-key can be set to the user.
 
-### Step 3: Create schema for Datafold
+### Create schema for Datafold
 
 Datafold requires a schema that is being used as a scratch surface for performance, and this allows us to keep the data processing inside of the DWH, and only fetch the results back to Datafold.
 
@@ -57,7 +67,7 @@ GRANT ALL ON SCHEMA <database_name>.DATAFOLD_TMP TO DATAFOLDROLE;
 
 This is the only schema that Datafold needs write access to.
 
-### Step 4: Give the Datafold role access to your Data warehouse
+### Give the Datafold role access
 
 Datafold will only scan the tables that it has access to. The snippet below will give Datafold read access to a database. Make sure to grant access to all the databases that you want to use in Datafold.
 
