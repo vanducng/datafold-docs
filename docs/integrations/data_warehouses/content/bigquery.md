@@ -3,8 +3,6 @@ sidebar_position: 2
 title: BigQuery
 description: "Setting up BigQuery on Datafold"
 ---
-# BigQuery
-
 **Steps to complete:**
 
 * [Create a Service Account](bigquery.md#create-a-service-account)
