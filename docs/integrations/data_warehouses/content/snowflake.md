@@ -138,8 +138,8 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE <database_name> TO ROLE DA
 | Password   | The password set in the [Setup password-based](snowflake.md#set-up-password-based-authentication) authentication section |
 | Key Pair file  | The key file generated in the [Use key-pair authentication](snowflake.md#use-key-pair-authentication) section|
 | Warehouse     | Your warehouse name |
-| Schema for temporary tables     | The schema name that we created with our script (<database_name>.DATAFOLD_TMP) |
-| Role     | The role we created for Datafold in our script (Typically DATAFOLDROLE) |
+| Schema for temporary tables     | The schema name that we created with our script (`<database_name>.DATAFOLD_TMP`) |
+| Role     | The role we created for Datafold in our script (Typically `DATAFOLDROLE`) |
 | Default DB     | The database name we've used to grant access. If more than one database was added, whichever you prefer to be the default |
 
 
