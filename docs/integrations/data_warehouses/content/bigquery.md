@@ -18,7 +18,7 @@ description: "Setting up BigQuery on Datafold"
 To connect Datafold to your BigQuery project, you will need to create a _service account_ for Datafold to use.
 
 * Navigate to the [Google Developers Console](https://console.developers.google.com/). Before proceeding, click on the drop-down to the left of the search bar and select the project you want to connect to.
-* If you do not see the project, you would like to connect to listed in the drop-down, click on the account switcher in the upper right corner of the window and ensure you are logged in to a Google account that is a member of the project.
+* If you do not see the project you would like to connect to listed in the drop-down, click on the account switcher in the upper right corner of the window and ensure you are logged in to a Google account that is a member of the project.
 * Click on the hamburger menu in the upper left and select **IAM & Admin,** and then **Service Accounts**.
 * Create the service account and name it `Datafold`
 
