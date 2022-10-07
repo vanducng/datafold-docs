@@ -1,10 +1,9 @@
 ---
 sidebar_position: 2
 title: BigQuery
+description: "Setting up BigQuery on Datafold"
 ---
 # BigQuery
-
-The following steps will walk you through creating a service account for Datafold to have read-access to your datasets and write-access to a new temporary table.
 
 **Steps to complete:**
 
@@ -12,6 +11,7 @@ The following steps will walk you through creating a service account for Datafol
 * [Give the Service Account BigQuery Data Viewer, BigQuery Job User, BigQuery Resource Viewer access](bigquery.md#service-account-access-and-permissions)
 * [Create a temporary dataset and give BiqQuery Data Editor access to the service account](bigquery.md#create-a-temporary-dataset)
 * [Generate a Service Account JSON key](bigquery.md#generate-a-service-account-key)
+* [Configure your data source in Datafold](bigquery.md#configure-in-datafold)
 
 ### Create a Service Account
 
@@ -55,10 +55,14 @@ Next, we have to go back to the **IAM & Admin** page to generate a key for Dataf
 
 We recommend using the json formatted key. After creating the key, it will be saved on your local machine.
 
-> In the **Project ID** field, enter the BigQuery project ID. It can be found in the URL of your Google Developers Console: `https://console.developers.google.com/apis/library?project=MY_PROJECT_ID`
->
-> In the **Schema for temporary tables** field, enter the project id and temporary table name in the following format `Project_id.temp_table_name`.
+### Configure in Datafold
+| Field Name      | Description |
+| ----------- | ----------- |
+| Name     | A name given to the data source within Datafold |
+| Project ID   | Your BigQuery project ID. It can be found in the URL of your Google Developers Console: `https://console.developers.google.com/apis/library?project=MY_PROJECT_ID`  |
+| JSON Key File   | They key file generated in the [Generate a Service Account JSON key](bigquery.md#generate-a-service-account-key) step  |
+| Schema for temporary tables     | The schema name that we created formatted as <project_id>.datafold_tmp |
+| Processing Location    | Which processing zone your project uses|
 
-> <!-- ![]() -->
 
-> After setting permissions in your data source, move on to <!-- ![]() -->
+Click **Create**. Your data source is ready!

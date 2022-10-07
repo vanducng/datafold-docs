@@ -1,10 +1,8 @@
 ---
 sidebar_position: 1
 title: Snowflake
-description: ""
+description: "Setting up Snowflake on Datafold"
 ---
-The following steps will walk you through creating a service account for Datafold to have read-access to your datasets and write-access to a new temporary table.
-
 :::tip
 Datafold will need permissions in your Snowflake dataset in order to read your table data. You will need to be a Snowflake **admin** in order to grant the required permission.
 :::
@@ -15,7 +13,7 @@ Datafold will need permissions in your Snowflake dataset in order to read your t
 * [Setup password-based](snowflake.md#set-up-password-based-authentication) or [Use key-pair authentication](snowflake.md#use-key-pair-authentication)
 * [Create a temporary schema](snowflake.md#create-schema-for-datafold)
 * [Give the Datafold role access to your warehouse](snowflake.md#give-the-datafold-role-access)
-## Basic Configuration
+* [Configure your data source in Datafold](snowflake.md#configure-in-datafold)
 
 ### Create a user and role for Datafold
 
@@ -131,7 +129,18 @@ GRANT SELECT ON FUTURE VIEWS IN DATABASE <database_name> TO ROLE DATAFOLDROLE;
 GRANT SELECT ON ALL MATERIALIZED VIEWS IN DATABASE <database_name> TO ROLE DATAFOLDROLE;
 GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE <database_name> TO ROLE DATAFOLDROLE;
 ```
+### Configure in Datafold
+| Field Name      | Description |
+| ----------- | ----------- |
+| Name     | A name given to the data source within Datafold |
+| Account   | The Account name for your Snowflake account  |
+| User   | The username set in the [Setup password-based](snowflake.md#set-up-password-based-authentication) authentication section  |
+| Password   | The password set in the [Setup password-based](snowflake.md#set-up-password-based-authentication) authentication section |
+| Key Pair file  | The key file generated in the [Use key-pair authentication](snowflake.md#use-key-pair-authentication) section|
+| Warehouse     | Your warehouse name |
+| Schema for temporary tables     | The schema name that we created with our script (<database_name>.DATAFOLD_TMP) |
+| Role     | The role we created for Datafold in our script (Typically DATAFOLDROLE) |
+| Default DB     | The database name we've used to grant access. If more than one database was added, whichever you prefer to be the default |
 
-## Advanced Config
 
-Lorem ipsum
+Click **Create**. Your data source is ready!
