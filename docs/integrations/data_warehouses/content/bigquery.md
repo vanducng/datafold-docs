@@ -61,7 +61,7 @@ We recommend using the json formatted key. After creating the key, it will be sa
 | Name     | A name given to the data source within Datafold |
 | Project ID   | Your BigQuery project ID. It can be found in the URL of your Google Developers Console: `https://console.developers.google.com/apis/library?project=MY_PROJECT_ID`  |
 | JSON Key File   | The key file generated in the [Generate a Service Account JSON key](bigquery.md#generate-a-service-account-key) step  |
-| Schema for temporary tables     | The schema name that we created formatted as `<project_id>.datafold_tmp` |
+| Schema for temporary tables     | The schema name that was created in [Create a temporary dataset](bigquery.md#create-a-temporary-dataset). It should be formatted as `<project_id>.datafold_tmp` |
 | Processing Location    | Which processing zone your project uses|
 
 

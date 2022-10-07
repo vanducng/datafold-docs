@@ -133,7 +133,7 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE <database_name> TO ROLE DA
 | Field Name      | Description |
 | ----------- | ----------- |
 | Name     | A name given to the data source within Datafold |
-| Account   | The Account name for your Snowflake account  |
+| Account   | The Account name for your Snowflake account. This can be found in the browser address string. It may look like `https://myaccountname.snowflakecomputing.com`  |
 | User   | The username set in the [Setup password-based](snowflake.md#set-up-password-based-authentication) authentication section  |
 | Password   | The password set in the [Setup password-based](snowflake.md#set-up-password-based-authentication) authentication section |
 | Key Pair file  | The key file generated in the [Use key-pair authentication](snowflake.md#use-key-pair-authentication) section|
