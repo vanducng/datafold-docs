@@ -19,7 +19,7 @@ Datafold will need permissions in your Snowflake dataset in order to read your t
 
 > A [full script](/docs/integrations/data_warehouses/content/snowflake#full-script) can be found at the bottom of this page.
 
-It is best practice to create a separate role for the Datafold integration. In this guide, we will refer to this new role as `DATAFOLDROLE` :
+It is best practice to create a separate role for the Datafold integration. In this guide, we will refer to this new role as `DATAFOLDROLE`:
 
 ```sql
 CREATE ROLE DATAFOLDROLE;
