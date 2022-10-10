@@ -5,7 +5,6 @@ title: GitHub Actions
 * [Basic Config](github_actions.md#basic-config)
     * [Production Job](github_actions.md#production-job)
     * [Pull Request Job](github_actions.md#pull-request-job)
-    * [Retrieve SQL endpoint settings](databricks.md#retrieve-sql-endpoint-settings)
 * [Advanced Config](github_actions.md#advanced-config)
     * [Pull Request Job](github_actions.md#advanced-pull-request-job)
 
