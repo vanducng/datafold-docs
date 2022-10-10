@@ -2,13 +2,20 @@
 sidebar_position: 1
 title: dbt Cloud
 ---
+* [Prerequisites](dbt_cloud.md#prerequisites)
 * [Basic Config](dbt_cloud.md#basic-config)
     * [Scheduled Production Job](dbt_cloud.md#scheduled-production-job)
     * [Merge Trigger Production Job](dbt_cloud.md#merge-trigger-production-job)
     * [Pull Request Job](dbt_cloud.md#pull-request-job)
+* [Datafold Config](dbt_cloud.md#datafold-config)
 * [Advanced Config](dbt_cloud.md#advanced-config)
     * [Pull Request Job](dbt_cloud.md#advanced-pull-request-job)
 
+## Prerequisites
+
+    You will need an API key for a dbt Cloud user whose account will be used for the integration. 
+    Their name will show up in the pull/merge request. 
+    You can either create a "synthetic" user "team@yourcompany.com" or use one of the existing accounts.
 
 ## Basic Config
 
@@ -22,12 +29,14 @@ Create a scheduled job (e.g. every 24 hours) in dbt cloud
 
 * Navigate to Jobs > Settings > Execution Settings
 * Under Commands, add a `dbt build` command:
+
 ![](../../../static/img/cloud_basic_ci.png)
 
 
 * Navigate to Jobs > Settings > Triggers > Schedule
 * Select "Run on schedule"
 * Complete the scheduling form for your desired schedule:
+
 ![](../../../static/img/cloud_scheduled_trigger.png)
 
 
@@ -73,7 +82,9 @@ jobs:
           JOB_ID: 4567 # dbt job id of the production tables
           GIT_SHA: "${{ github.ref == 'refs/heads/master' && github.sha || github.event.pull_request.head.sha }}"
 ```
+You need to add the dbt Cloud API key as a secret in GitHub Actions, and you need to set the IDs of the account and the job id that builds the production job. You can find these easily in the dbt Cloud UI:
 
+![](../../../static/img/cloud_datafold_parameters.png)
 
 ### Pull Request Job
 Create a job that runs when pull requests are opened
@@ -84,13 +95,41 @@ Create a job that runs when pull requests are opened
 
 * Navigate to Jobs > Settings > Execution Settings
 * Under Commands, add a `dbt build` command:
+
 ![](../../../static/img/cloud_basic_ci.png)
 
 
 * Navigate to Jobs > Settings > Triggers > Webhooks
 * Check "Run on Pull Requests?"
+
 ![](../../../static/img/cloud_pull_request_trigger.png)
 
+## Datafold Config
+
+* Navigate to Datafold > Admin > Settings > Integrations > Orchestration > Add new integration
+* Select dbt Cloud, and fill out the form:
+
+![](../../../static/img/cloud_datafold_form_1.png)
+![](../../../static/img/cloud_datafold_form_2.png)
+![](../../../static/img/cloud_datafold_form_3.png)
+
+| Field Name      | Description |
+| ----------- | ----------- |
+| Repository | Select the repository that generates the webhooks and where pull / merge requests will be raised.|
+| Datasource |Select the datasource where the code that is changed in the repository will run.|
+| Name | An identifier to be able to find the CI configuration later from the main screen. |
+|CI config id|An identifier that is only used when running CI with the datafold-sdk, not for dbt Cloud.|
+|API Key|This is an API key from dbt Cloud, taken from the "Profile > API Access" page.|
+|Account name| This becomes selectable when a valid API key is filled in. After that, select your account to use.|
+|Job that builds production tables|This becomes selectable after a valid API key is filled in. Select the job that builds production tables.|
+|Job that builds pull requests|This becomes selectable after a valid API key is filled in. Select the job that builds pull requests.|
+|Primary key tag|TODO link to doc describing this|
+|Sync metadata on every push to prod|When selected, will sync the metadata from the dbt run with Datafold every time a push happens on the default branch.|
+|Files to ignore|If defined, the files matching the pattern will be ignored in the PRs. The pattern uses the syntax of .gitignore. Excluded files can be re-included by using the negation; re-included files can be later re-excluded again to narrow down the filter. For example, to exclude everything except the `/dbt` folder, but not the dbt `.md` files, do: <br/>`!dbt/`<br/>`dbt/*.md`|
+|Mark the CI check as failed on errors|If the checkbox is disabled, the errors in the CI runs will be reported back to GitHub/GitLab as successes, to keep the check "green" and not block the PR/MR. By default (enabled), the errors are reported as failures.|
+|Require the 'datafold' label to start CI|When this is ticked, the Datafold CI process will only run when the 'datafold' label has been applied. This label needs to be created manually in GitHub or GitLab and the title or name must match 'datafold' exactly.|
+|Sampling tolerance|The tolerance to apply in sampling for all datadiffs|
+|Sampling confidence|The confidence to apply when sampling|
 
 ## Advanced Config
 
