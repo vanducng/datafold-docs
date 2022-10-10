@@ -13,7 +13,7 @@ This will guide you through setting up Column-level Lineage with AWS Aurora usin
 * [Set up an account for fetching the logs from CloudWatch.](postgres_aurora.md#connect-datafold-to-cloudwatch) We will follow the best practices and create a new account for Datafold, to fetch the logs from CloudWatch.
 * [Configure your data source in Datafold](postgres_aurora.md#configure-in-datafold)
 
-#### Increased verbosity
+### Increased verbosity
 
 To begin, navigate to your database instances in the Amazon RDS sidebar.
 
