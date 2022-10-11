@@ -2,10 +2,6 @@
 sidebar_position: 1
 title: CircleCI
 ---
----
-sidebar_position: 2
-title: GitLab CI
----
 * [Basic Config](circleci.md#basic-config)
 * [Advanced Config](circleci.md#advanced-config)
 
@@ -19,7 +15,7 @@ This job runs in two scenarios, determined in the `if [ -z "${CIRCLE_PULL_REQUES
         * Deploy model changes into the data warehouse
 * Deploy Pull Request
     * When?
-        * A pull request is opened in Gitlab
+        * A pull request is opened in the external repository
     * Why?
         * To understand, test, and QA changes before deploying to the data warehouse
 
