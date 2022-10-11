@@ -6,21 +6,24 @@ title: GitHub Actions
     * [Production Job](github_actions.md#production-job)
     * [Pull Request Job](github_actions.md#pull-request-job)
 * [Advanced Config](github_actions.md#advanced-config)
-    * [Pull Request Job](github_actions.md#advanced-pull-request-job)
+    * [Advanced Pull Request Job](github_actions.md#advanced-pull-request-job)
 
 ## Basic Config
 
 ### Production Job
 
 This job runs in two scenarios, defined in the `on:` section:
-1. When commits are pushed to the main branch
-    * Why? 
-        * To deploy new changes from pull requests
+* Deploy
+  * When?
+    * New commits are pushed to the main branch
+  * Why? 
+    * Deploy model changes into the data warehouse
 
-2. On a schedule (everyday at 2:00; for cron help - check out [crontab.guru](https://crontab.guru/))
-    * Why? 
-        * To refresh models every night
-        * Table models should be rematerialized with fresh data
+* Scheduled
+  * When?
+    * Every day at 2:00; for cron help - check out [crontab.guru](https://crontab.guru/)
+  * Why? 
+    * Data warehouse daily refresh with new data
 
 ```yml
 name: dbt prod
@@ -71,10 +74,10 @@ jobs:
 
 ### Pull Request Job
 This job runs in one scenario, again defined in the `on:` section:
-1. When commits are pushed a branch *other than* main
-    * Why? 
-        * To run and test pull request changes before deploying to production
-        * Changes are deployed to a test environment during review
+* When?
+  * New commits are pushed a branch *other than* main
+* Why?
+  * To understand, test, and QA changes before deploying to the data warehouse
 
 ```yml
 name: dbt staging
