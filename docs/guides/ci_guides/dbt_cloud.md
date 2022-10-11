@@ -123,7 +123,7 @@ Create a job that runs when pull requests are opened
 |Account name| This becomes selectable when a valid API key is filled in. After that, select your account to use.|
 |Job that builds production tables|This becomes selectable after a valid API key is filled in. Select the job that builds production tables.|
 |Job that builds pull requests|This becomes selectable after a valid API key is filled in. Select the job that builds pull requests.|
-|Primary key tag|TODO link to doc describing this|
+|Primary key tag|Datafold can infer the primary key based on dbt uniqueness tests, but a more explicit way of declaring the primary key is through [tags](https://docs.getdbt.com/reference/resource-configs/tags). Setting this field to `primary-key`, the config for that model would contain: <br/> `tags:` <br/>&nbsp&nbsp&nbsp`- primary-key` <br/>to explicitly declare the primary key.|
 |Sync metadata on every push to prod|When selected, will sync the metadata from the dbt run with Datafold every time a push happens on the default branch.|
 |Files to ignore|If defined, the files matching the pattern will be ignored in the PRs. The pattern uses the syntax of .gitignore. Excluded files can be re-included by using the negation; re-included files can be later re-excluded again to narrow down the filter. For example, to exclude everything except the `/dbt` folder, but not the dbt `.md` files, do: <br/>`!dbt/`<br/>`dbt/*.md`|
 |Mark the CI check as failed on errors|If the checkbox is disabled, the errors in the CI runs will be reported back to GitHub/GitLab as successes, to keep the check "green" and not block the PR/MR. By default (enabled), the errors are reported as failures.|
