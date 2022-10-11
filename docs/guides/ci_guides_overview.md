@@ -18,4 +18,8 @@ A mature CI pipeline:
 * can boost the quantity and quality of developer output
 
 There are many different possible permutations of CI. This guide offers walk-throughs and examples using a few of the most popular tools. 
-
+* [dbt Cloud](ci_guides/dbt_cloud.md)
+* [dbt Core](ci_guides/dbt_core.md)
+    * [CircleCI](ci_guides/dbt_core/circleci.md)
+    * [Github Actions](ci_guides/dbt_core/github_actions.md)
+    * [Gitlab CI](ci_guides/dbt_core/gitlab_ci.md)
