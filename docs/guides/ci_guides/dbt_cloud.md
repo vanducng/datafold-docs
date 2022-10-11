@@ -22,7 +22,7 @@ title: dbt Cloud
 ### Scheduled Production Job
 
 Create a scheduled job (e.g. every 24 hours) in dbt cloud
-* Why?
+* **Why?**
     * To refresh models every night
     * Table models should be rematerialized with fresh data
 
@@ -42,7 +42,7 @@ Create a scheduled job (e.g. every 24 hours) in dbt cloud
 
 ### Merge Trigger Production Job
 Create a job that triggers a dbt Cloud production run when changes are pushed to main
-* Why?
+* **Why?**
     * To deploy new changes from pull requests immediately
     * This will keep production up to date and enable accurate Datafold diffs
     * By default, dbt Cloud runs the production job on a schedule, not on merges
@@ -88,7 +88,7 @@ You need to add the dbt Cloud API key as a secret in GitHub Actions, and you nee
 
 ### Pull Request Job
 Create a job that runs when pull requests are opened
-* Why? 
+* **Why?**
     * To run and test pull request changes before deploying to production
     * Changes are deployed to a test environment during review
 

@@ -8,16 +8,16 @@ title: CircleCI
 ## Basic Config
 
 This job runs in two scenarios, determined in the `if [ -z "${CIRCLE_PULL_REQUEST##*/}" ]` statement:
-* Deploy Production
-    * When?
-        * New commits are pushed to the default branch
-    * Why? 
-        * Deploy model changes into the data warehouse
-* Deploy Pull Request
-    * When?
-        * A pull request is opened in the external repository
-    * Why?
-        * To understand, test, and QA changes before deploying to the data warehouse
+##### Deploy Production
+* **When?**
+    * New commits are pushed to the default branch
+* **Why?** 
+    * Deploy model changes into the data warehouse
+##### Deploy Pull Request
+* **When?**
+    * A pull request is opened in the external repository
+* **Why?** 
+    * To understand, test, and QA changes before deploying to the data warehouse
 
 
 ```yml

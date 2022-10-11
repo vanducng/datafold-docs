@@ -13,16 +13,16 @@ title: GitHub Actions
 ### Production Job
 
 This job runs in two scenarios, defined in the `on:` section:
-* Deploy
-  * When?
+##### Deploy Production
+* **When?**
     * New commits are pushed to the main branch
-  * Why? 
+* **Why?** 
     * Deploy model changes into the data warehouse
 
-* Scheduled
-  * When?
+##### Scheduled
+  * **When?**
     * Every day at 2:00; for cron help - check out [crontab.guru](https://crontab.guru/)
-  * Why? 
+  * **Why?**
     * Data warehouse daily refresh with new data
 
 ```yml
@@ -74,9 +74,9 @@ jobs:
 
 ### Pull Request Job
 This job runs in one scenario, again defined in the `on:` section:
-* When?
+* **When?**
   * New commits are pushed a branch *other than* main
-* Why?
+* **Why?**
   * To understand, test, and QA changes before deploying to the data warehouse
 
 ```yml

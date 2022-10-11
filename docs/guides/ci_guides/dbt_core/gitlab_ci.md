@@ -8,16 +8,16 @@ title: GitLab CI
 ## Basic Config
 
 This job runs in two scenarios, determined in the `rules:` section:
-* Deploy Production
-    * When?
-        * New commits are pushed to the default branch
-    * Why? 
-        * Deploy model changes into the data warehouse
-* Deploy Merge Request
-    * When?
-        * A merge request is opened in Gitlab
-    * Why?
-        * To understand, test, and QA changes before deploying to the data warehouse
+##### Deploy Production
+* **When?**
+  * New commits are pushed to the default branch
+* **Why?**
+  * Deploy model changes into the data warehouse
+##### Deploy Merge Request
+* **When?**
+    * A merge request is opened in Gitlab
+* **Why?**
+    * To understand, test, and QA changes before deploying to the data warehouse
 
 ```yml
 image:
