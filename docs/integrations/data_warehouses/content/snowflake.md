@@ -56,14 +56,12 @@ The private key needs to be uploaded to Datafold, and the optional passphrase of
 
 ### Create schema for Datafold
 
-Datafold requires a schema that is being used as a scratch surface for performance, and this allows us to keep the data processing inside of the DWH, and only fetch the results back to Datafold.
+Datafold utilizes a temporary schema to materialize data between the datasets. By materializing this data in Snowflake we reduce the volume of data that are being processed in Datafold itself. 
 
 ```sql
 CREATE SCHEMA <database_name>.DATAFOLD_TMP;
 GRANT ALL ON SCHEMA <database_name>.DATAFOLD_TMP TO DATAFOLDROLE;
 ```
-
-This is the only schema that Datafold needs write access to.
 
 ### Give the Datafold role access
 

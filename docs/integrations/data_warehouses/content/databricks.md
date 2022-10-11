@@ -39,6 +39,6 @@ Choose the preferred endpoint and copy the following fields values from its **Co
 | Host   | The hostname retrieved in the `Connection Details` tab  |
 | HTTP Path   | The HTTP Path retrieved in the `Connection Details` tab        |
 | Access Token   | The token retrieved in [Generate a Personal Access Token](databricks.md#generate-a-personal-access-token)       |
-| Database  | The catalog and database name of your Databricks account. Formatted as `CATALOG_NAME.DATABASE_NAME` (In most cases, `CATALOG_NAME` is `hive_metastore`.) |
+| Database  | The catalog and database name of your Databricks account. Formatted as `catalog_name.database_name` (In most cases, `catalog_name` is `hive_metastore`.) |
 
 Click **Create**. Your data source is ready!

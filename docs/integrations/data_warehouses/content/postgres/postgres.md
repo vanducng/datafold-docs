@@ -16,8 +16,7 @@ Using Postgres **without** Cloudwatch will not be compatible with Column-level L
 To connect to Postgres, you need to create a user with read-only access to all tables in all schemas, write access to Datafold-specific schema for temporary tables:
 
 ```sql
-/* Create schema for Datafold to write temporary tables to.
-    This is the only schema where Datafold will modify anything in your environment.*/
+/* Datafold utilizes a temporary schema to materialize data between the datasets. By materializing this data in Postgres we reduce the volume of data that are being processed in Datafold itself. */
 
 CREATE SCHEMA datafold_tmp;
 

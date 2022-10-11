@@ -12,14 +12,11 @@ description: "Setting up Redshift on Datafold"
 To connect to Amazon Redshift, you need to create a user with read-only access to all tables in all schemas, write access to Datafold-specific schema for temporary tables, and the ability to access SQL logs:
 
 ```sql
-/* Create schema for Datafold to write temporary tables to.
-    This is the only schema where Datafold will modify anything in your environment.*/
+/* Datafold utilizes a temporary schema to materialize data between the datasets. By materializing this data in Redshift we reduce the volume of data that are being processed in Datafold itself. */
 
 CREATE SCHEMA datafold_tmp;
 
-/* Since Redshift does not allow granting read-only access to ALL schemas which
-   Datafold needs to correctly work, you need to grant superuser level privilege to
-   the datafold user: */
+/* The Datafold user needs read access to ALL schemas; this requires superuser level privilege in Redshift */
       
 CREATE USER datafold CREATEUSER PASSWORD 'SOMESECUREPASSWORD';
 
