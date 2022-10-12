@@ -36,6 +36,8 @@ To generate a Datafold API key, navigate to **Admin** -> **Settings** -> **Accou
 
 Here, click on the **Create API Key** button. This will generate and store an API key for your account. You will be able to view, copy, and regenerate this key at any time. 
 
+![](../../../static/img/api_key_generate.png)
+
 ### Install datafold-sdk
 
 The [datafold-sdk](https://pypi.org/project/datafold-sdk/) allows you to integrate Datafold in your CI with arbitrary pipeline orchestrators. You can trigger diff and alerts from the command-line and implement CI jobs and procedures using **datafold-sdk**.
