@@ -5,33 +5,33 @@ description: "Setting up BigQuery on Datafold"
 ---
 **Steps to complete:**
 
-* [Create a Service Account](bigquery.md#create-a-service-account)
-* [Give the Service Account BigQuery Data Viewer, BigQuery Job User, BigQuery Resource Viewer access](bigquery.md#service-account-access-and-permissions)
-* [Create a temporary dataset and give BiqQuery Data Editor access to the service account](bigquery.md#create-a-temporary-dataset)
-* [Generate a Service Account JSON key](bigquery.md#generate-a-service-account-key)
-* [Configure your data source in Datafold](bigquery.md#configure-in-datafold)
+1. [Create a Service Account](bigquery.md#create-a-service-account)
+2. [Give the Service Account BigQuery Data Viewer, BigQuery Job User, BigQuery Resource Viewer access](bigquery.md#service-account-access-and-permissions)
+3. [Create a temporary dataset and give BiqQuery Data Editor access to the service account](bigquery.md#create-a-temporary-dataset)
+4. [Generate a Service Account JSON key](bigquery.md#generate-a-service-account-key)
+5. [Configure your data source in Datafold](bigquery.md#configure-in-datafold)
 
 ### Create a Service Account
 
 To connect Datafold to your BigQuery project, you will need to create a _service account_ for Datafold to use.
 
-* Navigate to the [Google Developers Console](https://console.developers.google.com/). Before proceeding, click on the drop-down to the left of the search bar and select the project you want to connect to.
-* If you do not see the project you would like to connect to listed in the drop-down, click on the account switcher in the upper right corner of the window and ensure you are logged in to a Google account that is a member of the project.
-* Click on the hamburger menu in the upper left and select **IAM & Admin,** and then **Service Accounts**.
-* Create the service account and name it `Datafold`
+* Navigate to the [Google Developers Console](https://console.developers.google.com/), click on the drop-down to the left of the search bar, and select the project you want to connect to.
+    * *Note: If you do not see your project, you may need to switch accounts.*
+* Click on the hamburger menu in the upper left, then select **IAM & Admin** followed by **Service Accounts**.
+* Create a service account named `Datafold`.
 
 ### Service Account Access and Permissions
 
 The Datafold service account requires the following roles and permissions:
 - **BigQuery Data Viewer** for read access on all the datasets in the project. 
 - **BigQuery Job User** to run queries. 
-- **BigQuery Resource Viewer** for fetching the query logs to parse lineage.
+- **BigQuery Resource Viewer** to fetch the query logs for parsing lineage.
 
 ![](../../../../static/img/bigquery_permissions.png)
 
 ### Create a Temporary Dataset
 
-Datafold utilizes a temporary dataset to materialize data between the datasets. By materializing this data in BigQuery we reduce the volume of data that are being processed in Datafold itself. 
+Datafold utilizes a temporary dataset to materialize scratch work and keep data processing in the your warehouse. 
 
 :::caution
 Make sure that the dataset lives in the same region as the rest of the data, otherwise, the dataset will not be found.
@@ -41,13 +41,11 @@ Let's navigate to BigQuery in the console and create a new dataset.
 
 ![](../../../../static/img/bigquery_tempdataset.png)
 
-- Give the dataset a name that is related to Datafold, in the example we call it `datafold_tmp`.
-
-- Datafold requires the **BigQuery Data Editor** role on the newly created dataset. Now we're set with the permissions.
+- Give the dataset a name like `datafold_tmp` and grant the Datafold service account the **BigQuery Data Editor** role.
 
 ### Generate a Service Account Key
 
-Next, we have to go back to the **IAM & Admin** page to generate a key for Datafold:
+Next, go back to the **IAM & Admin** page to generate a key for Datafold.
 
 ![](../../../../static/img/bigquery_key.png)
 

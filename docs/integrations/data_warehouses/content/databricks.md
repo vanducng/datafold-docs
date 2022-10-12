@@ -5,9 +5,9 @@ description: "Setting up Databricks on Datafold"
 ---
 **Steps to complete:**
 
-* [Generate a Personal Access Token](databricks.md#generate-a-personal-access-token)
-* [Retrieve SQL endpoint settings](databricks.md#retrieve-sql-endpoint-settings)
-* [Configure your data source in Datafold](databricks.md#configure-in-datafold)
+1. [Generate a Personal Access Token](databricks.md#generate-a-personal-access-token)
+2. [Retrieve SQL endpoint settings](databricks.md#retrieve-sql-endpoint-settings)
+3. [Configure your data source in Datafold](databricks.md#configure-in-datafold)
 
 ### Generate a Personal Access Token
 
@@ -15,7 +15,7 @@ Visit **Settings** → **User Settings**, and then switch to **Personal Access T
 
 ![](../../../../static/img/databricks_new_token.png)
 
-Then, click **Generate new token**. Save the generated token somewhere, we will need it later on.
+Then, click **Generate new token**. Save the generated token somewhere, you'll need it later on.
 
 ### Retrieve SQL endpoint settings
 

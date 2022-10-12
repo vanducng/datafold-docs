@@ -5,14 +5,14 @@ description: "Setting up Redshift on Datafold"
 ---
 **Steps to complete:**
 
-* [Run SQL Script for Permissions](redshift.md#run-sql-script)
-* [Configure your data source in Datafold](redshift.md#configure-in-datafold)
+1. [Run SQL Script for Permissions](redshift.md#run-sql-script)
+2. [Configure your data source in Datafold](redshift.md#configure-in-datafold)
 
 ### Run SQL Script
 To connect to Amazon Redshift, you need to create a user with read-only access to all tables in all schemas, write access to Datafold-specific schema for temporary tables, and the ability to access SQL logs:
 
 ```sql
-/* Datafold utilizes a temporary schema to materialize data between the datasets. By materializing this data in Redshift we reduce the volume of data that are being processed in Datafold itself. */
+/* Datafold utilizes a temporary dataset to materialize scratch work and keep data processing in the your warehouse. */
 
 CREATE SCHEMA datafold_tmp;
 

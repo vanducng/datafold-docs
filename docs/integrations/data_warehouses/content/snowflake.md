@@ -4,7 +4,7 @@ title: Snowflake
 description: "Setting up Snowflake on Datafold"
 ---
 :::tip
-Datafold will need permissions in your Snowflake dataset in order to read your table data. You will need to be a Snowflake **admin** in order to grant the required permissions.
+Datafold needs permissions in your Snowflake dataset to read your table data. You will need to be a Snowflake **admin** in order to grant the required permissions.
 :::
 
 **Steps to complete:**
@@ -19,7 +19,7 @@ Datafold will need permissions in your Snowflake dataset in order to read your t
 
 > A [full script](/docs/integrations/data_warehouses/content/snowflake#full-script) can be found at the bottom of this page.
 
-It is best practice to create a separate role for the Datafold integration. In this guide, we will refer to this new role as `DATAFOLDROLE`:
+It is best practice to create a separate role for the Datafold integration (e.g., `DATAFOLDROLE`):
 
 ```sql
 CREATE ROLE DATAFOLDROLE;
@@ -56,7 +56,7 @@ The private key needs to be uploaded to Datafold, and the optional passphrase of
 
 ### Create schema for Datafold
 
-Datafold utilizes a temporary schema to materialize data between the datasets. By materializing this data in Snowflake we reduce the volume of data that are being processed in Datafold itself. 
+Datafold utilizes a temporary dataset to materialize scratch work and keep data processing in the your warehouse. 
 
 ```sql
 CREATE SCHEMA <database_name>.DATAFOLD_TMP;
@@ -65,7 +65,7 @@ GRANT ALL ON SCHEMA <database_name>.DATAFOLD_TMP TO DATAFOLDROLE;
 
 ### Give the Datafold role access
 
-Datafold will only scan the tables that it has access to. The snippet below will give Datafold read access to a database. Make sure to grant access to all the databases that you want to use in Datafold.
+Datafold will only scan the tables that it has access to. The snippet below will give Datafold read access to a database. If you have more than one database that you want to use in Datafold, rerun the script below for each one.
 
 ```sql
 /* Repeat for every DATABASE to be usable in Datafold. This allows Datafold to
@@ -136,9 +136,9 @@ GRANT SELECT ON FUTURE MATERIALIZED VIEWS IN DATABASE <database_name> TO ROLE DA
 | Password   | The password set in the [Setup password-based](snowflake.md#set-up-password-based-authentication) authentication section |
 | Key Pair file  | The key file generated in the [Use key-pair authentication](snowflake.md#use-key-pair-authentication) section|
 | Warehouse     | The Snowflake warehouse name |
-| Schema for temporary tables     | The schema name that we created with our script (`<database_name>.DATAFOLD_TMP`) |
-| Role     | The role we created for Datafold in our script (Typically `DATAFOLDROLE`) |
-| Default DB     | The database name we've used to grant access. If more than one database was added, whichever you prefer to be the default |
+| Schema for temporary tables     | The schema name you created with our script (`<database_name>.DATAFOLD_TMP`) |
+| Role     | The role you created for Datafold (Typically `DATAFOLDROLE`) |
+| Default DB     | A database the role above can access. If more than one database was added, whichever you prefer to be the default |
 
 
 Click **Create**. Your data source is ready!

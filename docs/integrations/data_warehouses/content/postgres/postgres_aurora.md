@@ -8,55 +8,70 @@ This will guide you through setting up Column-level Lineage with AWS Aurora usin
 
 **Steps to complete:**
 
-* [Setup Postgres with Permissions](postgres.md#run-sql-script)
-* [Increase the verbosity of the logging of Postgres](postgres_aurora.md#increased-verbosity) to make sure that we log the required statements to track lineage.
-* [Set up an account for fetching the logs from CloudWatch.](postgres_aurora.md#connect-datafold-to-cloudwatch) We will follow the best practices and create a new account for Datafold, to fetch the logs from CloudWatch.
-* [Configure your data source in Datafold](postgres_aurora.md#configure-in-datafold)
+1. [Setup Postgres with Permissions](postgres.md#run-sql-script)
+2. [Increase the logging verbosity of Postgres](postgres_aurora.md#increased-verbosity) so Datafold can parse lineage
+3. [Set up an account for fetching the logs from CloudWatch.](postgres_aurora.md#connect-datafold-to-cloudwatch)
+4. [Configure your data source in Datafold](postgres_aurora.md#configure-in-datafold)
 
-### Increased verbosity
+### Run SQL Script
+To connect to Postgres, you need to create a user with read-only access to all tables in all schemas, write access to Datafold-specific schema for temporary tables:
+
+```sql
+/* Datafold utilizes a temporary dataset to materialize scratch work and keep data processing in the your warehouse. */
+
+CREATE SCHEMA datafold_tmp;
+
+/* Create a datafold user */
+
+CREATE ROLE datafold WITH LOGIN ENCRYPTED PASSWORD 'SOMESECUREPASSWORD';
+
+/* Make sure that the postgres user has read permissions on the tables */
+
+GRANT USAGE ON SCHEMA <myschema> TO datafold;
+GRANT SELECT ON ALL TABLES IN SCHEMA <myschema> TO datafold;
+
+```
+
+### Increase logging verbosity
 
 To begin, navigate to your database instances in the Amazon RDS sidebar.
 
 ![](<../../../../../static/img/psql_aurora_dbs.png>)
 
-Then, we need to create a new `Parameter Group`. Database instances run with default parameters that do not include logging verbosity. To turn on the logging verbosity, you'll need to create a new Parameter Group. Hit **Parameter Groups** on the menu, and create a new Parameter Group:
+Then, create a new `Parameter Group`. Database instances run with default parameters that do not include logging verbosity. To turn on the logging verbosity, you'll need to create a new Parameter Group. Hit **Parameter Groups** on the menu and create a new Parameter Group.
 
 ![](<../../../../../static/img/psql_aurora_parameter_group.png>)
 
-Next, we select the `aurora-postgresql10` parameter group family. This depends on the cluster that you're running. For Aurora serverless, this is the appropriate family.,
+Next, select the `aurora-postgresql10` parameter group family. This depends on the cluster that you're running. For Aurora serverless, this is the appropriate family.
 
-We want to set the `log_statement` enum field. By default, this isn't set, and we want to set it to mod, meaning that it will log all the DDL statements, plus data-modifying statements:
+Finally, set the `log_statement` enum field to mod - meaning that it will log all the DDL statements, plus data-modifying statements. Note: This field isn't set by default. 
 
 ![](<../../../../../static/img/psql_aurora_logstatement.png>)
 
-After saving the parameter group, we can go back to our database, and select the database cluster parameter group:
+After saving the parameter group, go back to your database, and select the database cluster parameter group.
 
 ![](<../../../../../static/img/psql_aurora_clustergroup.png>)
 
-After saving, we're ready to hook up Datafold to CloudWatch.
-
 ### Connect Datafold to CloudWatch
 
-Creating a Datafold user in CloudWatch is straightforward. It is best to create a new user to isolate the permissions as much as possible. First, we go to IAM an create a new user:
+Start by creating a new user to isolate the permissions as much as possible. Go to IAM and create a new user.
 
 ![](<../../../../../static/img/psql_aurora_iam_user.png>)
 
-Next, we'll create a new group named `CloudWatchLogsReadOnly` and attach the `CloudWatchLogsReadOnlyAccess` policy to it. Next, we select the group:
+Next, create a new group named `CloudWatchLogsReadOnly` and attach the `CloudWatchLogsReadOnlyAccess` policy to it. Next, select the group.
 
 ![](<../../../../../static/img/psql_aurora_user_permissions.png>)
 
 
-When reviewing the user, it should have the freshly created group attached to it:
+When reviewing the user, it should have the freshly created group attached to it.
 
 ![](<../../../../../static/img/psql_aurora_user_review.png>)
 
 After confirming the new user you should be given the `Access Key` and `Secret Key`. Save these two codes securely to finish configurations on Datafold. 
 
-The last piece of information we'll need is the CloudWatch Log Group. You will find this in CloudWatch under the Log Group section in the sidebar. It will be formatted as `/aws/rds/cluster/<my_cluster_name>/postgresql`.
+The last piece of information Datafold needs is the CloudWatch Log Group. You will find this in CloudWatch under the Log Group section in the sidebar. It will be formatted as `/aws/rds/cluster/<my_cluster_name>/postgresql`.
 
 ![](<../../../../../static/img/psql_aurora_log_group.png>)
-
-Finally, we'll supply these details in the Datafold configuration to complete the setup.
 
 ### Configure in Datafold
 
