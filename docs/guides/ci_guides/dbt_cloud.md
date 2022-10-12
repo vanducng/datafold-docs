@@ -106,30 +106,7 @@ Create a job that runs when pull requests are opened
 
 ## Datafold Config
 
-* Navigate to Datafold > Admin > Settings > Integrations > Orchestration > Add new integration
-* Select dbt Cloud, and fill out the form:
-
-![](../../../static/img/cloud_datafold_form_1.png)
-![](../../../static/img/cloud_datafold_form_2.png)
-![](../../../static/img/cloud_datafold_form_3.png)
-
-| Field Name      | Description |
-| ----------- | ----------- |
-| Repository | Select the repository that generates the webhooks and where pull / merge requests will be raised.|
-| Datasource |Select the datasource where the code that is changed in the repository will run.|
-| Name | An identifier to be able to find the CI configuration later from the main screen. |
-|CI config id|An identifier that is only used when running CI with the datafold-sdk, not for dbt Cloud.|
-|API Key|This is an API key from dbt Cloud, taken from the "Profile > API Access" page.|
-|Account name| This becomes selectable when a valid API key is filled in. After that, select your account to use.|
-|Job that builds production tables|This becomes selectable after a valid API key is filled in. Select the job that builds production tables.|
-|Job that builds pull requests|This becomes selectable after a valid API key is filled in. Select the job that builds pull requests.|
-|Primary key tag|Datafold can infer the primary key based on dbt uniqueness tests, but a more explicit way of declaring the primary key is through [tags](https://docs.getdbt.com/reference/resource-configs/tags). Setting this field to `primary-key`, the config for that model would contain: <br/> `tags:` <br/>&nbsp&nbsp&nbsp`- primary-key` <br/>to explicitly declare the primary key.|
-|Sync metadata on every push to prod|When selected, will sync the metadata from the dbt run with Datafold every time a push happens on the default branch.|
-|Files to ignore|If defined, the files matching the pattern will be ignored in the PRs. The pattern uses the syntax of .gitignore. Excluded files can be re-included by using the negation; re-included files can be later re-excluded again to narrow down the filter. For example, to exclude everything except the `/dbt` folder, but not the dbt `.md` files, do: <br/>`!dbt/`<br/>`dbt/*.md`|
-|Mark the CI check as failed on errors|If the checkbox is disabled, the errors in the CI runs will be reported back to GitHub/GitLab as successes, to keep the check "green" and not block the PR/MR. By default (enabled), the errors are reported as failures.|
-|Require the 'datafold' label to start CI|When this is ticked, the Datafold CI process will only run when the 'datafold' label has been applied. This label needs to be created manually in GitHub or GitLab and the title or name must match 'datafold' exactly.|
-|Sampling tolerance|The tolerance to apply in sampling for all datadiffs|
-|Sampling confidence|The confidence to apply when sampling|
+See [dbt Cloud Integration](/docs/integrations/orchestration/dbt_cloud.md)
 
 ## Advanced Config
 
