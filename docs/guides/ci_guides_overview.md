@@ -15,7 +15,7 @@ Put simply, CI (or Continuous Integration) is a process for building, testing, a
 * automate high-confidence test coverage.
 * boost the quantity and quality of developer output.
 
-There are many different possible permutations of CI. This guide offers walk-throughs and examples using a few of the most popular tools. 
+Interested in setting up CI or optimizing your current setup? Check out our guided walkthroughs.
 * [dbt Cloud](ci_guides/dbt_cloud.md)
 * [dbt Core](ci_guides/dbt_core.md)
     * [CircleCI](ci_guides/dbt_core/circleci.md)
