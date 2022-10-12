@@ -3,9 +3,7 @@ sidebar_position: 1
 title: CI Guides
 ---
 
-Continuous integration, or CI, is a well-established practice in software engineering, and is being increasingly adopted by data teams.
-
-CI streamlines code changes from multiple contributors into a single project. Tests and checks are handled automatically, and ensure the new code’s correctness before integration. By defining and automating this loop, CI can help improve the speed and quality of code changes. 
+Put simply, CI (or Continuous Integration) is a process for building, testing, and deploying changes to your code.
 
 In organizations without a CI process:
 * changes are manually coordinated, and often become a complex synchronization chore.
