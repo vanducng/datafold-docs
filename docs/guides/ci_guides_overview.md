@@ -5,15 +5,15 @@ title: CI Guides
 
 Put simply, CI (or Continuous Integration) is a process for building, testing, and deploying changes to your code.
 
-In organizations without a CI process:
+#### Without CI
 * changes are manually coordinated, and often become a complex synchronization chore.
 * testing is done manually, if at all.
-* code changes are released at a slower cadence, and with higher rates of failure
+* code changes are released at a slower cadence, and with higher rates of failure.
 
-A mature CI pipeline:
-* enables scaling teams and codebases
-* offers high-confidence automated test coverage
-* can boost the quantity and quality of developer output
+#### With CI
+* smoothly manage code changes, and scale as your team and codebase grows.
+* automate high-confidence test coverage.
+* boost the quantity and quality of developer output.
 
 There are many different possible permutations of CI. This guide offers walk-throughs and examples using a few of the most popular tools. 
 * [dbt Cloud](ci_guides/dbt_cloud.md)
