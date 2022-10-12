@@ -43,13 +43,14 @@ To uninstall the application:
 * Remove the Slack App from your Slack workspace
 
 ## Subscribing to alerts
+With this Slack integration established, you can now send alerts directly into your workspace's channels and tag groups or individuals who receive the Slack alert. 
 
 Users can subscribe to alerts themselves or be subscribed by others. However, only those Slack users that are mapped to Datafold users can be subscribed. The mapping is performed by a fully matched email address. Unmapped users will not be present in the selection.
 
-Besides, Slack groups or special Slack handles `@here` & `@channel` can be subscribed to alerts to notify everyone in that channel (or only those online at the moment).
+To configure:
+- Navigate to the alert you wish to subscribe to
+- Click on the **Add Subscription** button
+- Select **Slack** from the drop down menu and choose a Slack channel for the alert to be posted in
+- (Optionally) Select a person or group to receive a _mention_ when the alert message is posted
 
-<!-- ![](<../../../.gitbook/assets/image (267).png>) -->
-
-The subscribed users are _mentioned_ in the alert notifications when they trigger:
-
-<!-- ![](<../../../.gitbook/assets/image (263).png>) -->
+![](../../../static/img/alerts_subscribe_button.png)
