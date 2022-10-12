@@ -35,7 +35,7 @@ Complete the configuration by specifying the following fields:
 
 :::info
 
-Using dbt Core requires use of the Datafold SDK. Continue with setup by visiting [datafold-sdk](datafold-sdk.md).
+Using dbt Core requires use of the Datafold SDK. Continue with setup by [generating a Datafold API key](datafold-sdk.md#generate-a-datafold-api-key).
 
 :::
 
