@@ -8,7 +8,7 @@ _data-diff is in shape to be run in production, but also under development._
 Formatting option 1:
 | 🐞Bugs? 💡Issues?                                                                 | 💬 Prefer to chat live?                                                                                                                                                                                                                                                                           | 💸💸 **Looking for paid contributors!** 💸💸                                                                                                                                                                             |
 | :------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Please [open an issue](https://github.com/datafold/data-diff/issues/new/choose)! | <ul><li>Find us in [#tools-data-diff](https://locallyoptimistic.slack.com/archives/C03HUNGQV0S) in the [Locally Optimistic Slack][slack].</li> <li>[Reach out to the product team](https://calendly.com/jp-toor/customer-interview-oss) share any product feedback or feature requests!</li></ul> | We're looking for developers with a deep understanding of databases and solid Python knowledge. [**Apply here!**](https://docs.google.com/forms/d/e/1FAIpQLScEa5tc9CM0uNsb3WigqRFq92OZENkThM04nIs7ZVl_bwsGMw/viewform) | 
+| Please [open an issue](https://github.com/datafold/data-diff/issues/new/choose)! | Find us in [#tools-data-diff](https://locallyoptimistic.slack.com/archives/C03HUNGQV0S) in the [Locally Optimistic Slack][slack], or [reach out to the product team](https://calendly.com/jp-toor/customer-interview-oss) share any product feedback or feature requests! | We're looking for developers with a deep understanding of databases and solid Python knowledge. [**Apply here!**](https://docs.google.com/forms/d/e/1FAIpQLScEa5tc9CM0uNsb3WigqRFq92OZENkThM04nIs7ZVl_bwsGMw/viewform) | 
 
 Formatting option 2:
 - 🐞Bugs? 💡Issues? 
@@ -23,7 +23,7 @@ Formatting option 2:
 
 **data-diff** enables data professionals to detect differences between any two tables.
 
-<img width="454" alt="Screen Shot 2022-10-07 at 2 37 48 PM" src="https://user-images.githubusercontent.com/1799931/194626900-81be9980-b81e-47ca-934c-8bcb6262dfae.png">
+![](../../static/img/gitlab_access_token.png)
 
 * ⇄  Verifies across [many different databases][dbs] (e.g. PostgreSQL ⇄ Snowflake) or within a database
 * 🔍 Outputs [diff of rows](#example-command-and-output) in detail
