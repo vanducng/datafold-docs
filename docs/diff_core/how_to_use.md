@@ -19,7 +19,7 @@ Let's break this down. Assume there are two tables stored in two databases, and 
 - `TABLE2_NAME` is the name of the second table in that database.
 - `[OPTIONS]` can be replaced with a variety of additional commands, [detailed here](#options).
 
-## Options:
+### Options:
 
   - `--help` - Show help message and exit.
   - `-k` or `--key-columns` - Name of the primary key column. If none provided, default is 'id'.
@@ -105,3 +105,26 @@ It will use the `timestamp` column as the update column, as specified in `run.de
 flag is overwritten to `false`.
 
 Running it with `data-diff --conf myconfig.toml --run test_diff -v` will set verbose back to `true`.
+
+## How to use from Python
+
+API reference: [https://data-diff.readthedocs.io/en/latest/](https://data-diff.readthedocs.io/en/latest/)
+
+Example:
+
+```python
+# Optional: Set logging to display the progress of the diff
+import logging
+logging.basicConfig(level=logging.INFO)
+
+from data_diff import connect_to_table, diff_tables
+
+table1 = connect_to_table("postgresql:///", "table_name", "id")
+table2 = connect_to_table("mysql:///", "table_name", "id")
+
+for different_row in diff_tables(table1, table2):
+    plus_or_minus, columns = different_row
+    print(plus_or_minus, columns)
+```
+
+Run `help(diff_tables)` or [read the docs](https://data-diff.readthedocs.io/en/latest/) to learn about the different options.

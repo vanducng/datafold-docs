@@ -12,11 +12,15 @@ For each of the 💚 implemented and thoroughly tested 💚 databases, we'll pro
 
 #### Massive Data Set with Missing Row
 
+[TODO Example to be added]
+
 #### Smaller Data Set with Several Conflicting Values
+
+[TODO add a few screenshots to break up this text]
 
 In this example, we use the CLI to compare a small data set of organizations (in this case, pharmacies and groceries) that exists as the `COMPANIES` table in two schemas, `ANALYTICS` AND `ANALYTICS_DEV`, in the same database, `SNOWFLAKE_DB`. 
 
-Recall the basic command line formula mentioned above:
+Recall the basic command line formula mentioned in TODO link to how to use
 
 `data-diff DB1_URI TABLE1_NAME DB2_URI TABLE2_NAME [OPTIONS]`
 
@@ -123,7 +127,33 @@ In this example, we use the CLI to compare a smaller data set with one missing r
 
 #### Massive Data Set with Missing Row
 
+[TODO Example to be added]
+
 #### Smaller Data Set with Conflicting Values
+
+[TODO Example to be added]
+
+### BigQuery
+
+#### Massive Data Set with Missing Row
+
+[TODO Example to be added]
+
+#### Smaller Data Set with Conflicting Values
+
+[TODO Example to be added]
+
+### Redshift
+
+#### Massive Data Set with Missing Row
+
+[TODO Example to be added]
+
+#### Smaller Data Set with Conflicting Values
+
+[TODO Example to be added]
+
+
 
 ## Python Examples
 

@@ -3,27 +3,10 @@ sidebar_position: 1
 title: About
 ---
 
-_data-diff is in shape to be run in production, but also under development._
+#### **data-diff** enables data professionals to detect differences between any two tables.
+[Join us on GitHub](https://github.com/datafold/data-diff#readme) if you'd like to contribute to this open source library!
 
-Formatting option 1:
-| 🐞Bugs? 💡Issues?                                                                 | 💬 Prefer to chat live?                                                                                                                                                                                                                                                                           | 💸💸 **Looking for paid contributors!** 💸💸                                                                                                                                                                             |
-| :------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Please [open an issue](https://github.com/datafold/data-diff/issues/new/choose)! | Find us in [#tools-data-diff](https://locallyoptimistic.slack.com/archives/C03HUNGQV0S) in the [Locally Optimistic Slack][slack], or [reach out to the product team](https://calendly.com/jp-toor/customer-interview-oss) share any product feedback or feature requests! | We're looking for developers with a deep understanding of databases and solid Python knowledge. [**Apply here!**](https://docs.google.com/forms/d/e/1FAIpQLScEa5tc9CM0uNsb3WigqRFq92OZENkThM04nIs7ZVl_bwsGMw/viewform) | 
-
-Formatting option 2:
-- 🐞Bugs? 💡Issues? 
-  - Please [open an issue](https://github.com/datafold/data-diff/issues/new/choose)!
-- 💬 Prefer to chat live? 
-  - Find us in [#tools-data-diff](https://locallyoptimistic.slack.com/archives/C03HUNGQV0S) in the [Locally Optimistic Slack][slack] or
-  - [Please reach out to the product team](https://calendly.com/jp-toor/customer-interview-oss) share any product feedback or feature requests!
-- 💸💸 **Looking for paid contributors!** 💸💸
-  - We're looking for developers with a deep understanding of databases and solid Python knowledge. [**Apply here!**](https://docs.google.com/forms/d/e/1FAIpQLScEa5tc9CM0uNsb3WigqRFq92OZENkThM04nIs7ZVl_bwsGMw/viewform)
-
-----
-
-**data-diff** enables data professionals to detect differences between any two tables.
-
-![](../../static/img/gitlab_access_token.png)
+![](../../static/img/diff.png)
 
 * ⇄  Verifies across [many different databases][dbs] (e.g. PostgreSQL ⇄ Snowflake) or within a database
 * 🔍 Outputs [diff of rows](#example-command-and-output) in detail
@@ -32,9 +15,9 @@ Formatting option 2:
 * 🔥 Verify 25M+ rows in <10s, and 1B+ rows in ~5min.
 * ♾️  Works for tables with 10s of billions of rows
 
-# Common use-cases
+## Common use-cases
 
-## Validation of replication, migration, and pipelines
+### Validation of replication, migration, and pipelines
 
 * **Verify data migrations.** Verify that all data was copied when doing a
   critical data migration. For example, migrating from Heroku PostgreSQL to Amazon RDS.
@@ -53,7 +36,7 @@ Formatting option 2:
   self-heal by using the diff output to write/update rows in the target
   database.
 
-## Comparing tables within one database to validate successful transformaitons
+### Comparing tables within one database to validate successful transformaitons
 
 * **Inspect differences between branches**. Make sure your code results in only expected changes.
 * **Validate stability of critical downstream tables.** When refactoring a data pipeline, rest assured

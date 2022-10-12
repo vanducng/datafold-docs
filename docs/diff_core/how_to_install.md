@@ -3,8 +3,6 @@ sidebar_position: 2
 title: How to install
 ---
 
-# How to install
-
 First, install `data-diff` using `pip`.
 
 ```pip install data-diff```
