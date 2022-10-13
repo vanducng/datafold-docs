@@ -31,7 +31,7 @@ When completed, enter your **Service Name** and **Integration key** into the con
 To uninstall PagerDuty:
 
 * Remove the PagerDuty subscriptions from all alerts.
-* Remove the integration from Datafold by navigating to **Settings** -> **Notifications** and clicking on the PagerDuty account that you wish to remove. Click **Delete**
+* Remove the integration from Datafold by navigating to **Settings** -> **Notifications** and clicking on the PagerDuty account that you wish to remove. Click **Delete** to complete the removal. 
 
 ## Subscribing to alerts
 With this PagerDuty integration established, you can now send alerts directly to PagerDuty and trigger an escalation automatically. 
