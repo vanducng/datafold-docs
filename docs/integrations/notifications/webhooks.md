@@ -33,9 +33,30 @@ You can use the following variables in the **Headers** and **Body** of your webh
 | `{{name}}` | The name of the alert query. |
 | `{{status}}` | The status of the alert query: "triggered" (the violation or anomaly was detected) and "error" (the query execution has failed).|
 |`{{secret1}}` & `{{secret2}}` | The value of the secret fields in the webhook setup. |
+|`{{threshold_events\|json}}` `{{threshold_events\|json\|str}}` | A string with a JSON-serialized object describing the violated thresholds. |
+|`{{missing_data_events\|json}}`  `{{missing_data_events\|json\|str}}`| A string with a JSON-serialized object describing the missing data.|
 
 
+:::note
 
-Once the integration is finished, it will be available for all users to use in the alert subscriptions:
+The difference between `|json` and |`json|str` is that the former is just a JSON-serialized object, and the latter is an escaped string with the JSON-serialized object (i.e. double-serialized). The former can be used as the whole payload or in non-JSON payloads, while the latter can be put as a field value in a JSON payload. The raw non-serialized object is not provided.
+:::
 
-<!-- ![](<../../.gitbook/assets/image (17).png>) -->
+When configuration is completed, click **Create**!
+
+## Subscribing to alerts
+With this Webhook integration established, you can now send alerts directly to your webhook. 
+
+To configure:
+- Navigate to the alert you wish to subscribe to
+- Click on the **Add Subscription** button
+- Select **Webhook** from the drop down menu
+
+![](../../../static/img/alerts_subscribe_button.png)
+
+## Uninstalling a Webhook Integration
+
+To uninstall:
+
+* Remove the Webhook subscriptions from all alerts.
+* Remove the integration from Datafold by navigating to **Settings** -> **Notifications** and clicking on the Webhook that you wish to remove. Click **Delete** to complete the removal. 

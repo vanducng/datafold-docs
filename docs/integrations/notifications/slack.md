@@ -34,13 +34,6 @@ Continue on to [subscribe to alert notifications with Slack](slack.md#subscribin
 An admin can reinstall the Slack App by opening the existing Slack App integration and clicking the **Reinstall** button. This will upgrade all the granted scopes (if they have changed), refresh the access credentials, reload the names, channels, groups, and users. It will maintain the same alerting subscriptions that were configured. 
 
 ![](../../../static/img/slack_reinstall.png)
-## Uninstalling the Datafold Slack App
-
-To uninstall the application:
-
-* Remove the Slack App subscriptions from all alerts.
-* Remove the integration from Datafold by navigating to **Settings** -> **Notifications** and clicking on the Slack account that you wish to remove. Click **Delete**
-* Remove the Slack App from your Slack workspace
 
 ## Subscribing to alerts
 With this Slack integration established, you can now send alerts directly into your workspace's channels and tag groups or individuals who receive the Slack alert. 
@@ -54,3 +47,11 @@ To configure:
 - (Optionally) Select a person or group to receive a _mention_ when the alert message is posted
 
 ![](../../../static/img/alerts_subscribe_button.png)
+
+## Uninstalling the Datafold Slack App
+
+To uninstall the application:
+
+* Remove the Slack App subscriptions from all alerts.
+* Remove the integration from Datafold by navigating to **Settings** -> **Notifications** and clicking on the Slack account that you wish to remove. Click **Delete**
+* Remove the Slack App from your Slack workspace
