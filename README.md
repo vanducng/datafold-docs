@@ -8,7 +8,7 @@ From the project directory, begin by installing `nvm` and Node with version 16.4
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash # to download nvm
 
-nvm install 16.47 # to download Node version 16.4
+nvm install 16.17.1 # to download Node version 16.17.1
 ```
 
 Then, restart your terminal. 
