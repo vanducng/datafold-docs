@@ -21,3 +21,6 @@ Interested in setting up CI or optimizing your current setup? Check out our guid
     * [CircleCI](ci_guides/dbt_core/circleci.md)
     * [Github Actions](ci_guides/dbt_core/github_actions.md)
     * [Gitlab CI](ci_guides/dbt_core/gitlab_ci.md)
+
+#### How we use CI at Datafold:
+<iframe width="640" height="414" src="https://www.loom.com/embed/37fc5fb4c1e640c09b9b470128c85a7b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
