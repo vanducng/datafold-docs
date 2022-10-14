@@ -7,13 +7,81 @@ slug: /
 
 # Why Datafold?
 
-Proactive data quality
+Datafold is a data reliability platform; our goal is to help data people do brilliant work!
 
-## Datafold tl;dr
+Our tools will help you ship faster and more reliably by automating testing for your data pipelines. 
 
-< insert video \>
+By focusing on proactive data quality, Datafold can help you identify breaking changes <em>before</em> they make it into production. 
 
-## What is Data Diff?
+No more broken dashboards, data syncs, and ML models.
 
-Data Diff allows comparing datasets in a database or across databases. The datasets can be results of SQL queries or materialized tables. It's similar to running git diff on tables in your database.
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
+<Tabs>
+  <TabItem value="datadiff_in_ci" label="Datadiff in CI" >
+```  
+
+<table >
+ <tr>
+    <td>Get the row level impact of changes you’re making to your dbt models within your workflow – all without needing to write any SQL tests. ...</td>
+    <td><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-01.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="100%" height="auto%"></video></td>
+ </tr>
+</table>
+
+```mdx-code-block
+  </TabItem>
+```
+
+```mdx-code-block
+  <TabItem value="diff_ui" label="Diff GUI" >
+```  
+
+<table >
+ <tr>
+    <td>
+    Make it easy for Data, Marketing, and Finance teams to review changes before merging to production with in-depth reports.</td>
+    <td><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-02.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="100%" height="auto%"></video></td>
+ </tr>
+</table>
+
+```mdx-code-block
+  </TabItem>
+```
+
+```mdx-code-block
+  <TabItem value="lineage" label="Column-Level Lineage" >
+```  
+
+<table >
+ <tr>
+    <td>Navigate a column-level lineage graph of your data built for you automatically from the bottom up using the SQL logs of a database</td>
+    <td><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-04.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="100%" height="auto%"></video></td>
+ </tr>
+</table>
+
+```mdx-code-block
+  </TabItem>
+```
+
+```mdx-code-block
+  <TabItem value="alerts" label="Alerts" >
+```  
+
+<table >
+ <tr>
+    <td>
+    Turns SQL queries into smart alerts. Use the sensitivity controls to adjust for the optimal signal-to-noise ratio.</td>
+    <td><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-03.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="100%" height="auto%"></video></td>
+ </tr>
+</table>
+
+```mdx-code-block
+  </TabItem>
+```
+
+
+```mdx-code-block
+</Tabs>
+```
