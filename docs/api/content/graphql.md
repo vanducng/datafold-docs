@@ -65,43 +65,43 @@ query GetTables($dataSourceId: ID = 1) {
 ```
 
 ```graphql
-  query SearchTablesByPopularity(
-    $query: String = ""
-    $paths: [String!] = "123.DATABASE.SCHEMA"
-    $first: Int = null
-    $labels: [SearchLabel!] = [Table]
-    $popularity: [Int!] = [0,0]
-    $cursor: ID = ""
-  ) {
-    search(query: $query, paths: $paths, first: $first, labels: $labels, popularity: $popularity, cursor: $cursor) {
-      results {
-        item {
-          __typename
-          ... on Table {
-            uid
-            prop {
-              path
-            }
-            descriptions {
-              description
-            }
-            popularity
-            usageStats{
-                userName
-                count
-            }
+query SearchTablesByPopularity(
+  $query: String = ""
+  $paths: [String!] = "123.DATABASE.SCHEMA"
+  $first: Int = null
+  $labels: [SearchLabel!] = [Table]
+  $popularity: [Int!] = [0,0]
+  $cursor: ID = ""
+) {
+  search(query: $query, paths: $paths, first: $first, labels: $labels, popularity: $popularity, cursor: $cursor) {
+    results {
+      item {
+        __typename
+        ... on Table {
+          uid
+          prop {
+            path
+          }
+          descriptions {
+            description
+          }
+          popularity
+          usageStats{
+              userName
+              count
           }
         }
-        score
       }
-      page {
-        first
-        page
-        total
-        cursor
-      }
+      score
+    }
+    page {
+      first
+      page
+      total
+      cursor
     }
   }
+}
 ```
 ```mdx-code-block
 </TabItem>
