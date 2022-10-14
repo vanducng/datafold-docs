@@ -15,6 +15,12 @@ By focusing on proactive data quality, Datafold can help you identify breaking c
 
 No more broken dashboards, data syncs, and ML models.
 
+<br></br>
+
+**Product Demo**
+<video src="https://datafold-public.s3.us-west-2.amazonaws.com/homepage-demo.mp4" preload="metadata" loop="loop" muted="" width="100%" height="auto%">
+</video>
+
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
