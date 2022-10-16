@@ -3,7 +3,7 @@ sidebar_position: 1
 title: AWS
 description: Set up your on-premise deployment with AWS
 ---
-# AWS
+# On-premise Deployment with AWS
 :::info
 
 On-prem deployments are an Enterprise feature. Please email [sales@datafold.com](mailto:sales@datafold.com) to enable your account. 
