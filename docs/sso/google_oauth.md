@@ -10,7 +10,7 @@ title: Google OAuth
 * [Configure Google OAuth in Datafold](google_oauth.md#configure-google-oauth-in-datafold)
 
 ## Create OAuth Client ID
-To begin, navigate to the (Google admin console)[https://console.cloud.google.com/apis/credentials?authuser=1\&folder=\] for your organization, click **Create Credentials**, and select **OAuth Client ID**.
+To begin, navigate to the [Google admin console](https://console.cloud.google.com/apis/credentials?authuser=1\&folder=\) for your organization, click **Create Credentials**, and select **OAuth Client ID**.
 
 ![](../../static/img/google_oauth_create_credential.png)
 
