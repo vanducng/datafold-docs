@@ -5,10 +5,10 @@ title: Okta
 # Configuring authentication with Okta
 
 **Steps to Complete**
-1. [Create App Integration in Datafold](okta.md#create-okta-integration-in-datafold)
+1. [Create Okta Integration in Datafold](okta.md#create-okta-integration-in-datafold)
 2. [Create Okta App Integration](okta.md#create-okta-app-integration)
-3. [Complete Okta configuration in Datafold](okta.md#configure-okta-in-datafold)
-4. [Setup Okta-initiated Login](okta.md#okta-initiated-login)
+3. [Configure Okta in Datafold](okta.md#configure-okta-in-datafold)
+4. [Set Up Okta-initiated Login](okta.md#set-up-okta-initiated-login)
 
 Okta SSO is available for both SaaS and on-premise installations of Datafold.
 
@@ -32,8 +32,8 @@ Then, in the configuration form, select **OpenId Connect (OIDC)** and **Web Appl
 ![](../../static/img/okta_create_new_app.png)
 
 In the following section, you will set:
-- **App integration name**: A name to identify the integration; we suggest you use `Datafold`.
-- **Grant type**: Should be set to `Authorization code` automatically
+- **App integration name**: A name to identify the integration. We suggest you use `Datafold`.
+- **Grant type**: Should be set to `Authorization code` automatically.
 - **Sign-in redirect URI**: 
     - For standard **SAAS installations of Datafold**,the redirect URL should be `https://app.datafold.com/oauth/okta/<client-id>`, where client-id is the Client ID of the configuration. 
     :::caution
@@ -45,7 +45,7 @@ In the following section, you will set:
 ![](../../static/img/okta_redirect_uri.png)
 
 
-On the next screen you'll be presented with Client ID and Client Secret. You will need these to configure Okta in Datafold.
+On the next screen, you'll be presented with Client ID and Client Secret. You will need these to configure Okta in Datafold.
 
 ## Configure Okta in Datafold
 In Datafold, navigate back to **Org Settings** where we began. 
@@ -57,7 +57,7 @@ In Datafold, navigate back to **Org Settings** where we began.
 
 When completed, click **Save**.
 
-## Okta initiated login
+## Set Up Okta-initiated login
 :::tip
 Organization admins will always be able to log in with either password or Okta. Non-admin users will be required to log in through Okta once configured.
 :::
@@ -66,9 +66,13 @@ Users in your organization can log in to the application directly from the Okta 
 
 1. Set **Login initiated by** to `Either Okta or App`.
 2. Set **Application visibility** to `Display application icon to users`.
-3. Set **Login flow** to `Redirect to app to initiate login (OIDC Compliant).`
+3. Set **Login flow** to `Redirect to app to initiate login (OIDC Compliant)`.
 4. Set **Initiate login URI**:
-   * For on-premise deployment to `https://<install-hostname>/login/sso/<client-id>?action=<action>`, where client-id is the Client ID of the configuration and action is `signup` if you enabled users auto-creation and `login` otherwise.
-   * For SaaS to `https://app.datafold.com/login/sso/<client-id>?action=<action>,` where client-id is the Client ID of the configuration and action is `signup` if you enabled users auto-creation and `login` otherwise.
+   * **For on-premise deployment:** `https://<install-hostname>/login/sso/<client-id>?action=<action>`
+     * client-id is the Client ID of the configuration, and 
+     * action is `signup` if you enabled users auto-creation, or `login` otherwise.
+   * **For SaaS:** `https://app.datafold.com/login/sso/<client-id>?action=<action>`
+     * client-id is the Client ID of the configuration, and 
+     * action is `signup` if you enabled users auto-creation, or `login` otherwise.
 
 ![](../../static/img/okta_initiated_login.png)
