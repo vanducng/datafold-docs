@@ -4,7 +4,7 @@ title: SAML
 ---
 # SAML
 
-SAML (Security Assertion Markup Language) is a protocol for authenticating users with arbitrary Identity Providers to access Service Providers. In this case, Datafold (either SaaS or on-premise) is the service provider. The Identity Providers can be anything used by the organization, e.g. Google, Okta, Duo, etc.
+SAML (Security Assertion Markup Language) is a protocol for authenticating users with arbitrary Identity Providers to access Service Providers. In this case, Datafold (either SaaS or on-premise) is the service provider. The Identity Providers can be anything used by the organization (e.g., Google, Okta, Duo).
 
 ## Generic SAML Identity Providers
 
@@ -31,7 +31,7 @@ The Identity Providers sometimes provide additional parameters, such as SSO URLs
 
 If you have the option, enabled the SAML Response signature and set it to **whole-response signing**.
 
-6. In your Identity Provider activate the SAML application for all users or for select groups.
+6. In your Identity Provider, activate the SAML application for all users or for select groups.
 
 With SAML configured, the SAML login button will be available for Datafold users in your organization. 
 
@@ -47,7 +47,7 @@ Please follow this Google manual: [Set up your own custom SAML application](http
 You need to be a **super-admin** in the Google Workspace to configure a SAML application.
 ::: 
 
-- Begin by clicking **Downloading metadata** in the left sidebar and follow the steps to [setup a SAML identity provider](saml.md#generic-saml-identity-providers)
+- Begin by clicking **Downloading metadata** in the left sidebar and follow the steps to [setup a SAML identity provider](saml.md#generic-saml-identity-providers).
 - Paste in the **ACS URL** and **Entity ID** as provided by Datafold.
 - Select **Email** as the Name ID format.
 - Select **Basic Information > Primary email** as the Name ID.
