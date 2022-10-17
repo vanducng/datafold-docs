@@ -12,16 +12,16 @@ On-prem deployments are an Enterprise feature. Please email [sales@datafold.com]
 
 **Steps to complete:**
 
-1. [Create a Domain Name](gcp.md#domain-name)
+1. [Create a Domain Name](gcp.md#create-a-domain-name)
 2. [Create a New Project](gcp.md#create-a-new-project)
 3. [Set IAM Permissions](gcp.md#set-iam-permissions)
 
-## Domain name
+## Create a Domain Name
 
-Create a DNS A-record for the domain (for example, datafold.domain.tld) where Datafold is going to be hosted. For the DNS record there are two options:
+Create a DNS A-record for the domain (for example, `datafold.domain.tld`) where Datafold will be hosted. For the DNS record, there are two options:
 
-* **Public-facing** When the domain is publicly available, we will provide an SSL certificate for the endpoint.
-* **Internal** It is also possible to have Datafold disconnected from the internet. This would require an internal DNS (for example, AWS Route 53) record that points to the Datafold instance. It is possible to provide your own certificate for setting up the SSL connection.
+* **Public-facing:** When the domain is publicly available, we will provide an SSL certificate for the endpoint.
+* **Internal:** It is also possible to have Datafold disconnected from the internet. This would require an internal DNS (for example, AWS Route 53) record that points to the Datafold instance. It is possible to provide your own certificate for setting up the SSL connection.
 
 Once the deployment is complete, you will point that A-record to the IP address of the Datafold service.
 ## Create a New Project
@@ -30,7 +30,7 @@ For isolation reasons, it is best practice to [create a new project](https://con
 
 ![](../../../../static/img/onprem_gcp_create.png)
 
-After a minute or so you should receive confirmation that the project has been created. Afterward, you should be able to see the new project.
+After a minute or so, you should receive confirmation that the project has been created. Afterward, you should be able to see the new project.
 
 ## Set IAM Permissions
 Navigate to the **IAM** tab in the sidebar and click **Grant Access** to invite Datafold to the project.
@@ -51,4 +51,4 @@ The service account will run under “Project/Editor”, “Service Networking/S
 8. [Cloud SQL Admin API](https://console.cloud.google.com/apis/library/sqladmin.googleapis.com)
 9. [Google Cloud Memorystore for Redis API](https://console.cloud.google.com/apis/library/redis.googleapis.com?q=memor\&id=306efa89-7b50-4186-ba99-29c960fb6289\&project=rapidsql\&authuser=2\&folder\&organizationId)
 
-Once the access has been granted, make sure to notify Datafold, so we can initiate the deployment.
+Once the access has been granted, make sure to notify Datafold so we can initiate the deployment.
