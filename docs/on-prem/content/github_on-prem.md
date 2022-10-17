@@ -23,7 +23,7 @@ To begin, navigate to **Admin** -> **Settings** -> **Global Settings**.
 
 ![](../../../static/img/onprem_github_settings.png)
 
-To begin the set up process, enter the domain that was registered for the on-prem deployment in [AWS](../content/vpcs/aws.md) or [GCP](../content/vpcs/gcp.md). Then, enter the name of the GitHub organization you where you'd like to install the application. When filled, click **Create GitHub App**. 
+To begin the set up process, enter the domain that was registered for the on-prem deployment in [AWS](../content/vpcs/aws.md) or [GCP](../content/vpcs/gcp.md). Then, enter the name of the GitHub organization where you'd like to install the application. When filled, click **Create GitHub App**. 
 
 This will redirect the admin to GitHub, where they may need to authenticate. **The GitHub user must be an admin of the GitHub organization.**
 
