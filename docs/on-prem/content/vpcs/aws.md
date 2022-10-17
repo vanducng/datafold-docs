@@ -13,7 +13,7 @@ On-prem deployments are an Enterprise feature. Please email [sales@datafold.com]
 **Steps to complete:**
 
 1. [Create a Domain Name](aws.md#create-a-domain-name)
-2. [Give Datafold Access to AWS](aws.md#allow-datafold-access-to-the-aws-account)
+2. [Give Datafold Access to AWS](aws.md#give-datafold-access-to-aws)
 3. [Grant Access to Datafold](aws.md#grant-access-to-datafold)
 
 ## Create a Domain Name
@@ -25,7 +25,7 @@ Create a DNS A-record for the domain (for example, `datafold.domain.tld`) where 
 
 Once the deployment is complete, you will point that A-record to the IP address of the Datafold service.
 
-## Allow Datafold access to the AWS Account
+## Give Datafold Access to AWS
 
 For setting up Datafold, it is required to set up a separate account within your organization where we can deploy Datafold. We're following the [best practices of AWS to allow third-party access](https://docs.aws.amazon.com/IAM/latest/UserGuide/id\_roles\_common-scenarios\_third-party.html).
 
