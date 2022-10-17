@@ -23,17 +23,17 @@ To begin, navigate to **Admin** -> **Settings** -> **Global Settings**.
 
 ![](../../../static/img/onprem_github_settings.png)
 
-To begin the set up process enter the domain that was registered for the on-prem deployment in [AWS](../content/vpcs/aws.md) or [GCP](../content/vpcs/gcp.md). Then, enter the name of the GitHub organization you where you'd like to install the application. When filled, click **Create GitHub App**. 
+To begin the set up process, enter the domain that was registered for the on-prem deployment in [AWS](../content/vpcs/aws.md) or [GCP](../content/vpcs/gcp.md). Then, enter the name of the GitHub organization you where you'd like to install the application. When filled, click **Create GitHub App**. 
 
 This will redirect the admin to GitHub, where they may need to authenticate. **The GitHub user must be an admin of the GitHub organization.**
 
 
-After authentication you should be directed to enter a description for the GitHub App. After entering the description click **Create Github app**.
+After authentication, you should be directed to enter a description for the GitHub App. After entering the description click **Create Github app**.
 
-Once the application is created you should be returned to the Datafold settings screen. The button should then have disappeared and the details for the GitHub App should be visible.
+Once the application is created, you should be returned to the Datafold settings screen. The button should then have disappeared, and the details for the GitHub App should be visible.
 
 ![](../../../static/img/onprem_github_confirmation.png)
 
 ## Complete GitHub Configuration
 
-If you see this screen with all the details, you've successfully created a GitHub App! Now the app is created, you have to install it using the [GitHub integration setup](../../integrations/git/github.md).
+If you see this screen with all the details, you've successfully created a GitHub App! Now that the app is created, you have to install it using the [GitHub integration setup](../../integrations/git/github.md).
