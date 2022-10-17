@@ -12,16 +12,16 @@ On-prem deployments are an Enterprise feature. Please email [sales@datafold.com]
 
 **Steps to complete:**
 
-1. [Create a Domain Name](aws.md#domain-name)
+1. [Create a Domain Name](aws.md#create-a-domain-name)
 2. [Give Datafold Access to AWS](aws.md#allow-datafold-access-to-the-aws-account)
 3. [Grant Access to Datafold](aws.md#grant-access-to-datafold)
 
-## Domain name
+## Create a Domain Name
 
-Create a DNS A-record for the domain (for example, datafold.domain.tld) where Datafold is going to be hosted. For the DNS record there are two options:
+Create a DNS A-record for the domain (for example, `datafold.domain.tld`) where Datafold will be hosted. For the DNS record, there are two options:
 
-* **Public-facing** When the domain is publicly available, we will provide an SSL certificate for the endpoint.
-* **Internal** It is also possible to have Datafold disconnected from the internet. This would require an internal DNS (for example, AWS Route 53) record that points to the Datafold instance. It is possible to provide your own certificate for setting up the SSL connection.
+* **Public-facing:** When the domain is publicly available, we will provide an SSL certificate for the endpoint.
+* **Internal:** It is also possible to have Datafold disconnected from the internet. This would require an internal DNS (for example, AWS Route 53) record that points to the Datafold instance. It is possible to provide your own certificate for setting up the SSL connection.
 
 Once the deployment is complete, you will point that A-record to the IP address of the Datafold service.
 
@@ -39,12 +39,12 @@ Click **Add an AWS Account**:
 
 ![](../../../../static/img/onprem_aws_add_account.png)
 
-You can name this account anything that helps identify it clearly, in our examples we name it **Datafold**. Make sure that the email address of the owner isn't used by another account.
+You can name this account anything that helps identify it clearly. In our examples, we name it **Datafold**. Make sure that the email address of the owner isn't used by another account.
 
 ![](../../../../static/img/onprem_aws_account.png)
 
 
-When you click the **Create AWS Account** button, you'll be returned back the organization screen, and see the notification that the new account is being created. After refresh a few minutes later, the account should appear in the organization list.
+When you click the **Create AWS Account** button, you'll be returned back the organization screen, and see the notification that the new account is being created. After refresh a few minutes later, the account should appear in the organizations list.
 
 ### Grant Third-Party access to Datafold
 
@@ -54,11 +54,11 @@ To grant access, log into the account created in the previous step. You can swit
 
 ![](../../../../static/img/onprem_aws_switch_role.png)
 
-By default the role name is **OrganizationAccountAccessRole**.
+By default, the role name is **OrganizationAccountAccessRole**.
 
 Click **Switch Role** to log in to the Datafold account.
 
-### Grant Access to Datafold
+## Grant Access to Datafold
 
 Next, we need to allow Datafold to access the account. We do this by allowing the Datafold AWS account to access your AWS workspace. Go to the [IAM page](https://console.aws.amazon.com/iam/home) or type **IAM** in the search bar:
 
@@ -68,7 +68,7 @@ Go to the Roles page, and click the **Create Role** button:
 
 ![](../../../../static/img/onprem_aws_create_role.png)
 
-Select **Another AWS Account**, and use account ID `710753145501` which is Datafold's account ID. Select **Require MFA** and click **Next: Permissions**.
+Select **Another AWS Account**, and use account ID `710753145501`, which is Datafold's account ID. Select **Require MFA** and click **Next: Permissions**.
 
 ![](../../../../static/img/onprem_aws_role_config.png)
 
@@ -82,7 +82,7 @@ Finally, give the role a name of your choice. Be careful not to duplicate the ac
 
 Click **Create Role** to complete this step. 
 
-Now the role is created, you should be routed back to a list of roles in your organization. 
+Now that the role is created, you should be routed back to a list of roles in your organization. 
 
 Click on your newly created role to get a sharable link for the account and store this in your password manager. When setting up your deployment with a support engineer, Datafold will use this link to gain access to the account. 
 
