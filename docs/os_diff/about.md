@@ -10,17 +10,19 @@ It's fast, easy to use, and reliable. Even at massive scale.
 
 ## How to use
 
-### Quickly identify issues when migrating data between databases
-![](../../static/img/diff_xdb.png)
+### Diff Tables Between Databases
+#### Quickly identify issues when migrating data between databases
+![](../../static/img/diff_plus_minus.png)
 
-### Improve code reviews by identifying data problems you don't have tests for
+### Diff Tables Within Databases (available in pre release)
+#### Improve code reviews by identifying data problems you don't have tests for
 <iframe width="640" height="414" src="https://www.loom.com/embed/682e4b7d74e84eb4824b983311f0a3b2" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
 
 ### Here's a list of amazing things `data-diff` can do!
 
-* ⇄  Verifies across [many different databases][#] [TODO add link to DBs] (e.g. PostgreSQL ⇄ Snowflake) or within a database
+* ⇄  Verifies across [many different databases](./how_to_use#databases-we-support-and-how-to-connect) (e.g., PostgreSQL ⇄ Snowflake) or within a database
 * 🔍 Outputs [diff of rows](#example-command-and-output) in detail
 * 🚨 Simple CLI/API to create monitoring and alerts
 * 🔁 Bridges column types of different formats and levels of precision (e.g. Double ⇆ Float ⇆ Decimal)
