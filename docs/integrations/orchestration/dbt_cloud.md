@@ -8,7 +8,7 @@ description: Integrate Datafold with dbt Cloud jobs
 ### Prerequisites
 - To access the dbt API Datafold requires a dbt **Team** account or higher.
 - You will need an API key for a dbt Cloud user whose account will be used for the integration. The account holder's name will show up in the pull/merge request. You can either create a "synthetic" user "team@yourcompany.com" or use one of the existing accounts.
-- To configure dbt Cloud you must first connect a [Data Source](integrations/data_warehouses/dw_overview.md) and connect a [GitHub](/docs/integrations/git/github.md) or [GitLab](/docs/integrations/git/gitlab.md) account.
+- To configure dbt Cloud you must first connect a [Data Source](integrations/data_warehouses/dw_overview.md) and connect a [GitHub](/integrations/git/github.md) or [GitLab](/integrations/git/gitlab.md) account.
 
 ### Connecting dbt Cloud
 

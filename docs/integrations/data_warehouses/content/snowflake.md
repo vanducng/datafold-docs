@@ -17,7 +17,7 @@ Datafold needs permissions in your Snowflake dataset to read your table data. Yo
 
 ### Create a user and role for Datafold
 
-> A [full script](/docs/integrations/data_warehouses/content/snowflake#full-script) can be found at the bottom of this page.
+> A [full script](/integrations/data_warehouses/content/snowflake#full-script) can be found at the bottom of this page.
 
 It is best practice to create a separate role for the Datafold integration (e.g., `DATAFOLDROLE`):
 

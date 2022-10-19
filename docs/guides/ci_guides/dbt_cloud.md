@@ -106,7 +106,7 @@ Create a job that runs when pull requests are opened
 
 ## Datafold Config
 
-See [dbt Cloud Integration](/docs/integrations/orchestration/dbt_cloud.md)
+See [dbt Cloud Integration](/integrations/orchestration/dbt_cloud.md)
 
 ## Advanced Config
 
