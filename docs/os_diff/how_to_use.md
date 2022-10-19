@@ -20,8 +20,40 @@ Let's break this down. Assume there are two tables stored in two databases, and 
 - `[OPTIONS]` can be replaced with a variety of additional commands, [detailed here](#options).
 
 
+#### Code Example: Diff Tables Between Databases
+Here's an example command for your copy/pasting, taken from the screenshot above when we diffed data between Snowflake and Postgres.
 
-| Database      | Connection string                                                                                                                   | Status |
+```
+data-diff \
+  postgresql://<username>:'<password>'@localhost:5432/<database> \
+  <table> \
+  "snowflake://<username>:<password>@<password>/<DATABASE>/<SCHEMA>?warehouse=<WAREHOUSE>&role=<ROLE>" \
+  <TABLE> \
+  -k activity_id \
+  -c activity \
+  -w "event_timestamp < '2022-10-10'"
+```
+
+#### Code Example: Diff Tables Within a Database (available in pre release)
+
+Here's a code example from [the video](about), where we compare data between two Snowflake tables within one database.
+
+```
+data-diff \
+  "snowflake://<username>:<password>@<password>/<DATABASE>/<SCHEMA_1>?warehouse=<WAREHOUSE>&role=<ROLE>" <TABLE_1> \
+  <SCHEMA_2>.<TABLE_2> \
+  -k org_id \
+  -c created_at -c is_internal \
+  -w "org_id != 1 and org_id < 2000" \
+  -m test_results_%t \
+  --materialize-all-rows \
+  --table-write-limit 10000
+```
+
+In both code examples, I've used `<>` carrots to represent values that **should be replaced with your values** in the database connection strings. For the flags (`-k`, `-c`, etc.), I opted for "real" values (`org_id`, `is_internal`) to give you a more realistic view of what your command will look like.
+
+
+| Database      | `DB_URI` string                                                                                                                   | Status |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------|--------|
 | PostgreSQL >=10    | `postgresql://<user>:'<password>'@<host>:5432/<database>`                                                                             |  💚    |
 | MySQL         | `mysql://<user>:<password>@<hostname>:5432/<database>`                                                                              |  💚    |
@@ -50,11 +82,10 @@ Let's break this down. Assume there are two tables stored in two databases, and 
 If a database is not on the list, we'd still love to support it. Open an issue
 to discuss it.
 
-Notes: 
-- Because URLs allow many special characters, and may collide with the syntax of your command-line,
-it's recommended to surround them with quotes. Alternatively, you may provide them in a TOML file via the `--config` option.
+Note: Because URLs allow many special characters, and may collide with the syntax of your command-line,
+it's recommended to surround them with quotes. Alternatively, you may [provide them in a TOML file](#how-to-use-with-a-configuration-file) via the `--config` option.
 
-### Options:
+#### Options
 
   - `--help` - Show help message and exit.
   - `-k` or `--key-columns` - Name of the primary key column. If none provided, default is 'id'.
@@ -76,21 +107,22 @@ it's recommended to surround them with quotes. Alternatively, you may provide th
   - `-w`, `--where` - An additional 'where' expression to restrict the search space.
   - `--conf`, `--run` - Specify the run and configuration from a TOML file. (see below)
   - `--no-tracking` - data-diff sends home anonymous usage data. Use this to disable it.
-  - `-a`, `--algorithm` `[auto|joindiff|hashdiff]` - Force algorithm choice
 
-**Same-DB diff only:**
+  **The following two options are not available when using the pre release In-DB feature:**
+
+  - `--bisection-threshold` - Minimal size of segment to be split. Smaller segments will be downloaded and compared locally.
+  - `--bisection-factor` - Segments per iteration. When set to 2, it performs binary search.
+
+**In-DB commands, available in pre release only:**
   - `-m`, `--materialize` - Materialize the diff results into a new table in the database.
                             If a table exists by that name, it will be replaced.
                             Use `%t` in the name to place a timestamp.
                             Example: `-m test_mat_%t`
   - `--assume-unique-key` - Skip validating the uniqueness of the key column during joindiff, which is costly in non-cloud dbs.
   - `--sample-exclusive-rows` - Sample several rows that only appear in one of the tables, but not the other. Use with `-s`.
-  - `--materialize-all-rows` - Materialize every row, even if they are the same, instead of just the differing rows.
+  - `--materialize-all-rows` -  Materialize every row, even if they are the same, instead of just the differing rows.
   - `--table-write-limit` - Maximum number of rows to write when creating materialized or sample tables, per thread. Default=1000.
-
-**Cross-DB diff only:**
-  - `--bisection-threshold` - Minimal size of segment to be split. Smaller segments will be downloaded and compared locally.
-  - `--bisection-factor` - Segments per iteration. When set to 2, it performs binary search.
+  - `-a`, `--algorithm` `[auto|joindiff|hashdiff]` - Force algorithm choice
 
 
 
