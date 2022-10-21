@@ -5,9 +5,15 @@ title: GraphQL
 description: The GraphQL API give teams more access to their metadata.
 ---
 
+* [Prerequisites](rest.md#prerequisites)
 * [GraphQL Examples](graphql.md#graphql-examples)
 * [GraphQL Schema](graphql.md#graphql-chema)
 
+## Prerequisites
+:::info
+Generating an API Key is required:
+- ** Profile (bottom left) > Edit Profile > Create API Key **
+:::
 
 ## API Info
 

@@ -5,8 +5,15 @@ title: REST API
 description: Description of REST API
 ---
 
+* [Prerequisites](rest.md#prerequisites)
 * [Create A New Diff](rest.md#create-a-new-diff)
 * [Get Diff Results](rest.md#get-diff-results)
+
+## Prerequisites
+:::info
+Generating an API Key is required:
+- ** Profile (bottom left) > Edit Profile > Create API Key **
+:::
 
 ## Create A New Diff
 
@@ -16,6 +23,7 @@ description: Description of REST API
 | ** Method **|`POST`|
 | ** Request Content-Type ** |`application/json`|
 | ** Response Content-Type ** |`application/json`|
+| ** Auth **| API key header e.g. headers = {'Authorization': 'Key REPLACE_ME'} |
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -250,6 +258,7 @@ print(response.text)
 | ** Endpoint ** |`/api/v1/datadiffs/<id>/summary_results`|
 | ** Method **|`GET`|
 | ** Response Content-Type ** |`application/json`|
+| ** Auth **| API key header e.g. headers = {'Authorization': 'Key REPLACE_ME'} |
 
 ```mdx-code-block
 
