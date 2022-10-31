@@ -7,16 +7,27 @@ description: Integrate Datafold with dbt Cloud jobs
 
 ### Prerequisites
 - To access the dbt API Datafold requires a dbt **Team** account or higher.
-- You will need an API key for a dbt Cloud user whose account will be used for the integration. The account holder's name will show up in the pull/merge request. You can either create a "synthetic" user "team@yourcompany.com" or use one of the existing accounts.
+- You will need either a [Service Token](https://docs.getdbt.com/docs/dbt-cloud-apis/service-tokens) or a [User Token](https://docs.getdbt.com/docs/dbt-cloud-apis/user-tokens):
+    - **Service Token (Recommended):** 
+        - Navigate to **Account Settings -> Service Tokens -> + New Token**
+            - Add a Token Name
+            - Add a Permission Set
+                - Permission Set: Member
+                - Project: All Projects, or check only the projects to use with Datafold
+                - Save <br/>
+                ![](../../../static/img/dbt_cloud_service_token.png) <br/>
+    - **User Token:**
+        - Navigate to **Your Profile -> API Access**
+            - Copy
+
 - To configure dbt Cloud you must first connect a [Data Source](integrations/data_warehouses/dw_overview.md) and connect a [GitHub](/integrations/git/github.md) or [GitLab](/integrations/git/gitlab.md) account.
+
 
 ### Connecting dbt Cloud
 
 * To set up dbt Cloud begin by navigating to **Admin** -> **Settings** -> **Orchestration**. Here you will click on **Add New Integration** to enter your dbt Cloud details. 
 
 ![](../../../static/img/dbt_cloud_setup.png)
-
-* [Navigate to your dbt Cloud user profile](https://cloud.getdbt.com/#/profile/api/) and create a [service account token.](https://docs.getdbt.com/docs/dbt-cloud/dbt-cloud-api/service-tokens)
 
 ### Configure dbt Cloud on Datafold
 To complete the setup you'll connect your dbt Cloud account with an API key and specify settings for your dbt runs.
@@ -28,7 +39,7 @@ Complete the configuration by specifying the following fields:
 | Repository | Select the repository that generates the webhooks and where pull / merge requests will be raised. |
 | Data Source | Select the data source where the code that is changed in the repository will run.|
 | Name | An identifier used in Datafold to identify this CI configuration |
-| API Key | This is an API key from dbt Cloud, taken from the "Profile \| API Access" page. |
+| API Key | This is the token created [above](/docs/integrations/orchestration/dbt_cloud.md#prerequisites) |
 | Account name  | This becomes selectable when a valid API key is filled in. After that, select your account to use. |
 | Job that builds production tables | This becomes selectable after a valid API key is filled in. Select the job that builds production tables. |
 | Skip for pull/merge requests | When selected, the Datafold CI pipeline won't be run on pull/merge requests |
