@@ -211,22 +211,22 @@ models:
 
 There are two special meta types:
 
-* `owner`: Used to specify the owner of the table and applies the owner of the table in the catalog view
+* `owner`: Used to specify the owner of the table and applies the owner of the table in the catalog view.
 * `<pk_tag>`: The tag/name that is configured to identify primary columns is not synchronized into the meta-information, but it is synchronized as a tag if it exists.
 
 So for the above table:
 
 * `description` is synchronized into the description field of the table in the catalog.
 * The `owner` of the table is set to the user identified by the `user@company.com` field. This user must exist in Datafold with that email.
-* The `foo` meta information is added to the description field with the value `bar`
+* The `foo` meta information is added to the description field with the value `bar`.
 * The tags `pii` and `bar` are applied to the table as tags.
 
 For the columns above:
 
-* The column `user_id` has two tags applied: `pk` and `id`
+* The column `user_id` has two tags applied: `pk` and `id`.
 * The metadata for `user_id` is ignored, because it reflects the primary key tag.
 * The `email` column has the description applied.
-* The `email` column has the tag `pii` applied
+* The `email` column has the tag `pii` applied.
 * The `email` column has extra metadata information in the description field: `type` with the value `email`.
 
 Metadata synchronization occurs in one of two methods:
