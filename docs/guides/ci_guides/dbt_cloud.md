@@ -12,11 +12,14 @@ title: dbt Cloud
     * [Pull Request Job](dbt_cloud.md#advanced-pull-request-job)
 
 ## Prerequisites
+:::info
+You will need an API key for a dbt Cloud user whose account will be used for the integration. 
+Their name will show up in the pull/merge request. 
+You can either create a "synthetic" user "team@yourcompany.com" or use one of the existing accounts.
 
-    You will need an API key for a dbt Cloud user whose account will be used for the integration. 
-    Their name will show up in the pull/merge request. 
-    You can either create a "synthetic" user "team@yourcompany.com" or use one of the existing accounts.
-
+Generate an API Key:
+- ** Profile (bottom left) > Edit Profile > Create API Key **
+:::
 ## Basic Config
 
 ### Scheduled Production Job
