@@ -12,10 +12,19 @@ title: dbt Cloud
     * [Pull Request Job](dbt_cloud.md#advanced-pull-request-job)
 
 ## Prerequisites
-
-    You will need an API key for a dbt Cloud user whose account will be used for the integration. 
-    Their name will show up in the pull/merge request. 
-    You can either create a "synthetic" user "team@yourcompany.com" or use one of the existing accounts.
+- To access the dbt API Datafold requires a dbt **Team** account or higher.
+- You will need either a [Service Token](https://docs.getdbt.com/docs/dbt-cloud-apis/service-tokens) or a [User Token](https://docs.getdbt.com/docs/dbt-cloud-apis/user-tokens):
+    - **Service Token (Recommended):** 
+        - Navigate to **Account Settings -> Service Tokens -> + New Token**
+            - Add a Token Name
+            - Add a Permission Set
+                - Permission Set: Member
+                - Project: All Projects, or check only the projects to use with Datafold
+                - Save <br/>
+                ![](../../../static/img/dbt_cloud_service_token.png) <br/>
+    - **User Token:**
+        - Navigate to **Your Profile -> API Access**
+            - Copy
 
 ## Basic Config
 
