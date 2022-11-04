@@ -222,7 +222,7 @@ There are options!
 
 - You could create a single file that has various configurations that are used for multiple projects. This might be stored in your home directory. This has the benefit of everything being in one place.
 - Alternatively, you can have project-specific TOML files stored in each project. This has the benefit of each file being simpler and specific to a project. 
-  - However, be sure to exclude the TOML file in your `.gitignore` if it includes sensitive information such as passwords.
+  - _Note: be sure to exclude the TOML file in your `.gitignore`, especially if it includes sensitive information such as passwords._
 
 ## How to use from Python
 
