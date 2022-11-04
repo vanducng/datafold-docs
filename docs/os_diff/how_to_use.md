@@ -55,8 +55,8 @@ In both code examples, I've used `<>` carrots to represent values that **should 
 #### Databases we support and how to connect
 | Database      | `DB_URI` string                                                                                                                   | Status |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------|--------|
-| PostgreSQL >=10    | `postgresql://<user>:'<password>'@<host>:5432/<database>`                                                                             |  💚    |
-| MySQL         | `mysql://<user>:<password>@<hostname>:5432/<database>`                                                                              |  💚    |
+| PostgreSQL >=10    | `postgresql://<username>:'<password>'@<host>:5432/<database>`                                                                             |  💚    |
+| MySQL         | `mysql://<username>:<password>@<hostname>:5432/<database>`                                                                              |  💚    |
 | Snowflake     | **With password:**`"snowflake://<USER>:<password>@<ACCOUNT>/<DATABASE>/<SCHEMA>?warehouse=<WAREHOUSE>&role=<ROLE>"`<br />**With SSO:** `"snowflake://<USER>@<ACCOUNT>/<DATABASE>/<SCHEMA>?warehouse=<WAREHOUSE>&role=<ROLE>&authenticator=externalbrowser"`<br />_Note: Unless something is explicitly case sensitive (like your password) use all caps._ |  💚    |
 | BigQuery      | `bigquery://<project>/<dataset>`                                                                                                    |  💚    |
 | Redshift      | `redshift://<username>:<password>@<hostname>:5439/<database>`                                                                       |  💚    |
@@ -154,12 +154,12 @@ By setting up a TOML file like this:
 # In this section, you can specify one or more databases that your runs (defined later in the file) can connect to.
 
 # Specify the database connection information
-[database.db_postgres]
+[database.postgres]
 
   driver = "postgresql"
   database = "diff_test"
-  user = "your_username"
-  password = "buoyant_celeriac"
+  user = "username"
+  password = "password"
 
 # DATA-DIFF RUN PARAMETERS
 # In this section, you can specify default run parameters as well as parameters for
@@ -173,11 +173,11 @@ By setting up a TOML file like this:
 [run.postgres_analytics]
 
   # Source 1 ("left")
-  1.database = "db_postgres"
+  1.database = "postgres"
   1.table = "orders"
 
   # Source 2 ("right")
-  2.database = "db_postgres"
+  2.database = "postgres"
   2.table = "orders_backup"
 
   verbose = false
@@ -198,6 +198,14 @@ data-diff \
 - Optional: `-k` and `-w` are examples of parameters that have not been set in the TOML configuration file, and are defined in the command line.
 
 In summary, the command above will compare between `orders` and `orders_backup` using the `postgres_analytics` run, while also using additional parameters: `-k` and `-w`.
+
+**Note:** When defining how a run connects to a database, you can use a URI string (similar to the CLI command you would write in the absence of a TOML configuration file) instead of a database defined in `DATA-DIFF RUN PARAMETERS`:
+
+```
+  # Source 1 ("left")
+  1.database = "postgresql://postgres:Password1@/"
+  1.table = "orders"
+```
 
 **Inheritance and overriding parameters**
 
