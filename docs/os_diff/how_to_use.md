@@ -126,54 +126,105 @@ it's recommended to surround them with quotes. Alternatively, you may [provide t
 
 
 
-### How to use with a configuration file
+## How to use with a TOML configuration file
 
-Data-diff lets you load the configuration for a run from a TOML file.
+Data-diff lets you load the configuration for a run from [a TOML configuration file](https://toml.io/en/).
 
-**Reasons to use a configuration file:**
+**Why use a TOML configuration file?**
 
-- Convenience - Set-up the parameters for diffs that need to run often
+- Convenience: Set up the parameters for diffs that need to run often.
+- Easier and more readable: you can define the database connection settings as config values in a separate file, instead of a URI typed into the command line.
+- Configurable: Gives you fine-grained control over the settings switches, without requiring any Python code.
 
-- Easier and more readable - you can define the database connection settings as config values, instead of in a URI.
+In other words, you don't have to repeatedly enter verbose information such as URI strings or options every time you run a diff. This becomes even more handy as you use data-diff frequently in your workflow.
 
-- Gives you fine-grained control over the settings switches, without requiring any Python code.
+**How is a TOML configuration file set up for data-diff?**
 
-Use `--conf` to specify that path to the configuration file. data-diff will load the settings from `run.default`, if it's defined.
+There are two main sections:
 
-Then you can, optionally, use `--run` to choose to load the settings of a specific run, and override the settings `run.default`. (all runs extend `run.default`, like inheritance).
+- Database configuration
+  - You can define one or more databases that will be used by runs.
+- Run configuration
+  - This is where you define default options that are inherited or overridden by specific runs.
 
-Finally, CLI switches have the final say, and will override the settings defined by the configuration file, and the current run.
+By setting up a TOML file like this:
 
-Example TOML file:
+```
+# DATABASE CONNECTION INFORMATION
+# In this section, you can specify one or more databases that your runs (defined later in the file) can connect to.
 
-```toml
-# Specify the connection params to the test database.
-[database.test_postgresql]
-driver = "postgresql"
-user = "postgres"
-password = "Password1"
+# Specify the database connection information
+[database.db_postgres]
 
-# Specify the default run params
+  driver = "postgresql"
+  database = "diff_test"
+  user = "your_username"
+  password = "buoyant_celeriac"
+
+# DATA-DIFF RUN PARAMETERS
+# In this section, you can specify default run parameters as well as parameters for
+# one or more named runs that you can use from the command line.
+
+# Specify the default run parameters
 [run.default]
-update_column = "timestamp"
-verbose = true
+  verbose = true
 
-# Specify params for a run 'test_diff'.
-[run.test_diff]
-verbose = false
-# Source 1 ("left")
-1.database = "test_postgresql"                      # Use options from database.test_postgresql
-1.table = "rating"
-# Source 2 ("right")
-2.database = "postgresql://postgres:Password1@/"    # Use URI like in the CLI
-2.table = "rating_del1"
+# Specify the run parameters for a run called postgres_analytics
+[run.postgres_analytics]
+
+  # Source 1 ("left")
+  1.database = "db_postgres"
+  1.table = "orders"
+
+  # Source 2 ("right")
+  2.database = "db_postgres"
+  2.table = "orders_backup"
+
+  verbose = false
 ```
 
-In this example, running `data-diff --conf myconfig.toml --run test_diff` will compare between `rating` and `rating_del1`.
-It will use the `timestamp` column as the update column, as specified in `run.default`. However, it won't be verbose, since that
-flag is overwritten to `false`.
+Your command line input can look more like this:
 
-Running it with `data-diff --conf myconfig.toml --run test_diff -v` will set verbose back to `true`.
+```
+data-diff \
+  --conf ~/config_files/datadiff.toml \
+  --run postgres_analytics \
+  -k activity_id \
+  -w "event_timestamp < '2022-10-10'"
+```
+
+- `--conf` specifies a path to the configuration file.
+- `--run` specifies the parameters defined in your TOML file that will be used by data-diff.
+- Optional: `-k` and `-w` are examples of parameters that have not been set in the TOML configuration file, and are defined in the command line.
+
+In summary, the command above will compare between `orders` and `orders_backup` using the `postgres_analytics` run, while also using additional parameters: `-k` and `-w`.
+
+### Inheritance and overriding parameters
+
+If you review the TOML configuration file above, you'll see that that `verbose = true` is set the `run.default` parameters, which is then overridden by the `postgres_analytics` to set `verbose = false`. 
+
+If you decide you want to set `verbose = true` for a single run, you can switch that in your command line like this, by adding `-v` to override the `postgres_analytics` parameter:
+
+```
+data-diff \
+  --conf ~/config_files/datadiff.toml \
+  --run postgres_analytics \
+  -k activity_id \
+  -w "event_timestamp < '2022-10-10'" \
+  -v
+```
+
+CLI switches have the final say, and will override the settings defined by the configuration file, and the current run.
+
+**Where should you store your TOML configuration file?**
+
+There are options!
+
+- You could create a single file that has various configurations that are used for multiple projects. This might be stored in your home directory. This has the benefit of everything being in one place.
+- Alternatively, you can have project-specific TOML files stored in each project. This has the benefit of each file being simpler and specific to a project. 
+  - However, be sure to exclude the TOML file in your `.gitignore` if it includes sensitive information such as passwords.
+
+In both cases, we recommend storing sensitive information such as passwords as [environmental variables](https://linuxhint.com/set-environment-variable-zsh/) in a file such as `.zshrc`.
 
 ## How to use from Python
 
