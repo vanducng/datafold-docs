@@ -224,8 +224,6 @@ There are options!
 - Alternatively, you can have project-specific TOML files stored in each project. This has the benefit of each file being simpler and specific to a project. 
   - However, be sure to exclude the TOML file in your `.gitignore` if it includes sensitive information such as passwords.
 
-In both cases, we recommend storing sensitive information such as passwords as [environmental variables](https://linuxhint.com/set-environment-variable-zsh/) in a file such as `.zshrc`.
-
 ## How to use from Python
 
 API reference: [https://data-diff.readthedocs.io/en/latest/](https://data-diff.readthedocs.io/en/latest/)
