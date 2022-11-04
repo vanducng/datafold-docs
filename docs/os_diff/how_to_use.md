@@ -199,7 +199,7 @@ data-diff \
 
 In summary, the command above will compare between `orders` and `orders_backup` using the `postgres_analytics` run, while also using additional parameters: `-k` and `-w`.
 
-### Inheritance and overriding parameters
+**Inheritance and overriding parameters**
 
 If you review the TOML configuration file above, you'll see that that `verbose = true` is set the `run.default` parameters, which is then overridden by the `postgres_analytics` to set `verbose = false`. 
 
