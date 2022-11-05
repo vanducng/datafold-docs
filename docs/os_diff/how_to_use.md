@@ -151,34 +151,38 @@ By setting up a TOML file like this:
 
 ```
 # DATABASE CONNECTION INFORMATION
-# In this section, you can specify one or more databases that your runs (defined later in the file) can connect to.
+# In this section, you can specify one or more databases that your runs (which are defined later in the file) can connect to.
 
 # Specify the database connection information
-[database.postgres]
+[database.your_business_data] 
+# Note that this line *can* be the same as your actual database name, but doesn't 
+# have to be. It's a variable that stores information about a database connection 
+# (driver, database, user, and password).
 
   driver = "postgresql"
-  database = "diff_test"
-  user = "username"
-  password = "password"
+  database = "your_business_data" # Note that this line *is* where your actual database name must be used.
+  user = "your_username"
+  password = "your_password"
 
 # DATA-DIFF RUN PARAMETERS
-# In this section, you can specify default run parameters as well as parameters for
-# one or more named runs that you can use from the command line.
+# In this section, you can specify default run parameters that will be used by data-diff,
+# as well as parameters for one or more named runs that you can use from the command line.
 
 # Specify the default run parameters
 [run.default]
   verbose = true
 
-# Specify the run parameters for a run called postgres_analytics
-[run.postgres_analytics]
+# Specify the run parameters for a run called 'analytics'
+[run.analytics]
 
   # Source 1 ("left")
-  1.database = "postgres"
-  1.table = "orders"
+  1.database = "your_business_data" # This line instructs the 'analytics' run to 
+  # use the database connection information defined in 'database.your_business_data' above.
+  1.table = "orders" # This is a table in the 'your_business_data' database.
 
   # Source 2 ("right")
-  2.database = "postgres"
-  2.table = "orders_backup"
+  2.database = "your_business_data" # Again, database.your_business_data is referenced.
+  2.table = "orders_backup" # This is another table in the your_business_data database.
 
   verbose = false
 ```
@@ -188,7 +192,7 @@ Your command line input can look more like this:
 ```
 data-diff \
   --conf ~/config_files/datadiff.toml \
-  --run postgres_analytics \
+  --run analytics \
   -k activity_id \
   -w "event_timestamp < '2022-10-10'"
 ```
@@ -197,26 +201,26 @@ data-diff \
 - `--run` specifies the parameters defined in your TOML file that will be used by data-diff.
 - Optional: `-k` and `-w` are examples of parameters that have not been set in the TOML configuration file, and are defined in the command line.
 
-In summary, the command above will compare between `orders` and `orders_backup` using the `postgres_analytics` run, while also using additional parameters: `-k` and `-w`.
+In summary, the command above will compare between `orders` and `orders_backup` using the `analytics` run, while also using additional parameters: `-k` and `-w`.
 
 **Note:** When defining how a run connects to a database, you can use a URI string (similar to the CLI command you would write in the absence of a TOML configuration file) instead of a database defined in `DATA-DIFF RUN PARAMETERS`:
 
 ```
   # Source 1 ("left")
-  1.database = "postgresql://postgres:Password1@/"
+  1.database = "postgresql://your_business_data:your_password/"
   1.table = "orders"
 ```
 
 **Inheritance and overriding parameters**
 
-If you review the TOML configuration file above, you'll see that that `verbose = true` is set the `run.default` parameters, which is then overridden by the `postgres_analytics` to set `verbose = false`. 
+If you review the TOML configuration file above, you'll see that that `verbose = true` is set the `run.default` parameters, which is then overridden by the `analytics` run to set `verbose = false`. 
 
-If you decide you want to set `verbose = true` for a single run, you can switch that in your command line like this, by adding `-v` to override the `postgres_analytics` parameter:
+If you decide you want to set `verbose = true` for a single run, you can switch that in your command line like this, by adding `-v` to override the `analytics` parameter:
 
 ```
 data-diff \
   --conf ~/config_files/datadiff.toml \
-  --run postgres_analytics \
+  --run analytics \
   -k activity_id \
   -w "event_timestamp < '2022-10-10'" \
   -v
