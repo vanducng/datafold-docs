@@ -1,6 +1,6 @@
 ---
-sidebar_position: 3
-title: How to use
+sidebar_position: 2
+title: How to use with a TOML configuration file
 ---
 
 # How to use
@@ -52,38 +52,7 @@ data-diff \
 
 In both code examples, I've used `<>` carrots to represent values that **should be replaced with your values** in the database connection strings. For the flags (`-k`, `-c`, etc.), I opted for "real" values (`org_id`, `is_internal`) to give you a more realistic view of what your command will look like.
 
-#### Databases we support and how to connect
-| Database      | `DB_URI` string                                                                                                                   | Status |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------|--------|
-| PostgreSQL >=10    | `postgresql://<username>:'<password>'@<host>:5432/<database>`                                                                             |  💚    |
-| MySQL         | `mysql://<username>:<password>@<hostname>:5432/<database>`                                                                              |  💚    |
-| Snowflake     | **With password:**`"snowflake://<USER>:<password>@<ACCOUNT>/<DATABASE>/<SCHEMA>?warehouse=<WAREHOUSE>&role=<ROLE>"`<br />**With SSO:** `"snowflake://<USER>@<ACCOUNT>/<DATABASE>/<SCHEMA>?warehouse=<WAREHOUSE>&role=<ROLE>&authenticator=externalbrowser"`<br />_Note: Unless something is explicitly case sensitive (like your password) use all caps._ |  💚    |
-| BigQuery      | `bigquery://<project>/<dataset>`                                                                                                    |  💚    |
-| Redshift      | `redshift://<username>:<password>@<hostname>:5439/<database>`                                                                       |  💚    |
-| Oracle        | `oracle://<username>:<password>@<hostname>/database`                                                                                |  💛    |
-| Presto        | `presto://<username>:<password>@<hostname>:8080/<database>`                                                                         |  💛    |
-| Databricks    | `databricks://<http_path>:<access_token>@<server_hostname>/<catalog>/<schema>`                                                      |  💛    |
-| Trino         | `trino://<username>:<password>@<hostname>:8080/<database>`                                                                          |  💛    |
-| Clickhouse    | `clickhouse://<username>:<password>@<hostname>:9000/<database>`                                                                     |  💛    |
-| Vertica       | `vertica://<username>:<password>@<hostname>:5433/<database>`                                                                        |  💛    |
-| ElasticSearch |                                                                                                                                     |  📝    |
-| Planetscale   |                                                                                                                                     |  📝    |
-| Pinot         |                                                                                                                                     |  📝    |
-| Druid         |                                                                                                                                     |  📝    |
-| Kafka         |                                                                                                                                     |  📝    |
-| DuckDB        |                                                                                                                                     |  📝    |
-| SQLite        |                                                                                                                                     |  📝    |
 
-* 💚: Implemented and thoroughly tested.
-* 💛: Implemented, but not thoroughly tested yet.
-* ⏳: Implementation in progress.
-* 📝: Implementation planned. Contributions welcome.
-
-If a database is not on the list, we'd still love to support it. Open an issue
-to discuss it.
-
-Note: Because URLs allow many special characters, and may collide with the syntax of your command-line,
-it's recommended to surround them with quotes. Alternatively, you may [provide them in a TOML file](#how-to-use-with-a-configuration-file) via the `--config` option.
 
 #### Options
 
@@ -235,6 +204,10 @@ There are options!
 - You could create a single file that has various configurations that are used for multiple projects. This might be stored in your home directory. This has the benefit of everything being in one place.
 - Alternatively, you can have project-specific TOML files stored in each project. This has the benefit of each file being simpler and specific to a project. 
   - _Note: be sure to exclude the TOML file in your `.gitignore`, especially if it includes sensitive information such as passwords._
+
+**Setting up a Snowflake database connection in your TOML file**
+
+Snowflake has a few 
 
 ## How to use from Python
 
