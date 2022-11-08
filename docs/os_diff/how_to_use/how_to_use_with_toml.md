@@ -1,101 +1,7 @@
 ---
 sidebar_position: 2
-title: How to use with a TOML configuration file
+title: TOML configuration file
 ---
-
-# How to use
-
-## How to use from the command-line
-
-To run `data-diff` from the command line, run this command:
-
-`data-diff DB1_URI TABLE1_NAME DB2_URI TABLE2_NAME [OPTIONS]`
-
-Let's break this down. Assume there are two tables stored in two databases, and you want to know the differences between those tables.
-
-- `DB1_URI` will be a string that `data-diff` uses to connect to the database where the first table is stored.
-- `TABLE1_NAME` is the name of the table in the `DB1_URI` database.
-- `DB2_URI` will be a string that `data-diff` uses to connect to the database where the second table is stored.
-- `TABLE2_NAME` is the name of the second table in the `DB2_URI` database.
-- `[OPTIONS]` can be replaced with a variety of additional commands, [detailed here](#options).
-
-
-#### Code Example: Diff Tables Between Databases
-Here's an example command for your copy/pasting, taken from the screenshot above when we diffed data between Snowflake and Postgres.
-
-```
-data-diff \
-  postgresql://<username>:'<password>'@localhost:5432/<database> \
-  <table> \
-  "snowflake://<username>:<password>@<password>/<DATABASE>/<SCHEMA>?warehouse=<WAREHOUSE>&role=<ROLE>" \
-  <TABLE> \
-  -k activity_id \
-  -c activity \
-  -w "event_timestamp < '2022-10-10'"
-```
-
-#### Code Example: Diff Tables Within a Database (available in pre release)
-
-Here's a code example from [the video](about), where we compare data between two Snowflake tables within one database.
-
-```
-data-diff \
-  "snowflake://<username>:<password>@<password>/<DATABASE>/<SCHEMA_1>?warehouse=<WAREHOUSE>&role=<ROLE>" <TABLE_1> \
-  <SCHEMA_2>.<TABLE_2> \
-  -k org_id \
-  -c created_at -c is_internal \
-  -w "org_id != 1 and org_id < 2000" \
-  -m test_results_%t \
-  --materialize-all-rows \
-  --table-write-limit 10000
-```
-
-In both code examples, I've used `<>` carrots to represent values that **should be replaced with your values** in the database connection strings. For the flags (`-k`, `-c`, etc.), I opted for "real" values (`org_id`, `is_internal`) to give you a more realistic view of what your command will look like.
-
-
-
-#### Options
-
-  - `--help` - Show help message and exit.
-  - `-k` or `--key-columns` - Name of the primary key column. If none provided, default is 'id'.
-  - `-t` or `--update-column` - Name of updated_at/last_updated column
-  - `-c` or `--columns` - Names of extra columns to compare.  Can be used more than once in the same command.
-                          Accepts a name or a pattern like in SQL.
-                          Example: `-c col% -c another_col -c %foorb.r%`
-  - `-l` or `--limit` - Maximum number of differences to find (limits maximum bandwidth and runtime)
-  - `-s` or `--stats` - Print stats instead of a detailed diff
-  - `-d` or `--debug` - Print debug info
-  - `-v` or `--verbose` - Print extra info
-  - `-i` or `--interactive` - Confirm queries, implies `--debug`
-  - `--json` - Print JSONL output for machine readability
-  - `--min-age` - Considers only rows older than specified. Useful for specifying replication lag.
-                  Example: `--min-age=5min` ignores rows from the last 5 minutes.
-                  Valid units: `d, days, h, hours, min, minutes, mon, months, s, seconds, w, weeks, y, years`
-  - `--max-age` - Considers only rows younger than specified. See `--min-age`.
-  - `-j` or `--threads` - Number of worker threads to use per database. Default=1.
-  - `-w`, `--where` - An additional 'where' expression to restrict the search space.
-  - `--conf`, `--run` - Specify the run and configuration from a TOML file. (see below)
-  - `--no-tracking` - data-diff sends home anonymous usage data. Use this to disable it.
-
-  **The following two options are not available when using the pre release In-DB feature:**
-
-  - `--bisection-threshold` - Minimal size of segment to be split. Smaller segments will be downloaded and compared locally.
-  - `--bisection-factor` - Segments per iteration. When set to 2, it performs binary search.
-
-**In-DB commands, available in pre release only:**
-  - `-m`, `--materialize` - Materialize the diff results into a new table in the database.
-                            If a table exists by that name, it will be replaced.
-                            Use `%t` in the name to place a timestamp.
-                            Example: `-m test_mat_%t`
-  - `--assume-unique-key` - Skip validating the uniqueness of the key column during joindiff, which is costly in non-cloud dbs.
-  - `--sample-exclusive-rows` - Sample several rows that only appear in one of the tables, but not the other. Use with `-s`.
-  - `--materialize-all-rows` -  Materialize every row, even if they are the same, instead of just the differing rows.
-  - `--table-write-limit` - Maximum number of rows to write when creating materialized or sample tables, per thread. Default=1000.
-  - `-a`, `--algorithm` `[auto|joindiff|hashdiff]` - Force algorithm choice
-
-
-
-## How to use with a TOML configuration file
 
 Data-diff lets you load the configuration for a run from [a TOML configuration file](https://toml.io/en/).
 
@@ -180,6 +86,57 @@ In summary, the command above will compare between `orders` and `orders_backup` 
   1.table = "orders"
 ```
 
+**Setting up a Snowflake database connection in your TOML file**
+
+Because Snowflake has several unique settings that aren't used to connect to other databases, your TOML configuration needs to be structured a bit differently.
+
+Here's an example of how to configure a Snowflake database in a TOML configuration file. In this example, the data-diff run is configured to compare Postgres data with Snowflake data, as you would when validating cross-database replication.
+
+```
+# DATABASE CONNECTION INFORMATION
+
+# Specify the database connection information
+[database.your_postgres_business_data] 
+
+  driver = "postgresql"
+  database = "your_business_data"
+  user = "your_username"
+  password = "your_password"
+
+[database.your_snowflake_business_data]
+  driver = "snowflake"
+  database = "YOUR_BUSINESS_DATA"
+  user = "YOUR_USERNAME"
+  password = "YOUR_PASSWORD"
+  account = "YOUR_SNOWFLAKE_ACCOUNT"
+  schema = "YOUR_SCHEMA"
+  warehouse = "YOUR_WAREHOUSE"
+  role = "YOUR_ROLE"
+
+### RUN PARAMS: xdb_validation
+# Specify the run parameters for a run called xdb_validation
+[run.xdb_validation]
+
+  # Source 1 ("left")
+  1.database = "your_postgres_business_data"
+  1.table = "orders"
+
+  # Source 2 ("right")
+  2.database = "your_snowflake_business_data"
+  2.table = "ORDERS"
+```
+
+Then, you can run the following in your command line, which will inherit the configurations.
+
+```
+data-diff \
+  --conf ~/config_files/datadiff.toml \
+  --run xdb_validation \
+  -k activity_id \
+  -c activity \
+  -w "event_timestamp < '2022-10-10'"
+```
+
 **Inheritance and overriding parameters**
 
 If you review the TOML configuration file above, you'll see that that `verbose = true` is set the `run.default` parameters, which is then overridden by the `analytics` run to set `verbose = false`. 
@@ -204,51 +161,3 @@ There are options!
 - You could create a single file that has various configurations that are used for multiple projects. This might be stored in your home directory. This has the benefit of everything being in one place.
 - Alternatively, you can have project-specific TOML files stored in each project. This has the benefit of each file being simpler and specific to a project. 
   - _Note: be sure to exclude the TOML file in your `.gitignore`, especially if it includes sensitive information such as passwords._
-
-**Setting up a Snowflake database connection in your TOML file**
-
-Snowflake has a few 
-
-## How to use from Python
-
-API reference: [https://data-diff.readthedocs.io/en/latest/](https://data-diff.readthedocs.io/en/latest/)
-
-Example 1: Diff tables in mysql and postgresql
-
-```python
-# Optional: Set logging to display the progress of the diff
-import logging
-logging.basicConfig(level=logging.INFO)
-
-from data_diff import connect_to_table, diff_tables
-
-table1 = connect_to_table("postgresql:///", "table_name", "id")
-table2 = connect_to_table("mysql:///", "table_name", "id")
-
-for different_row in diff_tables(table1, table2):
-    plus_or_minus, columns = different_row
-    print(plus_or_minus, columns)
-```
-
-Example 2: Connect to snowflake using dictionary configuration
-
-```python
-SNOWFLAKE_CONN_INFO = {
-    "driver": "snowflake",
-    "user": "erez",
-    "account": "whatever",
-    "database": "TESTS",
-    "warehouse": "COMPUTE_WH",
-    "role": "ACCOUNTADMIN",
-    "schema": "PUBLIC",
-    "key": "snowflake_rsa_key.p8",
-}
-
-table1 = connect_to_table(SNOWFLAKE_CONN_INFO, "table_name")  # Uses id by default
-```
-
-Run `help(diff_tables)` or [read the docs](https://data-diff.readthedocs.io/en/latest/) to learn about the different options.
-
-
-
-
