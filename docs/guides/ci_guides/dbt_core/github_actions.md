@@ -119,7 +119,7 @@ jobs:
         id: findPR
 
 
-        # Run and test dbt models
+        # Run and test all dbt models
       - name: dbt build
         run: dbt build --profiles-dir ./
         env:
