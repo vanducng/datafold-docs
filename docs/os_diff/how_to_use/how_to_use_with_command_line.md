@@ -34,7 +34,7 @@ Note that several options (`-k`, `-c`, `-w`) are included in the command. Be sur
 
 #### Code Example: Diff Tables Within a Database (available in pre release)
 
-Here's a code example from [the video](about), where we compare data between two Snowflake tables within one database.
+Here's a code example corresponding to the (within-database demo video)[https://www.loom.com/share/682e4b7d74e84eb4824b983311f0a3b2], where we compare data between two Snowflake tables within one database.
 
 ```
 data-diff \
