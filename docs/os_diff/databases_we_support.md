@@ -33,4 +33,4 @@ If a database is not on the list, we'd still love to support it. Please [open an
 * 📝: Implementation planned. Contributions welcome.
 
 Note: Because URLs allow many special characters, and may collide with the syntax of your command-line,
-it's recommended to surround them with quotes. Alternatively, you may [provide them in a TOML file](./how-to-use-with-a-toml-configuration-file).
+it's recommended to surround them with quotes. Alternatively, you may [provide them in a TOML file](./how_to_use/how_to_use_with_toml).
