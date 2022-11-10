@@ -2,8 +2,14 @@
 sidebar_position: 2
 title: GitLab CI
 ---
+* [Prerequisites](gitlab_ci.md#prerequisites)
 * [Basic Config](gitlab_ci.md#basic-config)
 * [Advanced Config](gitlab_ci.md#advanced-config)
+
+## Prerequisites
+- [API Key](/integrations/orchestration/datafold-sdk#generate-a-datafold-api-key)
+- [DBT Core Integration](/integrations/orchestration/dbt_core.md)
+  - [CI config ID](/integrations/orchestration/dbt_core#next-steps)
 
 ## Basic Config
 

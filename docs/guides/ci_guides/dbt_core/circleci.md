@@ -2,9 +2,14 @@
 sidebar_position: 1
 title: CircleCI
 ---
+* [Prerequisites](circleci.md#prerequisites)
 * [Basic Config](circleci.md#basic-config)
 * [Advanced Config](circleci.md#advanced-config)
 
+## Prerequisites
+- [API Key](/integrations/orchestration/datafold-sdk#generate-a-datafold-api-key)
+- [DBT Core Integration](/integrations/orchestration/dbt_core.md)
+  - [CI config ID](/integrations/orchestration/dbt_core#next-steps)
 
 ## Basic Config
 
