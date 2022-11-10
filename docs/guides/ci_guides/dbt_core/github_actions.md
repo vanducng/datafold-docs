@@ -2,12 +2,17 @@
 sidebar_position: 1
 title: GitHub Actions
 ---
+* [Prerequisites](github_actions.md#prerequisites)
 * [Basic Config](github_actions.md#basic-config)
     * [Production Job](github_actions.md#production-job)
     * [Pull Request Job](github_actions.md#pull-request-job)
 * [Advanced Config](github_actions.md#advanced-config)
     * [Advanced Pull Request Job](github_actions.md#advanced-pull-request-job)
 
+## Prerequisites
+- [API Key](/integrations/orchestration/datafold-sdk#generate-a-datafold-api-key)
+- [DBT Core Integration](/integrations/orchestration/dbt_core.md)
+  - [CI config ID](/integrations/orchestration/dbt_core#next-steps)
 
 ## Basic Config
 
@@ -119,7 +124,7 @@ jobs:
         id: findPR
 
 
-        # Run and test dbt models
+        # Run and test all dbt models
       - name: dbt build
         run: dbt build --profiles-dir ./
         env:

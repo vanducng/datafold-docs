@@ -39,6 +39,13 @@ Using dbt Core requires use of the Datafold SDK. Continue with setup by [generat
 
 :::
 
+### Next Steps
+- Save
+- Note the CI config id:
+
+![](/img/ci_config_id.png)
+- Add Datafold to your [dbt Core CI workflow](/guides/ci_guides/dbt_core.md)
+
 ### Helpful Guides for dbt Core
 * [CI Overview](/guides/ci_guides_overview.md)
 * [dbt Core](/guides/ci_guides/dbt_core.md)
