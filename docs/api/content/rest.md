@@ -23,7 +23,7 @@ Generating an API Key is required:
 | ** Method **|`POST`|
 | ** Request Content-Type ** |`application/json`|
 | ** Response Content-Type ** |`application/json`|
-| ** Auth **| API key header e.g. headers = {'Authorization': 'Key REPLACE_ME'} |
+| ** Auth **| API key header. Example: <br /> `headers = {'Authorization': 'Key <api_key>'}`|
 
 ```mdx-code-block
 import Tabs from '@theme/Tabs';
@@ -144,7 +144,7 @@ The response will contain all data from the request with missing values filled i
 
 ```bash
 curl --location --request POST 'https://app.datafold.com/api/v1/datadiffs' \
---header 'Authorization: REPLACE_ME' \
+--header 'Authorization: <api_key>' \
 --header 'Content-Type: application/json' \
 --data-raw '{
   "data_source1_id": 1,
@@ -234,7 +234,7 @@ payload = json.dumps({
   "diff_tolerances_per_column": None
 })
 headers = {
-  'Authorization': 'REPLACE_ME',
+  'Authorization': '<api_key>',
   'Content-Type': 'application/json'
 }
 
@@ -258,7 +258,7 @@ print(response.text)
 | ** Endpoint ** |`/api/v1/datadiffs/<id>/summary_results`|
 | ** Method **|`GET`|
 | ** Response Content-Type ** |`application/json`|
-| ** Auth **| API key header e.g. headers = {'Authorization': 'Key REPLACE_ME'} |
+| ** Auth **| API key header. Example: <br /> `headers = {'Authorization': 'Key <api_key>'}` |
 
 ```mdx-code-block
 
@@ -360,8 +360,8 @@ Example:
 ```
 Example curl command:
 ```bash
-curl --location --request GET 'https://app.datafold.com/api/v1/datadiffs/REPLACE_ME/summary_results' \
---header 'Authorization: REPLACE_ME'
+curl --location --request GET 'https://app.datafold.com/api/v1/datadiffs/<id>/summary_results' \
+--header 'Authorization: <api_key>'
 ```
 
 ```mdx-code-block
@@ -372,11 +372,11 @@ Example python request:
 ```python
 import requests
 
-url = "https://app.datafold.com/api/v1/datadiffs/REPLACE_ME/summary_results"
+url = `https://app.datafold.com/api/v1/datadiffs/<id>/summary_results`
 
 payload={}
 headers = {
-  'Authorization': 'REPLACE_ME'
+  'Authorization': '<api_key>'
 }
 
 response = requests.request("GET", url, headers=headers, data=payload)
