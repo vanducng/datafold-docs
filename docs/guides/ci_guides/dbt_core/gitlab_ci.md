@@ -2,8 +2,14 @@
 sidebar_position: 2
 title: GitLab CI
 ---
+* [Prerequisites](gitlab_ci.md#prerequisites)
 * [Basic Config](gitlab_ci.md#basic-config)
 * [Advanced Config](gitlab_ci.md#advanced-config)
+
+## Prerequisites
+- [API Key](/integrations/orchestration/datafold-sdk#generate-a-datafold-api-key)
+- [DBT Core Integration](/integrations/orchestration/dbt_core.md)
+  - [CI config ID](/integrations/orchestration/dbt_core#next-steps)
 
 ## Basic Config
 
@@ -30,7 +36,11 @@ run_pipeline:
     - pip install datafold-sdk
   script:
     - set -ex
+
+    # Install dbt packages defined in packages.yml
     - dbt deps
+
+    # Run and test all dbt models
     - dbt build --full-refresh --profiles-dir ./
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
@@ -67,10 +77,22 @@ run_pipeline:
     - pip install datafold-sdk
   script:
     - set -ex
+
+    # Get the latest manifest.json from production
+    # The manifest.json is used for dbt state comparison and Datafold's diff comparison
     - aws s3 cp s3://datafold-dbt-prod-manifest/manifest.json ./manifest.json
+
+    # Install dbt packages defined in packages.yml
     - dbt deps
+
+    # Run and test modified dbt models and models downstream of them
+    # Otherwise defer to production for unmodified models
     - dbt build --select state:modified+ --defer --state ./ --exclude config.materialized:snapshot --profiles-dir ./
+
+    # Use the Datafold sdk to create a diff and write results to the PR
     - datafold dbt upload --ci-config-id 26 --run-type $TYPE --commit-sha $CI_COMMIT_SHA
+
+    # Optional source freshness tests
     - dbt source freshness --profiles-dir ./
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
