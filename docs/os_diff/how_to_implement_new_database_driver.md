@@ -1,5 +1,4 @@
 ---
-sidebar_position: 8
 title: How to Implement a New Database Driver
 ---
 

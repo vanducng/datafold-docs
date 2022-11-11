@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 title: About
 ---
 
@@ -22,8 +21,8 @@ It's fast, easy to use, and reliable. Even at massive scale.
 
 ### Here's a list of amazing things `data-diff` can do!
 
-* ⇄  Verifies across [many different databases](./how_to_use#databases-we-support-and-how-to-connect) (e.g., PostgreSQL ⇄ Snowflake) or within a database
-* 🔍 Outputs [diff of rows](#example-command-and-output) in detail
+* ⇄  Verifies across [many different databases](./databases_we_support) (e.g., PostgreSQL ⇄ Snowflake) or within a database
+* 🔍 Outputs diff of rows in detail
 * 🚨 Simple CLI/API to create monitoring and alerts
 * 🔁 Bridges column types of different formats and levels of precision (e.g. Double ⇆ Float ⇆ Decimal)
 * 🔥 Verify 25M+ rows in <10s, and 1B+ rows in ~5min.
