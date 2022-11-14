@@ -33,11 +33,6 @@ Let's walk through the process of using Datafold's open source `data-diff` tool 
 
 ## Enough preamble. Let's diff.
 
-<p align="center">
-  <a href=https://www.loom.com/share/682e4b7d74e84eb4824b983311f0a3b2 target="_blank">
-    <img alt="Intro to Diff" src="https://user-images.githubusercontent.com/1799931/196576582-d3535395-12ef-40fd-bbbb-e205ccae1159.png" width="50%" height="50%" />
-  </a>
-</p>
 
 ### Install `data-diff`.
 We recommend installing `data-diff` in the same virtual environment that you use when running dbt CLI.
