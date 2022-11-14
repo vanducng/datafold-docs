@@ -24,7 +24,7 @@ There are two main sections:
 
 By setting up a TOML file like this:
 
-```toml
+```python
 # DATABASE CONNECTION INFORMATION
 # In this section, you can specify one or more databases that your runs (which are defined later in the file) can connect to.
 
