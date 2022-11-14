@@ -24,7 +24,7 @@ There are two main sections:
 
 By setting up a TOML file like this:
 
-```toml
+```python
 # DATABASE CONNECTION INFORMATION
 # In this section, you can specify one or more databases that your runs (which are defined later in the file) can connect to.
 
@@ -80,7 +80,7 @@ In summary, the command above will compare between `orders` and `orders_backup` 
 
 **Note:** When defining how a run connects to a database, you can use a URI string (similar to the CLI command you would write in the absence of a TOML configuration file) instead of a database defined in `DATA-DIFF RUN PARAMETERS`:
 
-```toml
+```python
   # Source 1 ("left")
   1.database = "postgresql://your_business_data:your_password/"
   1.table = "orders"
@@ -92,7 +92,7 @@ Because Snowflake has several unique settings that aren't used to connect to oth
 
 Here's an example of how to configure a Snowflake database in a TOML configuration file. In this example, the data-diff run is configured to compare Postgres data with Snowflake data, as you would when validating cross-database replication.
 
-```toml
+```python
 # DATABASE CONNECTION INFORMATION
 
 # Specify the database connection information
