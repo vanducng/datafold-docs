@@ -48,4 +48,4 @@ data-diff DB1_URI TABLE1_NAME DB2_URI TABLE2_NAME --debug --v -k order_id
 | Output | `table_write_limit` | `--table-write-limit` | Maximum number of rows to write when creating materialized or sample tables, per thread. Default=1000. | ✅ |  |
 | Settings | | `--conf`, `--run` | Specify the run and configuration [from a TOML file](how_to_use_with_toml.md). | ✅ | ✅ |
 | Settings | `no_tracking` | `--no-tracking` | data-diff sends home anonymous usage data. Use this to disable it. | ✅ | ✅ |
-   test
+   test2
