@@ -33,9 +33,7 @@ The Datafold service account requires the following roles and permissions:
 
 Datafold utilizes a temporary dataset to materialize scratch work and keep data processing in the your warehouse. 
 
-:::caution
-Make sure that the dataset lives in the same region as the rest of the data, otherwise, the dataset will not be found.
-:::
+**Caution** Make sure that the dataset lives in the same region as the rest of the data, otherwise, the dataset will not be found.
 
 Let's navigate to BigQuery in the console and create a new dataset.
 
