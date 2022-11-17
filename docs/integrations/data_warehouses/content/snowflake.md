@@ -3,9 +3,7 @@ sidebar_position: 1
 title: Snowflake
 description: "Setting up Snowflake on Datafold"
 ---
-:::tip
-Datafold needs permissions in your Snowflake dataset to read your table data. You will need to be a Snowflake **admin** in order to grant the required permissions.
-:::
+**Important** - Datafold needs permissions in your Snowflake dataset to read your table data. You will need to be a Snowflake **admin** in order to grant the required permissions.
 
 **Steps to complete:**
 

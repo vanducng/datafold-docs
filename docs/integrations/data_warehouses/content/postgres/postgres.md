@@ -3,9 +3,7 @@ sidebar_position: 1
 title: PostgreSQL
 description: "Setting up PostgreSQL on Datafold"
 ---
-:::caution
-Using Postgres **without** Cloudwatch will not be compatible with Column-level Lineage.
-:::
+**Caution** - Using Postgres **without** Cloudwatch will not be compatible with Column-level Lineage.
 
 **Steps to complete:**
 
