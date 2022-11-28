@@ -19,7 +19,7 @@ Generating an API Key is required:
 
 | <div style={{ width: '290px' }}>Parameter</div> | <div style={{ width: '290px' }}>Value</div> |
 | ----------- | ----------- |
-| ** Endpoint ** |`/api/v1/datadiffs/`|
+| ** Endpoint ** |`/api/v1/datadiffs`|
 | ** Method **|`POST`|
 | ** Request Content-Type ** |`application/json`|
 | ** Response Content-Type ** |`application/json`|
