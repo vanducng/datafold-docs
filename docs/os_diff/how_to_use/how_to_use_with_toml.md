@@ -64,7 +64,7 @@ By setting up a TOML file like this:
 
 Your command line input can look more like this:
 
-```
+```shell
 data-diff \
   --conf ~/config_files/datadiff.toml \
   --run analytics \
@@ -128,7 +128,7 @@ Here's an example of how to configure a Snowflake database in a TOML configurati
 
 Then, you can run the following in your command line, which will inherit the configurations.
 
-```
+```shell
 data-diff \
   --conf ~/config_files/datadiff.toml \
   --run xdb_validation \
@@ -143,7 +143,7 @@ If you review the TOML configuration file above, you'll see that that `verbose =
 
 If you decide you want to set `verbose = true` for a single run, you can switch that in your command line like this, by adding `-v` to override the `analytics` parameter:
 
-```
+```shell
 data-diff \
   --conf ~/config_files/datadiff.toml \
   --run analytics \

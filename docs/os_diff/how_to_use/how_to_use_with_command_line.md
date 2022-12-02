@@ -7,7 +7,7 @@ Once you've installed data-diff using `pip`, it should be available through the 
 
 Run it without any arguments to get the "help" text:
 
-```sh
+```shell
 $ data-diff
 data-diff v0.3.0 - efficiently diff rows across database tables.
 
@@ -40,7 +40,7 @@ Note that if `database1` and `database2` are the same, data-diff will automatica
 #### Code Example: Diff Tables Between Databases
 Here's an example command for your copy/pasting, taken from the screenshot above when we diffed data between Snowflake and Postgres.
 
-```
+```shell
 data-diff \
   postgresql://<username>:'<password>'@localhost:5432/<database> \
   <table> \
@@ -63,7 +63,7 @@ Be sure to review and reference all the options you may use to construct your da
 
 Here's a code example corresponding to the (within-database demo video)[https://www.loom.com/share/682e4b7d74e84eb4824b983311f0a3b2], where we compare data between two Snowflake tables within one database.
 
-```
+```shell
 data-diff \
   "snowflake://<username>:<password>@<password>/<DATABASE>/<SCHEMA_1>?warehouse=<WAREHOUSE>&role=<ROLE>" <TABLE_1> \
   <SCHEMA_2>.<TABLE_2> \
