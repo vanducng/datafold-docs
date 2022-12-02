@@ -3,17 +3,38 @@ sidebar_position: 1
 title: Command line
 ---
 
-To run `data-diff` from the command line, run this command:
+Once you've installed data-diff using `pip`, it should be available through the `data-diff` command.
 
-`data-diff DB1_URI TABLE1_NAME DB2_URI TABLE2_NAME [OPTIONS]`
+Run it without any arguments to get the "help" text:
 
-Let's break this down. Assume there are two tables stored in two databases, and you want to know the differences between those tables.
+```sh
+$ data-diff
+data-diff v0.3.0 - efficiently diff rows across database tables.
 
-- `DB1_URI` will be a string that `data-diff` uses to connect to the database where the first table is stored.
-- `TABLE1_NAME` is the name of the table in the `DB1_URI` database.
-- `DB2_URI` will be a string that `data-diff` uses to connect to the database where the second table is stored.
-- `TABLE2_NAME` is the name of the second table in the `DB2_URI` database.
-- `[OPTIONS]` can be replaced with a variety of additional commands, [detailed here](./options).
+Usage:
+  * In-db diff:    data-diff <database1> <table1> <table2> [OPTIONS]
+  * Cross-db diff: data-diff <database1> <table1> <database2> <table2> [OPTIONS]
+  * Using config:  data-diff --conf PATH [--run NAME] [OPTIONS]
+
+Options:
+  ... (continues with the list of command-line switches) ...
+```
+
+In-db diff uses a join command to efficiently diff two tables within the same database.
+
+Cross-db diff uses a divide-and-conquer hashing algorithm to find the diff across tables in different databases.
+
+Let's break this down. Assume there are two tables stored in two different databases, and you want to know the differences between those tables.
+
+- `database1` will be a string that `data-diff` uses to connect to the database where the first table is stored.
+- `table1` is the name of the table in the first database.
+- `database2` will be a string that `data-diff` uses to connect to the database where the second table is stored.
+- `table2` is the name of the second table in the second database.
+- `[OPTIONS]` can be replaced with a variety of additional commands, [detailed here](#options).
+
+Usually, `database1` and `database2` will be URL connection strings. However, when `--conf` is specified, they can also be the names of the database configurations.
+
+Note that if `database1` and `database2` are the same, data-diff will automatically opt for using the in-db diff, despite the "cross-db syntax". To force a specific algorithm, you can use the `--algorithm` switch.
 
 
 #### Code Example: Diff Tables Between Databases
@@ -30,7 +51,13 @@ data-diff \
   -w "event_timestamp < '2022-10-10'"
 ```
 
-Note that several options (`-k`, `-c`, `-w`) are included in the command. Be sure to review and reference all the options you may use to construct your data-diff commands, which are documented [here](./options).
+What these switches mean:
+
+- `-k` sets the key column. That is the column that is used for determining the identity of the row. For the best performance, it should be unique and uniformly distributed. (identity is used to distinguish add/remove vs update)
+- `-c` is an additional, non-key column to diff.
+- `-w`, or `--where`, is an arbitrary SQL expression to filter the table.
+
+Be sure to review and reference all the options you may use to construct your data-diff commands, which are documented [here](./options).
 
 #### Code Example: Diff Tables Within a Database (available in pre release)
 
@@ -48,7 +75,9 @@ data-diff \
   --table-write-limit 10000
 ```
 
-In both code examples, I've used `<>` carrots to represent values that **should be replaced with your values** in the database connection strings. For the flags (`-k`, `-c`, etc.), I opted for "real" values (`org_id`, `is_internal`) to give you a more realistic view of what your command will look like.
+`-m` materializes the results into the specified table. `%t` will get replaced by the current timestamp.
+
+In both code examples, we've used `<>` carrots to represent values that **should be replaced with your values** in the database connection strings. For the flags (`-k`, `-c`, etc.), we opted for "real" values (`org_id`, `is_internal`) to give you a more realistic view of what your command will look like.
 
 #### Getting tired of entering all this text into the command line?
 

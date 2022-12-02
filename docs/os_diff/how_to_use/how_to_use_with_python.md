@@ -36,10 +36,15 @@ SNOWFLAKE_CONN_INFO = {
     "key": "snowflake_rsa_key.p8",
 }
 
-table1 = connect_to_table(SNOWFLAKE_CONN_INFO, "table_name")  # Uses id by default
+snowflake_table = connect_to_table(SNOWFLAKE_CONN_INFO, "table_name")  # Uses id by default
 ```
 
-Run `help(diff_tables)` or [read the docs](https://data-diff.readthedocs.io/en/latest/) to learn about the different options.
+Run `help(connect_to_table)` and `help(diff_tables)` or read our API reference to learn more about the different options:
+
+- [connect_to_table()](https://data-diff.readthedocs.io/en/latest/python-api.html#data_diff.connect_to_table)
+
+- [diff_tables()](https://data-diff.readthedocs.io/en/latest/python-api.html#data_diff.diff_tables)
+
 
 
 
