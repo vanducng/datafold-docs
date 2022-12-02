@@ -12,29 +12,27 @@ $ data-diff
 data-diff v0.3.0 - efficiently diff rows across database tables.
 
 Usage:
-  * In-db diff:    data-diff <database1> <table1> <table2> [OPTIONS]
-  * Cross-db diff: data-diff <database1> <table1> <database2> <table2> [OPTIONS]
-  * Using config:  data-diff --conf PATH [--run NAME] [OPTIONS]
+  * In-db diff:    python -m data_diff <database_a> <table_a> <table_b> [OPTIONS]
+  * Cross-db diff: python -m data_diff <database_a> <table_a> <database_b> <table_b> [OPTIONS]
+  * Using config:  python -m data_diff --conf PATH [--run NAME] [OPTIONS]
 
 Options:
   ... (continues with the list of command-line switches) ...
 ```
 
-In-db diff uses a join command to efficiently diff two tables within the same database.
-
-Cross-db diff uses a divide-and-conquer hashing algorithm to find the diff across tables in different databases.
+"In-db" diffs two tables within the same database, while "cross-db" diffs across tables in different databases.
 
 Let's break this down. Assume there are two tables stored in two different databases, and you want to know the differences between those tables.
 
-- `database1` will be a string that `data-diff` uses to connect to the database where the first table is stored.
-- `table1` is the name of the table in the first database.
-- `database2` will be a string that `data-diff` uses to connect to the database where the second table is stored.
-- `table2` is the name of the second table in the second database.
+- `database_a` will be a string that `data-diff` uses to connect to the database where the first table is stored.
+- `table_a` is the name of the table in the first database.
+- `database_b` will be a string that `data-diff` uses to connect to the database where the second table is stored.
+- `table_b` is the name of the second table in the second database.
 - `[OPTIONS]` can be replaced with a variety of additional commands, [detailed here](#options).
 
-Usually, `database1` and `database2` will be URL connection strings. However, when `--conf` is specified, they can also be the names of the database configurations.
+Usually, `database_a` and `database_b` will be URL connection strings. However, when `--conf` is specified, they can also be the names of the database configurations defined in a [TOML configuration file](./how_to_use_with_toml).
 
-Note that if `database1` and `database2` are the same, data-diff will automatically opt for using the in-db diff, despite the "cross-db syntax". To force a specific algorithm, you can use the `--algorithm` switch.
+Note that if `database_a` and `database_b` are the same, data-diff will automatically opt for using the in-db diff, despite the "cross-db syntax". To force a specific algorithm, you can use the `--algorithm` switch.
 
 
 #### Code Example: Diff Tables Between Databases
@@ -53,7 +51,7 @@ data-diff \
 
 What these switches mean:
 
-- `-k` sets the key column. That is the column that is used for determining the identity of the row. For the best performance, it should be unique and uniformly distributed. (identity is used to distinguish add/remove vs update)
+- `-k` sets the key column. That is the column that is used for determining the identity of the row. For the best performance, it should be unique and uniformly distributed. The identity is used to distinguish whether the rows were added/removed or updated.
 - `-c` is an additional, non-key column to diff.
 - `-w`, or `--where`, is an arbitrary SQL expression to filter the table.
 
