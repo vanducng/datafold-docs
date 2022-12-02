@@ -76,6 +76,16 @@ jobs:
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
           SNOWFLAKE_SCHEMA: "${{ 'ANALYTICS' }}"
+
+        # Use the Datafold sdk to create a diff and write results to the PR
+      - name: submit artifacts to datafold
+        run: |
+          set -ex
+          datafold dbt upload --ci-config-id 999 --run-type ${DATAFOLD_RUN_TYPE} --commit-sha ${GIT_SHA}
+        env:
+          DATAFOLD_APIKEY: ${{ secrets.DATAFOLD_APIKEY }}
+          DATAFOLD_RUN_TYPE: "${{ 'production' }}"
+          GIT_SHA: "${{ github.event.pull_request.head.sha }}"
 ```
 
 ### Pull Request Job
@@ -123,7 +133,6 @@ jobs:
         uses: jwalton/gh-find-current-pr@v1.3.0
         id: findPR
 
-
         # Run and test all dbt models
       - name: dbt build
         run: dbt build --profiles-dir ./
@@ -136,6 +145,15 @@ jobs:
           SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
           SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
           SNOWFLAKE_SCHEMA: "${{ format('{0}_{1}', 'PR_NUM', steps.findPr.outputs.pr) }}"
+
+      - name: submit artifacts to datafold
+        run: |
+          set -ex
+          datafold dbt upload --ci-config-id 999 --run-type ${DATAFOLD_RUN_TYPE} --commit-sha ${GIT_SHA}
+        env:
+          DATAFOLD_APIKEY: ${{ secrets.DATAFOLD_APIKEY }}
+          DATAFOLD_RUN_TYPE: "${{ 'pull_request' }}"
+          GIT_SHA: "${{ github.event.pull_request.head.sha }}"
 ```
 
 ## Advanced Config
@@ -218,7 +236,7 @@ jobs:
       - name: submit artifacts to datafold
         run: |
           set -ex
-          datafold dbt upload --ci-config-id 26 --run-type ${DATAFOLD_RUN_TYPE} --commit-sha ${GIT_SHA}
+          datafold dbt upload --ci-config-id 999 --run-type ${DATAFOLD_RUN_TYPE} --commit-sha ${GIT_SHA}
         env:
           DATAFOLD_APIKEY: ${{ secrets.DATAFOLD_APIKEY }}
           DATAFOLD_RUN_TYPE: "${{ 'pull_request' }}"
