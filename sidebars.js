@@ -152,6 +152,7 @@ const sidebars = {
         },
       ],
     },
+    'guides/os_diff',
     // {
     //   type: 'category',
     //   label: 'API',

@@ -1,11 +1,11 @@
 ---
 sidebar_position: 4
-title: OS Diff
+title: 'Open Source: data-diff + dbt-core'
 ---
 
-# Running `data-diff` to improve your dbt development workflow
+# Running open source `data-diff` to improve your dbt development workflow
 
-Let's walk through the process of using Datafold's open source `data-diff` tool to make sure the code changes in your development (dev) branch doesn't lead to unexpected data changes in production (prod).
+Let's walk through the process of using Datafold's [open source `data-diff` tool](https://github.com/datafold/data-diff) to make sure the code changes in your development (dev) branch doesn't lead to unexpected data changes in production (prod).
 
 ## How does `data-diff` work?
 
@@ -81,7 +81,7 @@ A few notes about this command:
   - `-m` specifies a prefix that will be used to write the results of your `data-diff` run to a Diff Results Table into your warehouse.
   - `--materialize_all_rows` instructs `data-diff` to write _all_ rows to the Diff Results Table, not only conflicts. This is helpful if you want to query the results and calculate statistics such as the percentage of rows that have a conflicting value in a given column.
   - `--table-write-limit` limits how many rows are written to the Diff Results Table in the warehouse. The limit is 1000 rows by default. Increase this limit for large tables to ensure your results are complete.
-- There are additional options you can add to your command, which are detailed in the [Options](../../../os_diff/how_to_use/options.md) section of the docs.
+- There are additional options you can add to your command, which are detailed in the [Options](../os_diff/how_to_use/options.md) section of the docs.
 
 ### Materialize the Diff Results Table in your warehouse.
 

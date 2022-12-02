@@ -79,7 +79,7 @@ const config = {
             label: 'Docs',
             position: 'left',
           },
-          {type: 'docSidebar', sidebarId: 'os_diff', label: 'OS Diff', position: 'left'},
+          {type: 'docSidebar', sidebarId: 'os_diff', label: 'Open Source', position: 'left'},
           {type: 'docSidebar', sidebarId: 'api', label: 'APIs', position: 'left'},
           {type: 'docSidebar', sidebarId: 'guides', label: 'Guides', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'left'}, // remove to turn on blog
