@@ -57,7 +57,7 @@ What these switches mean:
 
 Be sure to review and reference all the options you may use to construct your data-diff commands, which are documented [here](./options).
 
-#### Code Example: Diff Tables Within a Database (available in pre release)
+#### Code Example: Diff Tables Within a Database
 
 Here's a code example corresponding to the (within-database demo video)[https://www.loom.com/share/682e4b7d74e84eb4824b983311f0a3b2], where we compare data between two Snowflake tables within one database.
 

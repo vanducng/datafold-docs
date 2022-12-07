@@ -8,12 +8,6 @@ Installing `data-diff` is as easy as using `pip`:
 pip install data-diff
 ```
 
-To try out bleeding-edge features, including materialization of results in your data warehouse:
-
-```
-pip install data-diff --pre
-```
-
 **Note:**
 
 If you don't have the `pip` command, make sure you have Python 3.7+ installed, and that it is available in your path.
