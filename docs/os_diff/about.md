@@ -28,4 +28,4 @@ It's fast, easy to use, and reliable. Even at massive scale.
 * 🔥 Verify 25M+ rows in <10s, and 1B+ rows in ~5min.
 * ♾️  Works for tables with 10s of billions of rows
 
-Read more about our [common use cases](common_use_cases), or jump right in and [install data-diff](how_to_install) and run your first diff.
+Read more about our [common use cases](/docs/os_diff/common_use_cases.md), or jump right in and [install data-diff](/docs/os_diff/how_to_install.md) and run your first diff.
