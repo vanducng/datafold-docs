@@ -13,7 +13,7 @@ It's fast, easy to use, and reliable. Even at massive scale.
 #### Quickly identify issues when migrating data between databases
 ![](../../static/img/diff_plus_minus.png)
 
-### Diff Tables Within Databases (available in pre release)
+### Diff Tables Within Databases
 #### Improve code reviews by identifying data problems you don't have tests for
 <iframe width="640" height="414" src="https://www.loom.com/embed/682e4b7d74e84eb4824b983311f0a3b2" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 

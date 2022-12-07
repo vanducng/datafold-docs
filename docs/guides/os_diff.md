@@ -44,7 +44,7 @@ Let's walk through the process of using Datafold's [open source `data-diff` tool
 We recommend installing `data-diff` in the same virtual environment that you use when running dbt CLI.
 
 ```
-pip install data-diff --pre
+pip install data-diff
 ```
 
 Then, install a driver specific to the database you want to connect to. We'll assume you're using Snowflake, but `data-diff` supports additional databases as well.
