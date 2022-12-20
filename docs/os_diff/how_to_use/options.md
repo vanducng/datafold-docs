@@ -15,12 +15,9 @@ You can use the following options to specify the configuration of a data-diff ru
 ```
 
 - **CLI Switch**: Use this syntax when writing a [command line input](./how_to_use_with_command_line.md).
-```
+```shell
 data-diff DB1_URI TABLE1_NAME DB2_URI TABLE2_NAME --debug --v -k order_id
 ```
-
-'diff-related', 'table filtering', 'display options', 'misc'
-
 
 | Category | Config key | CLI&nbsp;switch&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description | Within-Database | Cross-Database |
 |---|---|---|---|---|---|

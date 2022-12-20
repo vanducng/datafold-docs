@@ -13,7 +13,7 @@ It's fast, easy to use, and reliable. Even at massive scale.
 #### Quickly identify issues when migrating data between databases
 ![](../../static/img/diff_plus_minus.png)
 
-### Diff Tables Within Databases (available in pre release)
+### Diff Tables Within Databases
 #### Improve code reviews by identifying data problems you don't have tests for
 <iframe width="640" height="414" src="https://www.loom.com/embed/682e4b7d74e84eb4824b983311f0a3b2" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -21,11 +21,11 @@ It's fast, easy to use, and reliable. Even at massive scale.
 
 ### Here's a list of amazing things `data-diff` can do!
 
-* ⇄  Verifies across [many different databases](./databases_we_support) (e.g., PostgreSQL ⇄ Snowflake) or within a database
+* ⇄  Verifies across [many different databases](/docs/os_diff/databases_we_support.md) (e.g., PostgreSQL ⇄ Snowflake) or within a database
 * 🔍 Outputs diff of rows in detail
 * 🚨 Simple CLI/API to create monitoring and alerts
 * 🔁 Bridges column types of different formats and levels of precision (e.g. Double ⇆ Float ⇆ Decimal)
 * 🔥 Verify 25M+ rows in <10s, and 1B+ rows in ~5min.
 * ♾️  Works for tables with 10s of billions of rows
 
-Read more about our [common use cases](./common_use_cases), or jump right in and [install data-diff](./how_to_install) and run your first diff.
+Read more about our [common use cases](/docs/os_diff/common_use_cases.md), or jump right in and [install data-diff](/docs/os_diff/how_to_install.md) and run your first diff.

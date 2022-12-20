@@ -62,6 +62,7 @@ jobs:
             set -ex
             dbt deps
             dbt build --full-refresh --profiles-dir ./
+            datafold dbt upload --ci-config-id 999 --run-type ${DATAFOLD_RUN_TYPE} --target-folder ./target/ --commit-sha ${CIRCLE_SHA1}
 workflows:
   beers-ci-workflow:
     jobs:
@@ -115,7 +116,7 @@ jobs:
             aws s3 cp s3://datafold-dbt-prod-manifest/manifest.json ./manifest.json
             dbt deps
             dbt build --select state:modified+ --defer --state ./ --exclude config.materialized:snapshot --profiles-dir ./
-            datafold dbt upload --ci-config-id 99999 --run-type ${DATAFOLD_RUN_TYPE} --target-folder ./target/ --commit-sha ${CIRCLE_SHA1}
+            datafold dbt upload --ci-config-id 999 --run-type ${DATAFOLD_RUN_TYPE} --target-folder ./target/ --commit-sha ${CIRCLE_SHA1}
             dbt source freshness --profiles-dir ./
 workflows:
   beers-ci-workflow:

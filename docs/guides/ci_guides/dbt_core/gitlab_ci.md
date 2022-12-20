@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 title: GitLab CI
 ---
 * [Prerequisites](gitlab_ci.md#prerequisites)
@@ -42,6 +42,9 @@ run_pipeline:
 
     # Run and test all dbt models
     - dbt build --full-refresh --profiles-dir ./
+
+    # Use the Datafold sdk to create a diff and write results to the PR
+    - datafold dbt upload --ci-config-id 999 --run-type $TYPE --commit-sha $CI_COMMIT_SHA
   rules:
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
       variables:
@@ -90,7 +93,7 @@ run_pipeline:
     - dbt build --select state:modified+ --defer --state ./ --exclude config.materialized:snapshot --profiles-dir ./
 
     # Use the Datafold sdk to create a diff and write results to the PR
-    - datafold dbt upload --ci-config-id 26 --run-type $TYPE --commit-sha $CI_COMMIT_SHA
+    - datafold dbt upload --ci-config-id 999 --run-type $TYPE --commit-sha $CI_COMMIT_SHA
 
     # Optional source freshness tests
     - dbt source freshness --profiles-dir ./

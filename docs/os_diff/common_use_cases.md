@@ -26,7 +26,7 @@ title: Common Use Cases
   self-heal by using the diff output to write/update rows in the target
   database.
 
-#### Comparing tables within one database to validate successful transformaitons
+#### Comparing tables within one database to validate successful transformations
 
 * **Inspect differences between branches**. Make sure your code results in only expected changes.
 
