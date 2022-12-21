@@ -56,11 +56,12 @@ dbt compile
 
 **5. Upload the dbt artifacts using the Datafold SDK.**
 ```
-datafold dbt upload --ci-config-id <ci_config_id> --run-type production --target-folder <artifacts_path> --commit-sha <git_sha>
+datafold dbt upload --ci-config-id <ci_config_id> --run-type <run-type> --target-folder <artifacts_path> --commit-sha <git_sha>
 ```
 
 * `<ci_config_id>`: The id of your ci config. This integer value can be found in your Datafold application by navigating to: Settings > Integrations > [Select your Integration] > CI config id.
+* `<run-type>`: This can be either `pull_request` or `production`. Choose a value depending on whether you're uploading dbt artifacts for a git commit SHA corresponding to production or pull request code.
 * `<artifacts_path>`: A path to dbt artifacts. Typically, these artifacts will be located in the `target` folder of your dbt project. If your current working directory is the dbt project, you can use `./target/` as your `<artifacts_path>`.
-* `<git_sha>`: The commit SHA for which you will provide artifacts.
+* `<git_sha>`: The git commit SHA for which you will provide artifacts.
 
 Finally, re-initiate the CI/CD process. This can be done manually in GitLab/GitHub, or you can simply push a new commit to the same PR.
