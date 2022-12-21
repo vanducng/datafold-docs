@@ -11,7 +11,7 @@ If your GitHub integration informs you that artifacts for a given SHA are missin
 Artifacts are json files that dbt creates representing the state of your dbt project at a specific commit. Datafold uses the artifacts from two commits to compare your code changes: 
 
 - A set of artifacts representing the data as would be created by the latest git commit in your PR.
-- A set of artifacts representing the data as it is in your production data, using a previous git commit.
+- A set of artifacts representing the data as it is in your production data, using an earlier git commit.
 
 #### Why are artifacts missing?
 If artifacts from one of the commits is missing, it could be for a number of reasons, but is likely due to a failed dbt Cloud job (e.g., a test failure).
