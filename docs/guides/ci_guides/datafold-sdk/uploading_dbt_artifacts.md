@@ -14,7 +14,12 @@ Artifacts are json files that dbt creates representing the state of your dbt pro
 - A set of artifacts representing the data as it is in your production data, using an earlier git commit.
 
 #### Why are artifacts missing?
-If artifacts from one of the commits is missing, it could be for a number of reasons, but is likely due to a failed dbt Cloud job (e.g., a test failure).
+If artifacts from one of the commits is missing, it could be for a number of reasons. Here are some possibilities:
+
+- If you're using a dbt Cloud integration, it's most likely that your dbt Cloud job did not run or failed. That includes if a step in your job failed, such as `dbt test`, even if `dbt run` was successful.
+- If you're using a dbt Core integration, it may be that:
+  - The files that build your CI pipeline are not yet merged into the main branch.
+  - Your CI pipeline did not trigger, or failed for any reason.
 
 #### What can I do about it?
 The missing artifacts from the specific commit can be created and uploaded via the SDK. 
