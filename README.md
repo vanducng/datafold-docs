@@ -13,7 +13,10 @@ nvm install 16.17.1 # to download Node version 16.17.1
 
 Then, restart your terminal. 
 
-To download the project dependencies, run `npm install` - installing dependency packages from the package.json
+Install the project's dependencies by running: 
+```
+npm install
+```
 
 Finally, run the project on localhost with:
 ```
