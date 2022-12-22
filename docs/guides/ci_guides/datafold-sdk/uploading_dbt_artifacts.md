@@ -27,7 +27,13 @@ The missing artifacts from the specific commit can be created and uploaded via t
 It's important to note that this will only resolve the error if the data in both your PR and production schemas were created using the code from the commits that were used to create the artifacts! Otherwise, the artifacts will not be consistent with the actual differences in the data. For example, this might cause Datafold to run too many or not enough diffs.
 
 #### A note on your base branch commit selection strategy
-Datafold will search for dbt artifacts based on your base branch commit selection strategy. This can be set in the Datfold application > Admin > Settings > Integrations > Orchestration > [Select your orchestration]. There are two options:
+Datafold will search for dbt artifacts based on your base branch commit selection strategy. This can be set in the Datfold application > Admin > Settings > Integrations > Orchestration > [Select your orchestration]. 
+
+<br/>
+<img width="304" alt="Screen Shot 2022-12-22 at 12 05 00 AM" src="https://user-images.githubusercontent.com/1799931/209088447-955dee8f-03bf-4c46-bc09-1539bc24a92d.png">
+<br/>
+
+There are two options:
 
 - **Merge base**: The dbt artifacts from your PR's latest commit will be compared to the dbt artifacts from the commit from which the PR branch was created. 
 - **Latest**: The dbt artifacts from your PR's latest commit will be compared to the latest available commit from the main/master branch.
