@@ -6,6 +6,7 @@ description: Description of datafold-sdk
 
 :::note
 
-Coming soon
+Additional documentation coming soon.
 
 :::
+
