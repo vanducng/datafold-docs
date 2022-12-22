@@ -18,13 +18,21 @@ If artifacts from one of the commits is missing, it could be for a number of rea
 
 - If you're using a dbt Cloud integration, it's most likely that your dbt Cloud job did not run or failed. That includes if a step in your job failed, such as `dbt test`, even if `dbt run` was successful.
 - If you're using a dbt Core integration, it may be that:
-  - The files that build your CI pipeline are not yet merged into the main branch.
+  - The files that build your CI pipeline are not yet merged into the main/master branch.
   - Your CI pipeline did not trigger, or failed for any reason.
 
 #### What can I do about it?
 The missing artifacts from the specific commit can be created and uploaded via the SDK. 
 
 It's important to note that this will only resolve the error if the data in both your PR and production schemas were created using the code from the commits that were used to create the artifacts! Otherwise, the artifacts will not be consistent with the actual differences in the data. For example, this might cause Datafold to run too many or not enough diffs.
+
+#### A note on your base branch commit selection strategy
+Datafold will search for dbt artifacts based on your base branch commit selection strategy. This can be set in the Datfold application > Admin > Settings > Integrations > Orchestration > [Select your orchestration]. There are two options:
+
+- **Merge base**: The dbt artifacts from your PR's latest commit will be compared to the dbt artifacts from the commit from which the PR branch was created. 
+- **Latest**: The dbt artifacts from your PR's latest commit will be compared to the latest available commit from the main/master branch.
+
+There is not a wrong choice here, but it's important to be aware that this setting determines which dbt artifacts Datafold tries to use to run a diff.
 
 #### Creating and uploading dbt artifacts
 
