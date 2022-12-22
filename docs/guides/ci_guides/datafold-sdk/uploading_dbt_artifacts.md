@@ -30,7 +30,7 @@ It's important to note that this will only resolve the error if the data in both
 Datafold will search for dbt artifacts based on your base branch commit selection strategy. This can be set in the Datfold application > Admin > Settings > Integrations > Orchestration > [Select your orchestration]. 
 
 <br/>
-<img width="304" alt="Screen Shot 2022-12-22 at 12 05 00 AM" src="https://user-images.githubusercontent.com/1799931/209088447-955dee8f-03bf-4c46-bc09-1539bc24a92d.png">
+<img width="304" alt="Screen Shot 2022-12-22 at 12 05 00 AM" src="https://user-images.githubusercontent.com/1799931/209088447-955dee8f-03bf-4c46-bc09-1539bc24a92d.png"></img>
 <br/>
 
 There are two options:
