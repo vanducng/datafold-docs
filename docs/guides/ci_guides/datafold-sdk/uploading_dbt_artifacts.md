@@ -19,7 +19,11 @@ If artifacts from one of the commits is missing, it could be for a number of rea
 - If you're using a dbt Cloud integration, it's most likely that your dbt Cloud job did not run or failed. That includes if a step in your job failed, such as `dbt test`, even if `dbt run` was successful.
 - If you're using a dbt Core integration, it may be that:
   - The files that build your CI pipeline are not yet merged into the main/master branch.
-  - Your CI pipeline did not trigger, or failed for any reason.
+  - Your CI pipeline did not trigger, or failed for any reason, including issues with any of the parameters in this line:
+
+```
+datafold dbt upload --ci-config-id ${DATAFOLD_CI_CONFIG} --run-type ${DATAFOLD_RUN_TYPE} --target-folder ./target/ --commit-sha ${GIT_SHA}
+```
 
 #### What can I do about it?
 The missing artifacts from the specific commit can be created and uploaded via the SDK. 
