@@ -278,3 +278,20 @@ jobs:
     runs-on: ubuntu-20.04
     if: ${{ !github.event.pull_request.draft }}
 ```
+
+### Use Concurrency to Cancel In-Progress Workflows
+
+By default, once a workflow is triggered, the workflow will run to completion. If the same workflow is subsequently triggered again, both workflows will run in parallel.
+
+For example, if `dbt staging` is triggered by opening a pull request, each additional push to the pull request will result in _another_ `dbt staging` workflow being triggered. For pull requests with many pushes in a short time frame, or a long running staging job, multiple staging workflows running simultaneously can be slow and costly.
+
+By implementing GitHub's [concurrency](https://docs.github.com/en/actions/using-jobs/using-concurrency#example-only-cancel-in-progress-jobs-or-runs-for-the-current-workflow) feature, new commits to an existing pull request will cancel any in progress runs.
+
+
+```yml
+jobs:
+  run:
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+```
