@@ -9,7 +9,7 @@ If a database is not on the list, we'd still love to support it. Please [open an
 | Database      | `DB_URI` string                                                                                                                   | Status |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------|--------|
 | PostgreSQL >=10    | `postgresql://<username>:'<password>'@<host>:5432/<database>`                                                                             |  💚    |
-| MySQL         | `mysql://<username>:<password>@<hostname>:5432/<database>`                                                                              |  💚    |
+| MySQL         | `mysql://<username>:<password>@<hostname>:3306/<database>`                                                                              |  💚    |
 | Snowflake     | **With password:**`"snowflake://<USER>:<password>@<ACCOUNT>/<DATABASE>/<SCHEMA>?warehouse=<WAREHOUSE>&role=<ROLE>"`<br />**With SSO:** `"snowflake://<USER>@<ACCOUNT>/<DATABASE>/<SCHEMA>?warehouse=<WAREHOUSE>&role=<ROLE>&authenticator=externalbrowser"`<br />_Note: Unless something is explicitly case sensitive (like your password) use all caps._ |  💚    |
 | BigQuery      | `bigquery://<project>/<dataset>`                                                                                                    |  💚    |
 | Redshift      | `redshift://<username>:<password>@<hostname>:5439/<database>`                                                                       |  💚    |
