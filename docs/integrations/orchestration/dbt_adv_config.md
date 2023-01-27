@@ -225,6 +225,18 @@ models:
           time_column:
             - created_at
 ```
+### Never diff a model
+You can exclude a model or a subdirectory of models using the \`never\_diff\` field.
+
+```yaml
+models:
+  - name: users
+    meta:
+      datafold:
+        datadiff:
+          never_diff: true
+```
+
 
 ### dbt metadata synchronization
 
