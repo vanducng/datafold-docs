@@ -138,7 +138,7 @@ See [dbt Cloud Integration](/integrations/orchestration/dbt_cloud.md)
 
 ### Autoscaling CI
 
-Although a great addition to you CI, [Slim CI](#slim-ci) has the following limitations:
+Although a great addition to your CI, [Slim CI](#slim-ci) has the following limitations:
 
 * Only one Slim CI job can run at a given time.
 * A job will continue to run even if another commit is added to the pull request.
