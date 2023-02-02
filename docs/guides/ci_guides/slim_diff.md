@@ -41,7 +41,7 @@ You can also add the `datafold:diff-all-downstream` label within your PR, which 
 <img width="942" alt="Screen Shot 2022-12-20 at 10 03 23 PM" src="https://user-images.githubusercontent.com/1799931/208833093-f853bde7-d12a-4b9f-b5ac-a4d8d9666076.png"></img>
 <br/>
 
-### Exclude models and directories from Slim Diff
+### Explicitly define which models to always diff
 
 Finally, with Slim Diff turned on, there might be certain models or subdirectories that you want to _always_ diff when downstream. You can think of this as an exclusion to the Slim Diff behavior.
 
