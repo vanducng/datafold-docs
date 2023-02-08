@@ -300,3 +300,35 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
 ```
+
+### Use source_state method to skip stale sources
+
+:::caution
+
+[From dbt Labs](https://docs.getdbt.com/reference/node-selection/methods#the-source_status-method): the `source_status` selection method is experimental and subject to change.
+
+:::
+
+If a data source in your dbt project has not received new data since the previous dbt run, rerunning downstream models is an unnessary expense. The `source_status` method allows you to skip models downstream of stale sources. 
+
+This method compares artifacts from the previous run to the current run, using the `max_loaded_at` field to dermine which sources have new data. Importantly, the `sources.json` artifact from the previous freshness test will need to be stored, and a freshness test will need to be invoked for the current run.
+
+```yml title="GitHub Actions source_status snippet"
+name: dbt prod
+    [...]
+    steps:
+    [...]
+      - name: Grab sources.json from S3 # download previous state sources.json
+        run: |
+          aws s3 cp [s3 url] ./sources.json
+
+      - name: dbt source freshness # invoke for current state sources.json
+        run: dbt source freshness --profiles-dir ./
+
+      - name: dbt build
+        run: dbt run --select source_status:fresher+ --state ./ --profiles-dir ./ # use source_status:fresher+ to compare artifacts
+
+      - name: Upload sources.json to S3 # upload current state sources.json for following run
+        run: |
+          aws s3 cp target/sources.json [s3 url]
+```
