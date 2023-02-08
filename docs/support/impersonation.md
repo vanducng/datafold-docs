@@ -24,8 +24,4 @@ To allow Datafold access to your account, navigate to Admin on the homescreen si
 
 Yes. To revoke access, simply uncheck the *"Allow Datafold access to your account for troubleshooting purposes"* box under Org Settings.
 
-**other question?**
-
-other answer
-
 :::
