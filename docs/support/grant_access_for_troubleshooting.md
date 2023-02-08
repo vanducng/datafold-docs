@@ -1,18 +1,18 @@
 ---
 sidebar_position: 1
-title: Impersonation
+title: Grant Access for Troubleshooting
 ---
-# Impersonation
+# Grant Access for Troubleshooting
 
 **Overview**
 
 In order to best resolve support issues, it is sometimes most effective for Datafold support to assume a user role while troubleshooting. 
 
-Impersonation allows Datafold engineers to see the same in-app context of an actual user, and can help skip back-and-forth trial and error between you and support.
+Granting access allows Datafold engineers to see the same in-app context of an actual user, and can help skip back-and-forth trial and error between you and support.
 
-**How to Update Impersonation Settings**
+**How to Update Access Settings**
 :::info Permissions
-Admin access is required to update impersonation settings
+Admin access is required to update Datafold access settings
 :::
 
 To allow Datafold access to your account, navigate to Admin on the homescreen sidebar &rarr; Settings &rarr; Org Settings, and check the box to ***"Allow Datafold access to your account for troubleshooting purposes"*** 
