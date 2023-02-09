@@ -4,18 +4,14 @@ id: overview
 title: Why Datafold?
 slug: /
 ---
-import ReactPlayer from 'react-player'
 
 # Why Datafold?
 
-Datafold is a data reliability platform. Our goal is to help data people do brilliant work!
+Datafold is the fastest way to validate dbt model changes during development & deployment.
 
-Our tools will help you ship faster and more reliably by automating testing for your data pipelines. 
+With Datafold, data engineers can audit their work in minutes without writing tests or custom queries. 
 
-By focusing on proactive data quality, Datafold can help you identify breaking changes <em>before</em> they make it into production. 
-
-No more broken dashboards, data syncs, or ML models.
-
+When integrated into CI, Datafold enables data teams to deploy quickly and with confidence - leaving tedious QA and firefighting behind.
 
 
 ```mdx-code-block
@@ -23,22 +19,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-  <TabItem value="datadiff_in_ci" label="Data Diff in CI" >
-```  
-
-<table >
- <tr>
-    <td>Get the row-level impact of changes made to dbt models within your workflow – all without needing to write any SQL tests.</td>
-    <td><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-01.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="100%" height="auto%"></video></td>
- </tr>
-</table>
-
-```mdx-code-block
-  </TabItem>
-```
-
-```mdx-code-block
-  <TabItem value="diff_ui" label="Diff GUI" >
+  <TabItem value="diff_ui" label="Development" >
 ```  
 
 <table >
@@ -54,13 +35,13 @@ import TabItem from '@theme/TabItem';
 ```
 
 ```mdx-code-block
-  <TabItem value="lineage" label="Column-Level Lineage" >
+  <TabItem value="datadiff_in_ci" label="Deployment" >
 ```  
 
 <table >
  <tr>
-    <td>Navigate a column-level lineage graph of your data built for you automatically from the bottom up using the SQL logs of a database.</td>
-    <td><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-04.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="100%" height="auto%"></video></td>
+    <td>Get the row-level impact of changes made to dbt models within your workflow – all without needing to write any SQL tests.</td>
+    <td><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-01.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="100%" height="auto%"></video></td>
  </tr>
 </table>
 
@@ -72,6 +53,5 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 ```
 
-## See Datafold in Action
-
-<ReactPlayer playing controls url='https://datafold-public.s3.us-west-2.amazonaws.com/homepage-demo.mp4'  loop="loop" muted="true" width="100%" height="auto%"/>
+### Interested?
+Learn more about how we do the above with [Data Diff](features/data_diff) and check out our [quickstart guide](quickstart_guide) to get started!
