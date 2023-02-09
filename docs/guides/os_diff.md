@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: 'Open Source: data-diff + dbt-core'
+title: 'Open Source data-diff'
 ---
 
 # Running open source `data-diff` to improve your dbt development workflow
