@@ -21,7 +21,7 @@ Database support for our CLI is currently limited to Snowflake and BigQuery, but
     Or
 
     ```bash
-    pip install data-diff 'sqeleton[bigquery]'
+    pip install data-diff google-cloud-bigquery
     ```
 3. Add the following data_diff variables to your dbt_project.yml.
     ```bash
