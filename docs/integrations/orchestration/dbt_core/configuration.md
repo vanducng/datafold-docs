@@ -1,18 +1,8 @@
 ---
-sidebar_position: 2
-title: dbt Core
+sidebar_position: 3
+title: Configuration
 description: Integrate Datafold with dbt Core jobs
 ---
-# dbt Core
-
-### Prerequisites
-- To configure dbt Core, you must first connect a [Data Source](integrations/data_warehouses/dw_overview.md) and connect a [GitHub](/integrations/git/github.md) or [GitLab](/integrations/git/gitlab.md) account.
-
-### Connecting dbt Core
-
-* To set up dbt Core begin by navigating to **Admin** -> **Settings** -> **Orchestration**. Here you will click on **Add New Integration** to enter your dbt Core details. 
-
-![](../../../static/img/dbt_cloud_setup.png)
 
 ### Configure dbt Core on Datafold
 After selecting dbt Core from the available options, complete configuration with the following information:

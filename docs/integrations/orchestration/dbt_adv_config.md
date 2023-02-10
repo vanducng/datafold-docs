@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: dbt - Adv. configs
+title: dbt - Advanced configs
 description: Advanced configuration options for dbt projects
 ---
 
