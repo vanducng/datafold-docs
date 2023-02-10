@@ -43,7 +43,7 @@ Complete the configuration by specifying the following fields:
 | Name | An identifier used in Datafold to identify this CI configuration. |
 | API Key | This is the token created [above](/docs/integrations/orchestration/dbt_cloud.md#prerequisites). |
 | Account name  | This becomes selectable when a valid API key is filled in. After that, select your account to use. |
-| Job that builds production tables | This becomes selectable after a valid API key is filled in. Select the job that builds production tables. |
+| Job that creates dbt artifacts | This becomes selectable after a valid API key is filled in. We recommend creating a dedicated job that executes `dbt compile` frequently (e.g., hourly) so that Datafold receives the latest artifacts from the master/main branch. |
 | Skip for pull/merge requests | When selected, the Datafold CI pipeline won't be run on pull/merge requests. |
 | Job that builds pull requests  | This becomes selectable after a valid API key is filled in. Select the job that builds pull requests. |
 | Primary key tag | See [dbt Integration](./dbt_adv_config.md). This should be set to a value such as `primary-key` which will also be used in your dbt project configuration (yaml files and config blocks). |
