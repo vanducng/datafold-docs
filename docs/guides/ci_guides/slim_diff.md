@@ -11,7 +11,7 @@ With Slim Diff enabled, Datafold will only diff models with code changes in your
 
 ### Setting up Slim Diff
 
-You can turn on Slim Diff in the Datafold app by navigating to Admin > Settings > Intregrations > Orchestration > [Select your Orchestration] > check the Slim Diff box. 
+You can turn on Slim Diff in the Datafold app by navigating to Admin > Settings > Integrations > Orchestration > [Select your Orchestration] > check the Slim Diff box.
 
 <br/>
 <img width="537" alt="Screen Shot 2022-12-20 at 9 50 03 PM" src="https://user-images.githubusercontent.com/1799931/208831392-5ff34df9-38d2-4f5f-b083-fe1410ba766a.png"></img>
