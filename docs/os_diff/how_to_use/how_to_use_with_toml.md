@@ -37,7 +37,8 @@ By setting up a TOML file like this:
   driver = "postgresql"
   database = "your_business_data" # Note that this line *is* where your actual database name must be used.
   user = "your_username"
-  password = "your_password"
+  password = ${YOUR_PASSWORD} # You can either store the password as a 
+  # raw text string or an environmental variable.
 
 # DATA-DIFF RUN PARAMETERS
 # In this section, you can specify default run parameters that will be used by data-diff,
@@ -101,13 +102,15 @@ Here's an example of how to configure a Snowflake database in a TOML configurati
   driver = "postgresql"
   database = "your_business_data"
   user = "your_username"
-  password = "your_password"
+  password = ${YOUR_PASSWORD} # You can either store the password as a 
+  # raw text string or an environmental variable.
 
 [database.your_snowflake_business_data]
   driver = "snowflake"
   database = "YOUR_BUSINESS_DATA"
   user = "YOUR_USERNAME"
-  password = "YOUR_PASSWORD"
+  password = ${YOUR_PASSWORD} # You can either store the password as a 
+  # raw text string or an environmental variable.
   account = "YOUR_SNOWFLAKE_ACCOUNT"
   schema = "YOUR_SCHEMA"
   warehouse = "YOUR_WAREHOUSE"
