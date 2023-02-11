@@ -23,7 +23,7 @@ Database support for our CLI is currently limited to Snowflake, but we are in th
     vars:
       data_diff:
         prod_database: <PROD_DATABASE_NAME>
-        prod_schema: <PROD_SCHEMA_NAME>
+        prod_schema: <PROD_SCHEMA_NAME> # optional -- use if project deploys to a single schema
     ```
 4. Tag the primary key in your model's `schema.yaml`. To learn more about setting primary key tags, check out [this section](../integrations/orchestration/dbt_adv_config#tag-primary-keys-in-dbt-models).
     ```yaml
