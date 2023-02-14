@@ -33,7 +33,7 @@ ALTER USER datafold WITH SYSLOG ACCESS UNRESTRICTED;
 | ----------- | ----------- |
 | Name     | A name given to the data source within Datafold |
 | Host   | The hostname of your cluster. (Go to Redshift in your AWS console, select your cluster, the hostname is the endpoint listed at the top of the page) |
-| Port   | Redshift connection port; default value is 5432 |
+| Port   | Redshift connection port; default value is 5439 |
 | User   | The user created in our SQL script - `datafold`  |
 | Password  | The password created in our SQL script |
 | Database Name  | The name of the Redshift database you want to connect to |
