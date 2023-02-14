@@ -1,21 +1,8 @@
 ---
-sidebar_position: 5
-title: datafold-sdk
+sidebar_position: 2
+title: Configuration
 description: Description of datafold-sdk
 ---
-# datafold-sdk
-### Prerequisites
-- To use the Datafold sdk, you must first connect a [Data Source](integrations/data_warehouses/dw_overview.md) and connect a [GitHub](/integrations/git/github.md) or [GitLab](/integrations/git/gitlab.md) account.
-
-### Steps to complete
-- [Configure **datafold-sdk** on Datafold](datafold-sdk.md#configure-datafold-sdk-on-datafold)
-- [Generate a Datafold API Key](datafold-sdk.md#generate-a-datafold-api-key)
-- [Install **datafold-sdk**](datafold-sdk.md#install-datafold-sdk)
-
-* To set up datafold-sdk begin by navigating to **Admin** -> **Settings** -> **Orchestration**. Here you will click on **Add New Integration** to configure the settings. 
-
-![](../../../static/img/dbt_cloud_setup.png)
-
 ### Configure datafold-sdk on Datafold
 After selecting datafold-sdk from the available options, complete configuration with the following information:
 
@@ -36,16 +23,8 @@ To generate a Datafold API key, navigate to **Admin** -> **Settings** -> **Accou
 
 Here, click on the **Create API Key** button. This will generate and store an API key for your account. You will be able to view, copy, and regenerate this key at any time. 
 
-![](../../../static/img/api_key_generate.png)
+![](../../../../static/img/api_key_generate.png)
 
-### Install datafold-sdk
-
-The [datafold-sdk](https://pypi.org/project/datafold-sdk/) allows you to integrate Datafold in your CI with arbitrary pipeline orchestrators. You can trigger diff from the command-line and implement CI jobs and procedures using **datafold-sdk**.
-
-To use locally, begin by installing **datafold-sdk**:
-```bash
-pip install datafold-sdk
-```
 ### Helpful Guides for datafold-sdk in CI
 * [CI Overview](/guides/ci_guides_overview.md)
 * [dbt Core](/guides/ci_guides/dbt_core.md)

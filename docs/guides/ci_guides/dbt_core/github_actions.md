@@ -10,9 +10,9 @@ title: GitHub Actions
     * [Advanced Pull Request Job](github_actions.md#advanced-pull-request-job)
 
 ## Prerequisites
-- [API Key](/integrations/orchestration/datafold-sdk#generate-a-datafold-api-key)
-- [DBT Core Integration](/integrations/orchestration/dbt_core.md)
-  - [CI config ID](/integrations/orchestration/dbt_core#next-steps)
+- [API Key](/integrations/orchestration/datafold_sdk/configuration.md#generate-a-datafold-api-key)
+- [dbt Core Integration](/integrations/orchestration/dbt_core/prerequisites.md)
+  - [CI config ID](/integrations/orchestration/dbt_core/configuration.md#next-steps)
 
 ## Basic Config
 
