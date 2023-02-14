@@ -8,7 +8,7 @@ title: CircleCI
 
 ## Prerequisites
 - [API Key](/integrations/orchestration/datafold_sdk/configuration.md#generate-a-datafold-api-key)
-- [DBT Core Integration](/integrations/orchestration/dbt_core/prerequisites.md)
+- [dbt Core Integration](/integrations/orchestration/dbt_core/prerequisites.md)
   - [CI config ID](/integrations/orchestration/dbt_core/configuration.md#next-steps)
 
 ## Basic Config

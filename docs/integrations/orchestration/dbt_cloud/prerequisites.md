@@ -7,7 +7,7 @@ description: Prerequisites to integrate Datafold with dbt Cloud
 
 ### Prerequisites
 - To configure dbt Cloud, you must first connect a [Data Source](integrations/data_warehouses/dw_overview.md) and connect a [GitHub](/integrations/git/github.md) or [GitLab](/integrations/git/gitlab.md) account.
-- To access the dbt API Datafold requires a dbt **Team** account or higher.
+- You will need a dbt **Team** account or higher to access the dbt API Datafold.
 - You will need either a [Service Token](https://docs.getdbt.com/docs/dbt-cloud-apis/service-tokens) or a [User Token](https://docs.getdbt.com/docs/dbt-cloud-apis/user-tokens):
     - **Service Token (Recommended):** 
         - Navigate to **Account Settings -> Service Tokens -> + New Token** <br/><br/>
