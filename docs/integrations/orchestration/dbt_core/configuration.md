@@ -14,7 +14,7 @@ Complete the configuration by specifying the following fields:
 | Repository | Select the repository that generates the webhooks and where pull / merge requests will be raised. |
 | Data Source | Select the data source where the code that is changed in the repository will run.|
 | Name | An identifier used in Datafold to identify this CI configuration. |
-| Primary key tag | See [dbt Integration](./dbt_adv_config.md). |
+| Primary key tag | See [dbt Integration](../dbt_adv_config.md). |
 | Sync metadata on every push to production | When selected, will sync the metadata from the dbt run with Datafold every time a push happens on the default branch.|
 | Files to ignore | If defined, the files matching the pattern will be ignored in the PRs. The pattern uses the syntax of .gitignore. Excluded files can be re-included by using the negation; re-included files can be later re-excluded again to narrow down the filter. For example, to exclude everything except the `/dbt` folder, but not the dbt `.md` files, do:`*!dbt/*dbt/*.md`. |
 | CI Status Reporting | If the checkbox is disabled, the errors in the CI runs will be reported back to GitHub/GitLab as successes, to keep the check "green" and not block the PR/MR. By default (enabled), the errors are reported as failures and may prevent PR/MRs from being merged. |
@@ -26,7 +26,7 @@ Complete the configuration by specifying the following fields:
 
 :::info
 
-Using dbt Core requires use of the Datafold SDK. Continue with setup by [generating a Datafold API key](datafold-sdk.md#generate-a-datafold-api-key).
+Using dbt Core requires use of the Datafold SDK. Continue with setup by [generating a Datafold API key](../datafold_sdk/configuration.md#generate-a-datafold-api-key).
 
 :::
 

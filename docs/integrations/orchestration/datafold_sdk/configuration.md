@@ -18,6 +18,13 @@ After selecting datafold-sdk from the available options, complete configuration 
 | Sampling confidence | The confidence to apply when sampling. |
 | Sampling Threshold | Sampling will be disabled automatically if tables are smaller than specified threshold. If unspecified, default values will be used depending on the Data Source type. |
 
+### Generate a Datafold API Key
+To generate a Datafold API key, navigate to **Admin** -> **Settings** -> **Account**. 
+
+Here, click on the **Create API Key** button. This will generate and store an API key for your account. You will be able to view, copy, and regenerate this key at any time. 
+
+![](../../../../static/img/api_key_generate.png)
+
 ### Helpful Guides for datafold-sdk in CI
 * [CI Overview](/guides/ci_guides_overview.md)
 * [dbt Core](/guides/ci_guides/dbt_core.md)

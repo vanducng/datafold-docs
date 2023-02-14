@@ -19,12 +19,12 @@ Complete the configuration by specifying the following fields:
 | Repository | Select the repository that generates the webhooks and where pull / merge requests will be raised. |
 | Data Source | Select the data source where the code that is changed in the repository will run.|
 | Name | An identifier used in Datafold to identify this CI configuration. |
-| API Key | This is the token created [above](/docs/integrations/orchestration/dbt_cloud.md#prerequisites). |
+| API Key | This is the token created [above](/docs/integrations/orchestration/dbt_cloud/prerequisites.md). |
 | Account name  | This becomes selectable when a valid API key is filled in. After that, select your account to use. |
 | Job that creates dbt artifacts | This becomes selectable after a valid API key is filled in. We recommend creating a dedicated job that executes `dbt compile` frequently (e.g., hourly) so that Datafold receives the latest artifacts from the master/main branch. |
 | Skip for pull/merge requests | When selected, the Datafold CI pipeline won't be run on pull/merge requests. |
 | Job that builds pull requests  | This becomes selectable after a valid API key is filled in. Select the job that builds pull requests. |
-| Primary key tag | See [dbt Integration](./dbt_adv_config.md). This should be set to a value such as `primary-key` which will also be used in your dbt project configuration (yaml files and config blocks). |
+| Primary key tag | See [dbt Integration](../dbt_adv_config.md). This should be set to a value such as `primary-key` which will also be used in your dbt project configuration (yaml files and config blocks). |
 | Base branch commit selection strategy | Select "Merge Base" to compare your PR to the commit in the main branch that is defined as part of the PR. Select "Latest" to compare your PR branch to the latest commit in the main branch.  |
 | Sync metadata on every push to production | When selected, this will sync the manifest.json artifact from the dbt run with Datafold every time a push happens on the default branch.|
 | Sync metadata on a schedule | Set a schedule to synchronize the dbt metadata (columns and table descriptions, tags, owners, etc), use this when you run the production job on a schedule. |

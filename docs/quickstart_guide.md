@@ -8,7 +8,7 @@ To get up and running with Datafold, there are only a few steps to get your acco
 1. Verify your email address - we've sent you a confirmation email. Check your Spam folder if you don't see it.
 2. Connect your [Data Warehouse](integrations/data_warehouses/dw_overview.md).
 3. Connect your [GitHub](integrations/git/github.md) or [GitLab](integrations/git/gitlab.md) accounts.
-4. Connect your [dbt Cloud](integrations/orchestration/dbt_cloud.md) account or configure [dbt Core](integrations/orchestration/dbt_core.md) with the datafold-sdk.
+4. Connect your [dbt Cloud](integrations/orchestration/dbt_cloud/prerequisites.md) account or configure [dbt Core](integrations/orchestration/dbt_core//prerequisites.md) with the datafold-sdk.
 
 
 Additionally, you may want to add integrations that enhance your data observability.
