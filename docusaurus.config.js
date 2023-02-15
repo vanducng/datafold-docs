@@ -14,14 +14,6 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'datafold', // Usually your GitHub org/user name.
-  projectName: 'datafold-docs', // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -35,12 +27,11 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/datafold/datafold-docs/tree/main/',
         },
-        blog: false, // remove to turn on blog
+        // To add blog, change to true and uncomment the block below
+        blog: false,
         // blog: {
         //   showReadingTime: true,
         //   // Please change this to your repo.
@@ -63,8 +54,8 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        // hideOnScroll: true,
-        // title: 'Datafold',
+        hideOnScroll: false,
+        // title: 'Datafold', // replace title with logo
         logo: {
           alt: '',
           src: 'img/logo_with_text.svg',
@@ -73,15 +64,10 @@ const config = {
           // height: 32,
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'overview',
-            label: 'Docs',
-            position: 'left',
-          },
-          {type: 'docSidebar', sidebarId: 'os_diff', label: 'Open Source', position: 'left'},
-          {type: 'docSidebar', sidebarId: 'api', label: 'APIs', position: 'left'},
+          {type: 'doc', docId: 'overview', label: 'Get Started', position: 'left'},
           {type: 'docSidebar', sidebarId: 'guides', label: 'Guides', position: 'left'},
+          {type: 'docSidebar', sidebarId: 'developer', label: 'Developer', position: 'left'},
+          // {type: 'docSidebar', sidebarId: 'api', label: 'APIs', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'left'}, // remove to turn on blog
           {
             href: 'https://github.com/datafold/datafold-docs',
