@@ -30,41 +30,6 @@ In dbt Cloud, [set up dbt Cloud CI](https://docs.getdbt.com/docs/deploy/cloud-ci
 
 dbt Cloud CI requires you to create at least two dbt Cloud jobs: a Production job and a Pull Request job. To integrate with Datafold, you may need to create additional jobs, which are described below.
 
-### Production Job
-Create a scheduled job (e.g., every 24 hours) in dbt Cloud.
-* **Why?**
-    * To refresh models every night.
-    * Table models should be rematerialized with fresh data.
-
-* Navigate to Jobs > Settings > Execution Settings
-* Under Commands, add a `dbt build` command:
-
-![](../../../../static/img/cloud_basic_ci.png)
-
-* Navigate to Jobs > Settings > Triggers > Schedule
-* Select "Run on schedule"
-* Complete the scheduling form for your desired schedule:
-
-![](../../../../static/img/cloud_scheduled_trigger.png)
-
-### Pull Request Job
-Create a job that runs when pull requests are opened.
-
-* **Why?**
-    * To run and test pull request changes before deploying to production.
-    * Changes are deployed to a test environment during review.
-
-
-* Navigate to Jobs > Settings > Execution Settings
-* Under Commands, add a `dbt build` command:
-
-![](../../../../static/img/cloud_basic_ci.png)
-
-* Navigate to Jobs > Settings > Triggers > Webhooks
-* Check "Run on Pull Requests?"
-
-![](../../../../static/img/cloud_pull_request_trigger.png)
-
 ### Merge Trigger Production Job
 We recommend creating a job that triggers a dbt Cloud production run when changes are pushed to main.
 
@@ -122,7 +87,7 @@ You need to add the dbt Cloud API key as a secret in GitHub Actions, and you nee
 
 ### Artifacts Job
 
-If you do not set up a Merge Trigger Production Job, we recommend creating a dedicated job that executes a `dbt compile` command on an hourly basis. Then, select this job as the "Job that creates dbt artifacts" when setting up your dbt Cloud Integration.
+If you do not set up a Merge Trigger Production Job, we recommend creating a dedicated dbt Cloud job that executes a `dbt compile` command on an hourly basis. Then, select this job as the "Job that creates dbt artifacts" when setting up your dbt Cloud Integration.
 
 
 <center><img src={DbtArtifacts} style={{width: '50%'}}/></center>
