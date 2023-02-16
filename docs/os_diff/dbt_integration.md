@@ -8,6 +8,15 @@ Database support for our CLI is currently limited to Snowflake, but we are in th
 
 :::
 
+```mdx-code-block
+import DbtDemo from '../../static/img/dbt_demo.gif';
+
+```
+`data-diff --dbt` gives a quick print out summary of changes so you can move fast and (not) break stuff!
+
+<center><img src={DbtDemo} style={{width: '75%'}}/></center>
+
+
 #### To get started, open your terminal and follow the steps below.
 
 1. Navigate to your dbt project.
