@@ -32,6 +32,8 @@ dbt Cloud CI requires you to create at least two dbt Cloud jobs: a Production jo
 
 ## Create a Job to provide Datafold with dbt Artifacts
 
+We recommend creating either a Merge Trigger Production Job using a tool like GitHub Actions, or an Artifacts Job using dbt Cloud.
+
 ### Merge Trigger Production Job
 We recommend creating a job that triggers a dbt Cloud production run when changes are pushed to main.
 
