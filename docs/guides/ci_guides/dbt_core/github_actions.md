@@ -166,8 +166,6 @@ This is similar to the [pull request job](github_actions.md#pull-request-job) ab
         * `state:modified+` run the modified model(s) and all downstream models
         * `state:+modified` run the modified model(s) and all upstream models
         * `state:modified+n` run the modified model(s) and N downstream models
-* Datafold CI Diff - Link Here? Diff Core?
-    * Create diffs automatically and write the details to the PR
 * Concurrency
     * [Cancel in-progress workflows](#use-concurrency-to-cancel-in-progress-workflows) for new commits pushed
 
