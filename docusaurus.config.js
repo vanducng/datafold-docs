@@ -66,7 +66,7 @@ const config = {
         items: [
           {type: 'doc', docId: 'overview', label: 'Get Started', position: 'left'},
           {type: 'docSidebar', sidebarId: 'guides', label: 'Guides', position: 'left'},
-          {type: 'docSidebar', sidebarId: 'developer', label: 'Developer', position: 'left'},
+          {type: 'docSidebar', sidebarId: 'reference', label: 'Reference', position: 'left'},
           // {type: 'docSidebar', sidebarId: 'api', label: 'APIs', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'left'}, // remove to turn on blog
           {
