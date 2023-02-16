@@ -30,68 +30,27 @@ In dbt Cloud, [set up dbt Cloud CI](https://docs.getdbt.com/docs/deploy/cloud-ci
 
 dbt Cloud CI requires you to create at least two dbt Cloud jobs: a Production job and a Pull Request job. To integrate with Datafold, you may need to create additional jobs, which are described below.
 
-## Create a Job to provide Datafold with dbt Artifacts
+## Create an Artifacts Job to provide Datafold with dbt Artifacts
 
-We recommend creating either a Merge Trigger Production Job using a tool like GitHub Actions, or an Artifacts Job using dbt Cloud.
+We recommend creating a job in dbt Cloud that sends production artifacts (the `manifest.json` file) to Datafold on a regular basis. This is the easiest way to get started with Datafold.
 
-### Merge Trigger Production Job
-We recommend creating a job that triggers a dbt Cloud production run when changes are pushed to main.
+:::info Continuous Deployment
+Alternatively, you can set up continuous deployment by
+[creating a Merge Trigger Production Job](../../../guides/ci_guides/dbt_cloud.md#merge-trigger-production-job) using a tool like GitHub Actions.
+:::
 
-Then, select this job as the "Job that creates dbt artifacts" when setting up your dbt Cloud Integration.
+### Artifacts Job
+
+An Artifacts Job is a dbt Cloud job that executes a `dbt compile` command on an hourly basis. 
+
+![](../../../../static/img/artifacts_job_1.png)
+![](../../../../static/img/artifacts_job_2.png)
+
+Select this job as the "Job that creates dbt artifacts" when setting up your dbt Cloud Integration.
 
 ```mdx-code-block
 import DbtArtifacts from '../../../../static/img/job_that_creates_artifacts.png';
 
 ```
-<center><img src={DbtArtifacts} style={{width: '50%'}}/></center>
-
-* **Why?**
-    * To deploy new changes from pull requests immediately.
-    * This will keep production up to date and enable accurate Datafold diffs.
-    * By default, dbt Cloud runs the production job on a schedule, not on merges.
-
-
-Example [Github Action](../../../guides/ci_guides/dbt_core/github_actions.md):
-```yml
-name: Trigger dbt Cloud
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  run:
-    runs-on: ubuntu-20.04
-    timeout-minutes: 15
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-
-      - name: Trigger dbt Cloud job
-        run: |
-          output=$(curl -X POST --fail \
-            --header "Authorization: Token ${DBT_API_KEY}" \
-            --header "Content-Type: application/json" \
-            --data '{"cause": "Commit '"${GIT_SHA}"'"}' \
-            https://cloud.getdbt.com/api/v2/accounts/${ACCOUNT_ID}/jobs/${JOB_ID}/run/)
-
-          echo "Triggered dbt Cloud run at:"
-          echo ${output} | jq -r .data.href
-        env:
-          DBT_API_KEY: ${{ secrets.DBT_API_KEY }}
-          ACCOUNT_ID: 1234 # dbt account id
-          JOB_ID: 4567 # dbt job id of the production tables
-          GIT_SHA: "${{ github.ref == 'refs/heads/master' && github.sha || github.event.pull_request.head.sha }}"
-```
-You need to add the dbt Cloud API key as a secret in GitHub Actions, and you need to set the IDs of the account and the job id that builds the production job. You can find these easily in the dbt Cloud UI:
-
-![](../../../../static/img/cloud_datafold_parameters.png)
-
-### Artifacts Job
-
-If you do not set up a Merge Trigger Production Job, we recommend creating a dedicated dbt Cloud job that executes a `dbt compile` command on an hourly basis. Then, select this job as the "Job that creates dbt artifacts" when setting up your dbt Cloud Integration.
-
 
 <center><img src={DbtArtifacts} style={{width: '50%'}}/></center>
