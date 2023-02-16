@@ -8,7 +8,7 @@ description: Prerequisites to integrate Datafold with dbt Cloud
 - To configure dbt Cloud, you must first connect a [Data Source](integrations/data_warehouses/dw_overview.md) and connect a [GitHub](/integrations/git/github.md) or [GitLab](/integrations/git/gitlab.md) account.
 - You will need a dbt **Team** account or higher to access the dbt API Datafold.
 
-### Connect your accounts using a token
+## Connect your accounts using a token
 - You will need either a [Service Token](https://docs.getdbt.com/docs/dbt-cloud-apis/service-tokens) or a [User Token](https://docs.getdbt.com/docs/dbt-cloud-apis/user-tokens):
     - **Service Token (Recommended):** 
         - Navigate to **Account Settings -> Service Tokens -> + New Token** <br/><br/>
@@ -25,12 +25,12 @@ description: Prerequisites to integrate Datafold with dbt Cloud
         - Navigate to **Your Profile -> API Access**
             - Copy
 
-### Set up dbt Cloud CI
+## Set up dbt Cloud CI
 In dbt Cloud, [set up dbt Cloud CI](https://docs.getdbt.com/docs/deploy/cloud-ci-job) so that your Pull Request job runs when you open or update a Pull Request.
 
 dbt Cloud CI requires you to create at least two dbt Cloud jobs: a Production job and a Pull Request job. To integrate with Datafold, you may need to create additional jobs, which are described below.
 
-#### Production Job
+### Production Job
 Create a scheduled job (e.g., every 24 hours) in dbt Cloud.
 * **Why?**
     * To refresh models every night.
@@ -39,19 +39,15 @@ Create a scheduled job (e.g., every 24 hours) in dbt Cloud.
 * Navigate to Jobs > Settings > Execution Settings
 * Under Commands, add a `dbt build` command:
 
-<br/><br/>
 ![](../../../../static/img/cloud_basic_ci.png)
-<br/><br/>
 
 * Navigate to Jobs > Settings > Triggers > Schedule
 * Select "Run on schedule"
 * Complete the scheduling form for your desired schedule:
 
-<br/><br/>
 ![](../../../../static/img/cloud_scheduled_trigger.png)
-<br/><br/>
 
-#### Pull Request Job
+### Pull Request Job
 Create a job that runs when pull requests are opened.
 
 * **Why?**
@@ -62,25 +58,23 @@ Create a job that runs when pull requests are opened.
 * Navigate to Jobs > Settings > Execution Settings
 * Under Commands, add a `dbt build` command:
 
-<br/><br/>
 ![](../../../../static/img/cloud_basic_ci.png)
-<br/><br/>
 
 * Navigate to Jobs > Settings > Triggers > Webhooks
 * Check "Run on Pull Requests?"
 
-<br/><br/>
 ![](../../../../static/img/cloud_pull_request_trigger.png)
-<br/><br/>
 
 ### Merge Trigger Production Job
 We recommend creating a job that triggers a dbt Cloud production run when changes are pushed to main.
 
 Then, select this job as the "Job that creates dbt artifacts" when setting up your dbt Cloud Integration.
 
-<br/><br/>
-![](../../../../static/img/job_that_creates_artifacts.png)
-<br/><br/>
+```mdx-code-block
+import DbtArtifacts from '../../../../static/img/job_that_creates_artifacts.png';
+
+```
+<center><img src={DbtArtifacts} style={{width: '50%'}}/></center>
 
 * **Why?**
     * To deploy new changes from pull requests immediately.
@@ -124,15 +118,11 @@ jobs:
 ```
 You need to add the dbt Cloud API key as a secret in GitHub Actions, and you need to set the IDs of the account and the job id that builds the production job. You can find these easily in the dbt Cloud UI:
 
-<br/><br/>
 ![](../../../../static/img/cloud_datafold_parameters.png)
-<br/><br/>
-
-
 
 ### Artifacts Job
 
 If you do not set up a Merge Trigger Production Job, we recommend creating a dedicated job that executes a `dbt compile` command on an hourly basis. Then, select this job as the "Job that creates dbt artifacts" when setting up your dbt Cloud Integration.
 
-<br/><br/>
-![](../../../../static/img/job_that_creates_artifacts.png)
+
+<center><img src={DbtArtifacts} style={{width: '50%'}}/></center>
