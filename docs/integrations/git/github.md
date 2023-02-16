@@ -11,7 +11,7 @@ If you are on an on-prem deployment, you should first create a GitHub App for th
 :::info Prerequisites
 * Your Datafold user must have admin permissions
 * Your GitHub account must be a member of the GitHub organization where the app is to be installed
-* Approval from a GitHub repo admins or GitHub organization owner is required
+* Approval from a GitHub repo admin or GitHub organization owner is required
 :::
 
 To begin, navigate to **Admin** -> **Settings**. Then, click on Git in the sidebar to configure a new GitHub integration.
