@@ -30,6 +30,8 @@ In dbt Cloud, [set up dbt Cloud CI](https://docs.getdbt.com/docs/deploy/cloud-ci
 
 dbt Cloud CI requires you to create at least two dbt Cloud jobs: a Production job and a Pull Request job. To integrate with Datafold, you may need to create additional jobs, which are described below.
 
+## Create a Job to provide Datafold with dbt Artifacts
+
 ### Merge Trigger Production Job
 We recommend creating a job that triggers a dbt Cloud production run when changes are pushed to main.
 
