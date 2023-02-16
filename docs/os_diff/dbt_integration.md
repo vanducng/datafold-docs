@@ -25,7 +25,7 @@ import DbtDemo from '../../static/img/dbt_demo.gif';
     ```
 2. Install our free, open-source CLI tool and the Snowflake database connector.
     ```bash
-    pip install data-diff 'sqeleton[snowflake]' -U
+    pip install data-diff 'data-diff[snowflake]' -U
     ```
 3. Add the following data_diff variables to your dbt_project.yml.
     ```bash
