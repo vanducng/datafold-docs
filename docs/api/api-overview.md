@@ -25,7 +25,7 @@ import GenerateApiKey from '../../static/img/generate_api_key.png';
 The base URL for connecting to the Datafold API is `https://app.datafold.com`. 
 
 :::info
-For Datafold single-tenant (on-premise) customers, you should instead use `https://datafold.yourdomain.com` as the base URL.
+For Datafold single-tenant (on-prem) customers, you should instead use `https://datafold.yourdomain.com` as the base URL.
 :::
 
 
