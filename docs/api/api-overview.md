@@ -30,7 +30,7 @@ For Datafold single-tenant (on-prem) customers, you should instead use `https://
 
 
 
-## API Methods
+### API Methods
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
