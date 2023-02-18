@@ -48,9 +48,4 @@ An Artifacts Job is a dbt Cloud job that executes a `dbt compile` command on an 
 
 Select this job as the "Job that creates dbt artifacts" when setting up your dbt Cloud Integration.
 
-```mdx-code-block
-import DbtArtifacts from '../../../../static/img/job_that_creates_artifacts.png';
-
-```
-
-<center><img src={DbtArtifacts} style={{width: '50%'}}/></center>
+![](../../../../static/img/job_that_creates_artifacts.png)
