@@ -5,15 +5,12 @@ title: REST API
 description: Description of REST API
 ---
 
-* [Prerequisites](rest.md#prerequisites)
+:::info
+To use the Datafold REST API, you should first [create a Datafold API Key](../api-overview.md#create-a-datafold-api-key).
+:::
+
 * [Create A New Diff](rest.md#create-a-new-diff)
 * [Get Diff Results](rest.md#get-diff-results)
-
-## Prerequisites
-:::info
-Generating an API Key is required:
-- ** Profile (bottom left) > Edit Profile > Create API Key **
-:::
 
 ## Create A New Diff
 
