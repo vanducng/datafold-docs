@@ -25,14 +25,7 @@ Generating an API Key is required:
 
 ## GraphQL Examples
 
-```mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-  <TabItem value="get-tables" label="Get Tables" >
-```
-
+### Get Tables
 ```graphql
 query GetTables($dataSourceId: ID = 1) {
     tables(dataSourceId: $dataSourceId
@@ -65,10 +58,7 @@ query GetTables($dataSourceId: ID = 1) {
 }
 ```
 
-```mdx-code-block
-</TabItem>
-<TabItem value="search-tables-pop" label="Search Tables by Popularity" >
-```
+### Search Tables by Popularity
 
 ```graphql
 query SearchTablesByPopularity(
@@ -109,10 +99,8 @@ query SearchTablesByPopularity(
   }
 }
 ```
-```mdx-code-block
-</TabItem>
-<TabItem value="get-datasource-metadata" label="Get Datasource Metadata" >
-```
+
+### Get Datasource Metadata
 
 ```graphql
 query GetDataSourceMetaData {
@@ -133,10 +121,8 @@ query GetDataSourceMetaData {
   }
 }
 ```
-```mdx-code-block
-</TabItem>
-<TabItem value="get-lineage-metadata" label="Get Lineage Metadata" >
-```
+
+### Get Lineage Metadata
 
 ```graphql
 query GetLineage($primaryUid: ID = "c949a00ec65a40989c533ec979ca66c3") {
@@ -226,17 +212,10 @@ query GetLineage($primaryUid: ID = "c949a00ec65a40989c533ec979ca66c3") {
 }
 ```
 
-```mdx-code-block
-  </TabItem>
-  </Tabs>
-```
-
 ## Additional Examples
 
-```mdx-code-block
-<Tabs>
-  <TabItem value="get-table-uid" label="Get Table UID" >
-```
+### Get Table UID
+
 Query:
 ```graphql
 query GetTableUID($path: String = "4233.INTEGRATION.BEERS.BEERS") {
@@ -256,10 +235,7 @@ Response:
 }
 ```
 
-```mdx-code-block
-</TabItem>
-<TabItem value="get-downstream-tables" label="Get Downstream Tables" >
-```
+### Get Downstream Tables
 
 Query:
 ```graphql
@@ -358,10 +334,7 @@ Response:
 }
 ```
 
-```mdx-code-block
-</TabItem>
-<TabItem value="get-table-columns" label="Get Table Columns" >
-```
+### Get Table Columns
 
 Query:
 ```graphql
@@ -437,10 +410,7 @@ Response:
 }
 ```
 
-```mdx-code-block
-</TabItem>
-<TabItem value="create-tag" label="Create Tag" >
-```
+### Create Tag
 
 Mutation:
 ```graphql
@@ -467,10 +437,7 @@ Response:
 }
 ```
 
-```mdx-code-block
-</TabItem>
-<TabItem value="attach-tag" label="Attach Tag" >
-```
+### Attach Tag
 
 Mutation:
 ```graphql
@@ -499,10 +466,7 @@ Response:
 }
 ```
 
-```mdx-code-block
-</TabItem>
-<TabItem value="get-downstream-columns" label="Get Downstream Columns" >
-```
+### Get Downstream Columns
 
 Query:
 ```graphql
@@ -594,12 +558,10 @@ Response:
 }
 ```
 
-```mdx-code-block
-</TabItem>
-<TabItem value="search-by-tag" label="Search by Tag" >
-```
+### Search by Tag
 
 Query:
+
 ```graphql
 query GetSearchResults(
   $query: String = ""
@@ -637,7 +599,8 @@ query GetSearchResults(
 }
 ```
 
-Response
+Response:
+
 ```json
 {
     "data": {
@@ -729,12 +692,6 @@ Response
         }
     }
 }
-```
-
-
-```mdx-code-block
-</TabItem>
-</Tabs>
 ```
 
 ## GraphQL Schema
