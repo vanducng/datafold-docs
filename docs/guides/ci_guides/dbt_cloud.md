@@ -84,4 +84,4 @@ jobs:
 ```
 You need to add the dbt Cloud API key as a secret in GitHub Actions, and you need to set the IDs of the account and the job id that builds the production job. You can find these easily in the dbt Cloud UI:
 
-![](../../../static/img/cloud_datafold_parameters.png)
+![](../../../static/img/dbt_cloud_trigger.png)
