@@ -65,7 +65,7 @@ models:
   <project_name>:
     <directory_name>:        
       +materialized: view
-      - name: <model_name>:
+      name: <model_name>:
         +meta:
           datafold:
             datadiff:
