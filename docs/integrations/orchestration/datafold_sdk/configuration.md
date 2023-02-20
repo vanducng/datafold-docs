@@ -23,7 +23,7 @@ To generate a Datafold API key, navigate to **Admin** -> **Settings** -> **Accou
 
 Here, click on the **Create API Key** button. This will generate and store an API key for your account. You will be able to view, copy, and regenerate this key at any time. 
 
-![](../../../../static/img/api_key_generate.png)
+![](../../../../static/img/generate_api_key.png)
 
 ### Helpful Guides for datafold-sdk in CI
 * [CI Overview](/guides/ci_guides_overview.md)
