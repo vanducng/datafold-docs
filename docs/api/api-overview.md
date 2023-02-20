@@ -5,21 +5,32 @@ title: API Overview
 
 # Datafold API
 
-### Authentication
+### Create a Datafold API Key
 
-Authentication is done by setting the HTTP header:
+Authentication is done by storing the value of a Datafold API key in the HTTP header:
 
-`Authorization: Key <your-api-key>`
+`Authorization: <your-api-key>`
 
-You can get the key in Datafold Web UI: Settings -> Account -> Create API Key
+You can generate an API Key in Datafold Application: Settings -> Account -> Create API Key
+
+```mdx-code-block
+import GenerateApiKey from '../../static/img/generate_api_key.png';
+
+```
+
+<center><img src={GenerateApiKey} style={{width: '50%'}}/></center>
 
 ### Base URL
 
-Datafold SaaS: `https://app.datafold.com`
+The base URL for connecting to the Datafold API is `https://app.datafold.com`. 
 
-Datafold single-tenant (on-premise): https://datafold.yourdomain.com
+:::info
+For Datafold single-tenant (on-prem) customers, you should instead use `https://datafold.yourdomain.com` as the base URL.
+:::
 
-## API Methods
+
+
+### API Methods
 
 ```mdx-code-block
 import DocCardList from '@theme/DocCardList';
