@@ -5,13 +5,15 @@ title: API Overview
 
 # Datafold API
 
-### Create a Datafold API Key
-
 Authentication is done by storing the value of a Datafold API key in the HTTP header:
 
 `Authorization: <your-api-key>`
 
-You can generate an API Key in Datafold Application: Settings -> Account -> Create API Key
+### Create a Datafold API Key
+
+To generate a Datafold API key, navigate to **Admin** -> **Settings** -> **Account**. 
+
+Here, click on the **Create API Key** button. This will generate and store an API key for your account. You will be able to view, copy, and regenerate this key at any time. 
 
 ```mdx-code-block
 import GenerateApiKey from '../../static/img/generate_api_key.png';
