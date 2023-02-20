@@ -2,6 +2,8 @@
 title: dbt Integration
 ---
 
+### Investigating data changes to your dbt models as you code
+
 :::info
 
 Database support for our CLI is currently limited to Snowflake and BigQuery ([via gcloud oauth](https://docs.getdbt.com/reference/warehouse-setups/bigquery-setup#oauth-via-gcloud)), but we are in the process of adding more databases. If you don't see your database, [let us know](https://github.com/datafold/data-diff/issues/new?assignees=&labels=new-db-driver&template=request-support-for-a-database.md&title=Add+support+for+%3Cdatabase+name%3E)!
@@ -92,7 +94,7 @@ import DataDiffDbtCLI from '../../static/img/data-diff--dbt__cli_output.png';
 
 The next steps are for adding the `--cloud` flag, which is available to Datafold Cloud customers.
 
-### Integrating `data-diff --dbt` with Datafold Cloud
+### Visualizing value-level data differences in Datafold Cloud
 
 6. [Create a Datafold API Key](../api/api-overview.md#create-a-datafold-api-key).
 
