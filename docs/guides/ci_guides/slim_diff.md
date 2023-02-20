@@ -45,7 +45,7 @@ You can also add the `datafold:diff-all-downstream` label within your PR, which 
 
 Finally, with Slim Diff turned on, there might be certain models or subdirectories that you want to _always_ diff when downstream. You can think of this as an exclusion to the Slim Diff behavior.
 
-Apply the `slim_diff: diff_when_downstream` meta tag to an entire folder:
+Apply the `slim_diff: diff_when_downstream` meta tag to an entire folder in your `dbt_project.yml` file:
 
 ```yaml
 models:
@@ -58,7 +58,7 @@ models:
             slim_diff: diff_when_downstream
 ```
 
-Apply the `slim_diff: diff_when_downstream` meta tag to an individual model:
+Apply the `slim_diff: diff_when_downstream` meta tag to an individual model in your `dbt_project.yml` file:
 
 ```yaml
 models:
