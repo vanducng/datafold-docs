@@ -2,6 +2,8 @@
 title: dbt Integration
 ---
 
+### Investigating data changes to your dbt models as you code
+
 :::info
 
 Database support for our CLI is currently limited to Snowflake and BigQuery ([via gcloud oauth](https://docs.getdbt.com/reference/warehouse-setups/bigquery-setup#oauth-via-gcloud)), but we are in the process of adding more databases. If you don't see your database, [let us know](https://github.com/datafold/data-diff/issues/new?assignees=&labels=new-db-driver&template=request-support-for-a-database.md&title=Add+support+for+%3Cdatabase+name%3E)!
@@ -77,3 +79,39 @@ import DbtDemo from '../../static/img/dbt_demo.gif';
     dbt run --select <model(s)>
     data-diff --dbt
     ```
+
+That's all you need to run `data-diff --dbt` in your dbt development workflow! The results should look like this.
+
+
+```mdx-code-block
+import DataDiffDbtCLI from '../../static/img/data-diff--dbt__cli_output.png';
+
+```
+
+<center><img src={DataDiffDbtCLI} style={{width: '75%'}}/></center>
+
+<br/><br/><br/>
+
+The next steps are for adding the `--cloud` flag, which is available to Datafold Cloud customers.
+
+### Visualizing value-level data differences in Datafold Cloud
+
+6. [Create a Datafold API Key](../api/api-overview.md#create-a-datafold-api-key).
+
+7. Store your Datafold API Key as an environmental variable. We suggest storing it in a file like `.zshrc` so it runs automatically when you open a new terminal.
+```bash
+export DATAFOLD_API_KEY=xxxxxxxxx
+```
+
+8. Add the `--cloud` flag to your `data-diff` command. This will store diff results in the Datafold application. You'll also see value-level differences and other comparisons between the two versions of your data.
+
+```bash
+dbt run --select <model> && data-diff --dbt --cloud
+```
+
+```mdx-code-block
+import ValuesTab from '../../static/img/values_tab.png';
+
+```
+
+<center><img src={ValuesTab} style={{width: '75%'}}/></center>
