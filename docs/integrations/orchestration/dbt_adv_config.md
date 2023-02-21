@@ -45,7 +45,7 @@ models:
       - name: user_id
         meta:
           primary-key: true
-      - name: version_id
+      - name: company_id
         meta:
           primary-key: true
 ```
@@ -67,7 +67,10 @@ In the case of a compound Primary Key, you can assign a second column (or more):
 models:
   - name: users
     columns:
-      - name: version_id
+      - name: user_id
+        tags:
+          - primary-key
+      - name: company_id
         tags:
           - primary-key
 ```
