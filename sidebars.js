@@ -153,7 +153,7 @@ const sidebars = {
         'guides/ci_guides/slim_diff',
       ],
     },
-    'guides/os_diff',
+
     // {
     //   type: 'category',
     //   label: 'API',
