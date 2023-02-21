@@ -45,32 +45,27 @@ You can also add the `datafold:diff-all-downstream` label within your PR, which 
 
 Finally, with Slim Diff turned on, there might be certain models or subdirectories that you want to _always_ diff when downstream. You can think of this as an exclusion to the Slim Diff behavior.
 
-Apply the `slim_diff: diff_when_downstream` meta tag to an entire folder in your `dbt_project.yml` file:
+Apply the `slim_diff: diff_when_downstream` meta tag to individual models or entire folders in your `dbt_project.yml` file:
 
 ```yaml
 models:
   <project_name>:
-    <directory_name>:      
+    <directory_name>:   
       +materialized: view
+      <model_name>:
+        +meta:
+          datafold:
+            datadiff:
+              slim_diff: diff_when_downstream
+    
+    <directory_name>:
       +meta:
         datafold:
           datadiff:
             slim_diff: diff_when_downstream
 ```
 
-Apply the `slim_diff: diff_when_downstream` meta tag to an individual model in your `dbt_project.yml` file:
-
-```yaml
-models:
-  <project_name>:
-    <directory_name>:        
-      +materialized: view
-      name: <model_name>:
-        +meta:
-          datafold:
-            datadiff:
-              slim_diff: diff_when_downstream
-```
+These meta tags can also be added in individual yaml files or in config blocks. More details about using meta tags are available in [the dbt docs](https://docs.getdbt.com/reference/resource-configs/meta).
 
 With this configuration in place, Slim Diff will prevent downstream models from being run _unless_ they have been designated as exceptions with the `slim_diff: diff_when_downstream` dbt meta tag.
 
