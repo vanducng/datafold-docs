@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: filiph/linkcheck@2.0.23
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
       with:
-        arguments: https://docs.datafold.com/
+        use-verbose-mode: 'yes'
