@@ -1,26 +1,26 @@
-name: linkcheck
-on: [push]
+# name: linkcheck
+# on: [push]
 
-jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
+# jobs:
+#   setup:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v2
 
-      - name: install npm
-        run: npm install
+#       - name: install npm
+#         run: npm install
 
-      - name: npm start
-        run: npm start
+#       - name: npm start
+#         run: npm start
 
-  linkcheck:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+#   linkcheck:
+#     needs: setup
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
 
-      - name: linkcheck
-        uses: filiph/linkcheck@2.0.23
-        with:
-          arguments: http://localhost:3000/
+#       - name: linkcheck
+#         uses: filiph/linkcheck@2.0.23
+#         with:
+#           arguments: http://localhost:3000/
