@@ -5,6 +5,8 @@ title: Quickstart Guide
 
 [this link works](https://docs.datafold.com/quickstart_guide)
 
+[this don't work](https://docs.datafold.com/quickstartguide)
+
 
 To get up and running with Datafold, there are only a few steps to get your account setup and connected.
 
