@@ -7,6 +7,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+
+      - name: install npm
+        run: npm install
+
+      - name: install npm
+        run: npm start
+
       - name: linkcheck
         uses: filiph/linkcheck@2.0.23
         with:
