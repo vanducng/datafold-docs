@@ -12,10 +12,10 @@ jobs:
         uses: filiph/linkcheck@2.0.23
         with:
           arguments: https://docs.datafold.com/
-        run: |
-          echo "::set-output name=linkcheck::$linkcheck
-      - name: Auto Comment
-        uses: bubkoo/auto-comment@v1
-        run: |
-            print            
-            ${{ steps.linkcheck.outputs.linkcheck }}
+      #   run: |
+      #     echo "::set-output name=linkcheck::$linkcheck
+      # - name: Auto Comment
+      #   uses: bubkoo/auto-comment@v1
+      #   run: |
+      #       print            
+      #       ${{ steps.linkcheck.outputs.linkcheck }}
