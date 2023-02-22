@@ -3,11 +3,6 @@ sidebar_position: 2
 title: Quickstart Guide
 ---
 
-[this link works](https://docs.datafold.com/quickstart_guide)
-
-[this don't work](https://docs.datafold.com/quickstartguide)
-
-
 To get up and running with Datafold, there are only a few steps to get your account setup and connected.
 
 1. Verify your email address - we've sent you a confirmation email. Check your Spam folder if you don't see it.
