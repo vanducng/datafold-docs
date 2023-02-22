@@ -3,8 +3,12 @@ name: linkcheck
 on: push
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: filiph/linkcheck@2.0.23
+  linktcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: lintcheck
+        uses: filiph/linkcheck@2.0.23
         with:
           arguments: https://docs.datafold.com/
