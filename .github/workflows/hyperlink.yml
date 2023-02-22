@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Check for broken links
     steps:
-      - uses: untitaker/hyperlink@0.1.27
+      - uses: filiph/linkcheck@2.0.23
         with:
-          args: public/ --sources src/
+          args: https://docs.datafold.com/
