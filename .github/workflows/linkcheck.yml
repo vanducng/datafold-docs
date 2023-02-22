@@ -2,10 +2,12 @@ name: linkcheck
 on: [push]
 
 jobs:
-  hyperlink:
+  linkcheck:
     runs-on: ubuntu-latest
-    name: Check for broken links
     steps:
-      - uses: filiph/linkcheck@2.0.23
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: linkcheck
+        uses: filiph/linkcheck@2.0.23
         with:
-          args: https://docs.datafold.com/
+          arguments: https://docs.datafold.com/
