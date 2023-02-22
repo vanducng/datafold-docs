@@ -103,11 +103,38 @@ The next steps are for adding the `--cloud` flag, which is available to Datafold
 export DATAFOLD_API_KEY=xxxxxxxxx
 ```
 
-8. Add the `--cloud` flag to your `data-diff` command. This will store diff results in the Datafold application. You'll also see value-level differences and other comparisons between the two versions of your data.
+8. Update your `dbt_project.yml` to indicate your Datafold Data Source ID. You can find this value in the Datafold application under Settings > Integrations > Data Warehouses.
+
+```mdx-code-block
+import DataSourceId from '../../static/img/data_source_id.png';
+
+```
+
+<center><img src={DataSourceId} style={{width: '75%'}}/></center>
 
 ```bash
-dbt run --select <model> && data-diff --dbt --cloud
+vars:
+  data_diff:
+    prod_database: <PROD_DATABASE_NAME>
+    prod_schema: <PROD_SCHEMA_NAME> # optional -- use if project deploys to a single schema
+    datasource_id: 1234
 ```
+
+9. Add the `--cloud` flag to your `data-diff` command. 
+
+This will submit the data diff to Datafold Cloud, where you can see the summary results as well as value-level differences and other reports.
+
+```bash
+dbt run --select <model(s)>
+data-diff --dbt
+```
+
+```mdx-code-block
+import DataDiffDbtCloudCLI from '../../static/img/data-diff--dbt--cloud__cli_output.png';
+
+```
+
+<center><img src={DataDiffDbtCloudCLI} style={{width: '75%'}}/></center>
 
 ```mdx-code-block
 import ValuesTab from '../../static/img/values_tab.png';
