@@ -3,7 +3,7 @@ name: linkcheck
 on: push
 
 jobs:
-  linktcheck:
+  linkcheck:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
