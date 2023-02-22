@@ -9,11 +9,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: linkcheck
-        # uses: filiph/linkcheck@2.0.23
-        # with:
-        #   arguments: https://docs.datafold.com/
+        uses: filiph/linkcheck@2.0.23
+        with:
+          arguments: https://docs.datafold.com/
         run: |
-          linkcheck https://docs.datafold.com/
           echo "::set-output name=linkcheck::$linkcheck
       - name: Auto Comment
         uses: bubkoo/auto-comment@v1
