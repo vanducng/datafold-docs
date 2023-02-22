@@ -1,4 +1,4 @@
-name: hyperlink
+name: linkcheck
 on: [push]
 
 jobs:
