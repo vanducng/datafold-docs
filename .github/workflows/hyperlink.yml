@@ -1,0 +1,11 @@
+name: hyperlink
+on: [push]
+
+jobs:
+  hyperlink:
+    runs-on: ubuntu-latest
+    name: Check for broken links
+    steps:
+      - uses: untitaker/hyperlink@0.1.27
+        with:
+          args: public/ --sources src/
