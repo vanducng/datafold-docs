@@ -2,7 +2,7 @@ name: linkcheck
 on: [push]
 
 jobs:
-  linkcheck:
+  setup:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -11,10 +11,13 @@ jobs:
       - name: install npm
         run: npm install
 
-      - name: install npm
+      - name: npm start
         run: npm start
 
+  linkcheck:
+    needs: setup
+    runs-on: ubuntu-latest
       - name: linkcheck
         uses: filiph/linkcheck@2.0.23
         with:
-          arguments: https://docs.datafold.com/
+          arguments: http://localhost:3000/
