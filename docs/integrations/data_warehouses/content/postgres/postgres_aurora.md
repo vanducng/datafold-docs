@@ -9,7 +9,7 @@ This will guide you through setting up Column-level Lineage with AWS Aurora usin
 **Steps to complete:**
 
 1. [Setup Postgres with Permissions](postgres.md#run-sql-script)
-2. [Increase the logging verbosity of Postgres](postgres_aurora.md#increased-verbosity) so Datafold can parse lineage
+2. [Increase the logging verbosity of Postgres](postgres_aurora.md#increase-logging-verbosity) so Datafold can parse lineage
 3. [Set up an account for fetching the logs from CloudWatch.](postgres_aurora.md#connect-datafold-to-cloudwatch)
 4. [Configure your data source in Datafold](postgres_aurora.md#configure-in-datafold)
 

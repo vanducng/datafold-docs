@@ -10,7 +10,7 @@ To use the Datafold GraphQL API, you should first [create a Datafold API Key](..
 :::
 
 * [GraphQL Examples](graphql.md#graphql-examples)
-* [GraphQL Schema](graphql.md#graphql-chema)
+* [GraphQL Schema](graphql.md#graphql-schema)
 
 ## API Info
 

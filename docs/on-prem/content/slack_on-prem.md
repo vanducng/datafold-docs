@@ -13,7 +13,7 @@ On-prem deployments are an Enterprise feature. Please email [sales@datafold.com]
 **Steps to complete:**
 
 1. [Create a Slack Application](slack_on-prem.md#create-a-slack-app)
-2. [Configure Slack in Datafold](github_on-prem.md#complete-github-configuration)
+2. [Configure Slack in Datafold](slack_on-prem.md#configure-slack-in-datafold)
 
 ## Create a Slack App
 
