@@ -28,7 +28,7 @@ Let's break this down. Assume there are two tables stored in two different datab
 - `table_a` is the name of the table in the first database.
 - `database_b` will be a string that `data-diff` uses to connect to the database where the second table is stored.
 - `table_b` is the name of the second table in the second database.
-- `[OPTIONS]` can be replaced with a variety of additional commands, [detailed here](#options).
+- `[OPTIONS]` can be replaced with a variety of additional commands, [detailed here](./options).
 
 Usually, `database_a` and `database_b` will be URL connection strings. However, when `--conf` is specified, they can also be the names of the database configurations defined in a [TOML configuration file](./how_to_use_with_toml).
 
