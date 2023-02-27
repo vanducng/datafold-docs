@@ -7,12 +7,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Datafold',
-  tagline: 'Automated Testing for Data',
+  tagline: 'The fastest way to validate dbt model changes during development & deployment',
   url: 'https://datafold.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  customFields: {
+    image: 'img/logo_with_text.svg',
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -64,16 +67,16 @@ const config = {
           // height: 32,
         },
         items: [
-          {type: 'doc', docId: 'overview', label: 'Get Started', position: 'left'},
+          {type: 'doc', docId: 'get_started', label: 'Get Started', position: 'left'},
           {type: 'docSidebar', sidebarId: 'guides', label: 'Guides', position: 'left'},
-          {type: 'docSidebar', sidebarId: 'reference', label: 'Reference', position: 'left'},
+          {type: 'docSidebar', sidebarId: 'references', label: 'API/CLI Reference', position: 'left'},
           // {type: 'docSidebar', sidebarId: 'api', label: 'APIs', position: 'left'},
           // {to: '/blog', label: 'Blog', position: 'left'}, // remove to turn on blog
-          {
-            href: 'https://github.com/datafold/datafold-docs',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/datafold/datafold-docs',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
         ],
       },
       // footer: {

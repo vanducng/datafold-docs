@@ -1,6 +1,8 @@
 ---
 sidebar_position: 1
-id: reference_overview
+id: overview
 ---
 
-# Overview
+# API / CLI Reference
+
+This section contains information about the various CLI and APIs we offer.

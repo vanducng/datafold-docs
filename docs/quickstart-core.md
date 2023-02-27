@@ -3,21 +3,13 @@ sidebar_position: 2
 title: Quickstart
 ---
 
-:::info
+The fastest way to get started is with Datafold Open-Source data-diff.
 
-Database support for our CLI is currently limited to Snowflake, but we are in the process of adding more databases. If you don't see your database, [let us know](https://github.com/datafold/data-diff/issues/new?assignees=&labels=new-db-driver&template=request-support-for-a-database.md&title=Add+support+for+%3Cdatabase+name%3E)!
+### To get started, open your terminal and follow the steps below.
 
-:::
-
-
-`data-diff --dbt` gives a quick print out summary of changes so you can move fast and (not) break stuff!
-
-
-#### To get started, open your terminal and follow the steps below.
-
-1. In your dbt project, install our free, open-source CLI tool and the Snowflake database connector.
+1. Start by installing data-diff in your dbt project.
     ```bash
-    pip install data-diff 'data-diff[snowflake]'
+    pip install data-diff
     ```
 2. In your dbt project, add the following data_diff variables and tag the primary keys for each model. To learn more about setting primary key tags, check out [this section](../integrations/orchestration/dbt_adv_config#tag-primary-keys-in-dbt-models).
     ```bash
