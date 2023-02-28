@@ -24,7 +24,7 @@ Complete the configuration by specifying the following fields:
 | Sampling confidence | The confidence to apply when sampling. |
 | Sampling Threshold | Sampling will be disabled automatically if tables are smaller than specified threshold. If unspecified, default values will be used depending on the Data Source type. |
 
-<div style="background-color: #e6f4ff; border: 1px solid #91caff; border-radius: 8px; padding: 8px 12px;">
+<div style={{backgroundColor: '#e6f4ff', border: '1px solid #91caff', borderRadius: '8px', padding: '8px 12px'}}">
 
 Using dbt Core requires use of the Datafold SDK. Continue with setup by [generating a Datafold API key](https://docs.datafold.com/integrations/orchestration/datafold_sdk/configuration#generate-a-datafold-api-key).
 </div>
