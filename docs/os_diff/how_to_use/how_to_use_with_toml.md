@@ -3,6 +3,10 @@ sidebar_position: 2
 title: TOML configuration file
 ---
 
+:::info
+dbt users should check out our [dbt Integration](/docs/os_diff/dbt_integration.md), where you'll find everything you need to get started.
+:::
+
 Data-diff lets you load the configuration for a run from [a TOML configuration file](https://toml.io/en/).
 
 **Why use a TOML configuration file?**

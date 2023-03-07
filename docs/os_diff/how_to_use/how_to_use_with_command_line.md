@@ -3,6 +3,10 @@ sidebar_position: 1
 title: Command line
 ---
 
+:::info
+dbt users should check out our [dbt Integration](/docs/os_diff/dbt_integration.md), where you'll find everything you need to get started.
+:::
+
 Once you've installed data-diff using `pip`, it should be available through the `data-diff` command.
 
 Run it without any arguments to get the "help" text:

@@ -2,6 +2,10 @@
 title: Databases we support
 ---
 
+:::info
+dbt users should check out our [dbt Integration](/docs/os_diff/dbt_integration.md), where you'll find everything you need to get started.
+:::
+
 #### Databases we support and how to connect
 
 If a database is not on the list, we'd still love to support it. Please [open an issue](https://github.com/datafold/data-diff/issues) to discuss it.

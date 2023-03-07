@@ -2,6 +2,10 @@
 title: Common Use Cases
 ---
 
+:::info
+dbt users should check out our [dbt Integration](/docs/os_diff/dbt_integration.md), where you'll find everything you need to get started.
+:::
+
 #### Validation of replication, migration, and pipelines
 
 * **Verify data migrations.** Verify that all data was copied when doing a

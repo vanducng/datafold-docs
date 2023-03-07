@@ -2,6 +2,10 @@
 title: How to install
 ---
 
+:::info
+dbt users should check out our [dbt Integration](/docs/os_diff/dbt_integration.md), where you'll find everything you need to get started.
+:::
+
 Installing `data-diff` is as easy as using `pip`:
 
 ```

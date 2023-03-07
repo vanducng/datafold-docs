@@ -1,3 +1,11 @@
+---
+title: Implementing a new database driver
+---
+
+:::info
+dbt users should check out our [dbt Integration](/docs/os_diff/dbt_integration.md), where you'll find everything you need to get started.
+:::
+
 # How to Implement a New Database Driver
 
 First, read through the [CONTRIBUTING.md](https://github.com/datafold/data-diff/blob/master/CONTRIBUTING.md) document.
