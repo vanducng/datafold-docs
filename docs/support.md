@@ -2,7 +2,7 @@
 
 ## Datafold Open-Source
 
-- GitHub [Issues](https://github.com/datafold/data-diff/issues) and [Discussions](https://github.com/datafold/data-diff/discussions).
+- GitHub [Issues](https://github.com/datafold/data-diff/issues) and [Discussions](https://github.com/datafold/data-diff/discussions)
 
 ## Datafold Cloud
 
@@ -12,24 +12,12 @@
 
 ### Grant Access for Troubleshooting
 
-**Overview**
+In order to resolve support issues, you may wish to grant Datafold Support access to your account. Granting access allows Datafold to assume a user role and see the same in-app context you see - reducing the back-and-forth required to resolve the issue.
 
-In order to best resolve support issues, it is sometimes most effective for Datafold support to assume a user role while troubleshooting. 
+To grant Datafold access to your account, navigate to the Org Settings page (Admin &rarr; Settings &rarr; Org Settings tab) and check the box next to *"Allow Datafold access to your account for troubleshooting purposes."*
 
-Granting access allows Datafold engineers to see the same in-app context of an actual user, and can help skip back-and-forth trial and error between you and support.
+To revoke access, simply uncheck the box.
 
-**How to Update Access Settings**
-:::info Permissions
-Admin access is required to update Datafold access settings
-:::
-
-To allow Datafold access to your account, navigate to Admin on the homescreen sidebar &rarr; Settings &rarr; Org Settings, and check the box to ***"Allow Datafold access to your account for troubleshooting purposes"*** 
-
-<!-- ![](../../static/img/impersonation.png) -->
-
-:::info FAQ
-**Can I revoke access?**
-
-Yes. To revoke access, simply uncheck the *"Allow Datafold access to your account for troubleshooting purposes"* box under Org Settings.
-
+:::note
+The Admin role is required to update access Org Settings.
 :::
