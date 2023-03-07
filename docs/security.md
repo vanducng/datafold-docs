@@ -4,13 +4,11 @@ title: Security
 
 # Security
 
-## Network Security & IP Whitelisting
+## IP Whitelisting
 
-As an additional security measure, your data warehouse may be restricting IP addresses with an allowlist. You may need to manually add Datafold's addresses in order to use our product.
+If access to your data warehouse is restricted to IP addresses on an allowlist, you will need to manually add Datafold's addresses in order to use our product. Otherwise, you will receive a connection error when setting up your data warehouse.
 
-### IP Whitelisting
-
-For SaaS (app.datafold.com) deployments, you can whitelist the following IP addresses of Datafold:
+For SaaS (app.datafold.com) deployments, whitelist the following IP addresses:
 
 * `23.23.71.47`
 * `35.166.223.86`
@@ -19,15 +17,15 @@ For SaaS (app.datafold.com) deployments, you can whitelist the following IP addr
 * `54.185.25.103`
 * `54.210.34.216`
 
-Note that at any time, you will only see one of these addresses in active use. However, the active IP address can change at any time, so you should add them all to your IP whitelist to make sure there will be no service interruptions. 
+Note that at any time, you will only see one of these addresses in use. However, the active IP address can change at any time, so you should add them all to your IP whitelist to ensure no interruptions in service. 
 
 ---
 
 ## Policies & Certifications
 
-Datafold is SOC 2 compliant and has  processes and procedures in place to keep our customers' data safe. When connecting a data source, you may choose which tables are indexed and profiled on Datafold.
+Datafold is SOC 2 compliant and has processes and procedures in place to keep our customers' data safe. When connecting a data source, you may choose which tables are indexed and profiled on Datafold.
 
-When using Datafold, we may render information from your data's metrics, logs, and metadata. Additionally, in our data diff tools, we may show previews for table values if they are affected by upstream changes.
+When using Datafold, we may render information from your data's metrics, logs, and metadata. Additionally, in our data diff tools, we may show previews of table values if they are affected by upstream changes.
 
 You can read more about our security policies and certifications at [security.datafold.com](https://security.datafold.com/).
 
