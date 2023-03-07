@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Datafold',
-  tagline: 'The fastest way to validate dbt model changes during development & deployment',
+  tagline: 'The fastest way to validate dbt model changes in development & deployment',
   url: 'https://datafold.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
