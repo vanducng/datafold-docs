@@ -1,9 +1,11 @@
 ---
 sidebar_position: 1
 id: deployment_testing
+title: Getting Started
 ---
-
 # Deployment Testing
+
+## Getting Started
 
 To get started with deployment testing you need to do the following:
 1. Connect your Data Warehouse
