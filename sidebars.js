@@ -14,8 +14,8 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
-    'get_started',
-    'quickstart-core',
+    'overview',
+    'quickstart',
     {
       type: 'category',
       label: 'Development Testing',
@@ -80,7 +80,7 @@ const sidebars = {
     },
     {
       type: 'link',
-      label: 'API/CLI Reference',
+      label: 'Reference',
       href: '/reference/overview',
     },
   ],
@@ -96,12 +96,12 @@ const sidebars = {
     },
     {
       type: 'link',
-      label: 'Get Started',
-      href: '/get_started',
+      label: 'Overview',
+      href: '/overview',
     },
     {
       type: 'link',
-      label: 'API/CLI Reference',
+      label: 'Reference',
       href: '/reference/overview',
     },
   ],
@@ -139,8 +139,8 @@ const sidebars = {
     },
     {
       type: 'link',
-      label: 'Get Started',
-      href: '/get_started',
+      label: 'Overview',
+      href: '/overview',
     },
     {
       type: 'link',
