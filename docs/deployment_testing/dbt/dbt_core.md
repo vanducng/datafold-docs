@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: dbt Core
 description: ""
 pagination_prev: deployment_testing/source_control

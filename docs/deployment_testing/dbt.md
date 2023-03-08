@@ -3,7 +3,7 @@ pagination_prev: deployment_testing/source_control
 pagination_next: deployment_testing/data_apps
 ---
 
-# Integrate with dbt
+# Integrate with dbt Core/Cloud
 
 :::info
 To configure dbt, you must first connect a [Data Source](data_sources) and connect a [GitHub](source_control/github) or [GitLab](source_control/gitlab) account.

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: dbt Cloud
 description: ""
 pagination_prev: deployment_testing/source_control
