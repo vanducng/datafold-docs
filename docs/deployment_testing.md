@@ -8,7 +8,7 @@ title: Getting Started
 ## Getting Started
 
 To get started with deployment testing you need to do the following:
-1. Connect your Data Warehouse
+1. Connect your Data Source
 2. Integrate with Source Control
 3. Integrate with dbt
 

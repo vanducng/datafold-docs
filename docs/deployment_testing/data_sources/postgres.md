@@ -2,7 +2,7 @@
 sidebar_position: 5
 title: Postgres
 description: ""
-pagination_prev: deployment_testing/data_warehouses
+pagination_prev: deployment_testing/data_sources
 pagination_next: deployment_testing/source_control
 ---
 **Caution** - Using Postgres **without** Cloudwatch will not be compatible with Column-level Lineage.

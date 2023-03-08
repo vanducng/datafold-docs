@@ -2,7 +2,7 @@
 sidebar_position: 1
 title: Snowflake
 description: ""
-pagination_prev: deployment_testing/data_warehouses
+pagination_prev: deployment_testing/data_sources
 pagination_next: deployment_testing/source_control
 ---
 **NOTE**: Datafold needs permissions in your Snowflake dataset to read your table data. You will need to be a Snowflake *Admin* in order to grant the required permissions.
@@ -17,7 +17,7 @@ pagination_next: deployment_testing/source_control
 
 ### Create a user and role for Datafold
 
-> A [full script](/integrations/data_warehouses/content/snowflake#full-script) can be found at the bottom of this page.
+> A [full script](/data_sources/snowflake#full-script) can be found at the bottom of this page.
 
 It is best practice to create a separate role for the Datafold integration (e.g., `DATAFOLDROLE`):
 
@@ -107,7 +107,7 @@ ALTER USER DATAFOLD SET PASSWORD = 'SomethingSecret';
 CREATE SCHEMA <database_name>.DATAFOLD_TMP;
 GRANT ALL ON SCHEMA <database_name>.DATAFOLD_TMP TO DATAFOLDROLE;
 
---Step 4: Give the Datafold role access to your Data warehouse
+--Step 4: Give the Datafold role access to your Data Source
 /*
   Repeat for every DATABASE to be usable in Datafold. This allows Datafold to
   correctly discover, profile & diff each table

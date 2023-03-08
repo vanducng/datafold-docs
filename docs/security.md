@@ -6,7 +6,7 @@ title: Security
 
 ## IP Whitelisting
 
-If access to your data warehouse is restricted to IP addresses on an allowlist, you will need to manually add Datafold's addresses in order to use our product. Otherwise, you will receive a connection error when setting up your data warehouse.
+If access to your data source is restricted to IP addresses on an allowlist, you will need to manually add Datafold's addresses in order to use our product. Otherwise, you will receive a connection error when setting up your data source.
 
 For SaaS (app.datafold.com) deployments, whitelist the following IP addresses:
 
