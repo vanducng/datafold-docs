@@ -130,7 +130,7 @@ const sidebars = {
       defaultStyle: true, 
     },
     'reference/cloud/rest_api',
-    'reference/cloud/graphql',
+    // 'reference/cloud/graphql',
     {
       type: 'html',
       value: `
