@@ -12,8 +12,8 @@ Complete the configuration by specifying the following fields:
 | Field Name | Description |
 | ----------- | ----------- |
 | Integration name | An identifier used in Datafold to identify this Data App configuration. |
-| Workspace URL | Then, grab your workspace URL, by navigating to **Settings** -> **Workspace** tab -> **Workspace slug** or by finding the workspace name in the search bar (`https://app.hightouch.io/<workspace_slug/>`). |
-| API Key | Log into your [Hightouch account](https://app.hightouch.com/login) and navigate to **Settings** -> **API keys** tab -> **Add API key** to generate a new, unique API key. <br /><br /> :warning: Your API key will appear only once, so please copy and save it to your password manager for further use. |
+| Workspace URL | Then, grab your workspace URL, by navigating to **Settings** &rarr; **Workspace** tab &rarr; **Workspace slug** or by finding the workspace name in the search bar (`https://app.hightouch.io/<workspace_slug/>`). |
+| API Key | Log into your [Hightouch account](https://app.hightouch.com/login) and navigate to **Settings** &rarr; **API keys** tab &rarr; **Add API key** to generate a new, unique API key. <br /><br /> :warning: Your API key will appear only once, so please copy and save it to your password manager for further use. |
 | Data source mapping | When the correct credentials are entered we will begin to populate data sources in Hightouch (on the left side) that will need to be mapped to data sources configured in Datafold (on the right side). See image below. |
 
 ![](/img/hightouch_data_source_match.png)

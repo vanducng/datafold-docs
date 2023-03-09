@@ -12,7 +12,7 @@ You will need a dbt **Team** account or higher to access the dbt Cloud API that 
 <!-- ### Connect your accounts using a token
 - You will need either a [Service Token](https://docs.getdbt.com/docs/dbt-cloud-apis/service-tokens) or a [User Token](https://docs.getdbt.com/docs/dbt-cloud-apis/user-tokens):
     - **Service Token (Recommended):** 
-        - Navigate to **Account Settings -> Service Tokens -> + New Token** <br/><br/>
+        - Navigate to **Account Settings &rarr; Service Tokens &rarr; + New Token** <br/><br/>
             ![](/img/dbt_cloud_add_service_token.png) <br/><br/>
             
             - Add a Token Name
@@ -23,7 +23,7 @@ You will need a dbt **Team** account or higher to access the dbt Cloud API that 
                 - Save <br/><br/>
                 ![](/img/dbt_cloud_service_token.png) <br/><br/>
     - **User Token:**
-        - Navigate to **Your Profile -> API Access**
+        - Navigate to **Your Profile &rarr; API Access**
             - Copy -->
 
 ## Requirements

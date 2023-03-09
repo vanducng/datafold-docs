@@ -9,7 +9,7 @@ pagination_next: deployment_testing/data_apps
 To configure dbt, you must first connect a [Data Source](data_sources) and connect a [GitHub](source_control/github) or [GitLab](source_control/gitlab) account.
 :::
 
-To set up dbt begin by navigating to Admin -> Settings -> Orchestration. Here you will click on Add New Integration to enter your dbt Core details.
+To set up dbt begin by navigating to Admin &rarr; Settings &rarr; Orchestration. Here you will click on Add New Integration to enter your dbt Core details.
 
 ![](/img/dbt_cloud_setup.png)
 
