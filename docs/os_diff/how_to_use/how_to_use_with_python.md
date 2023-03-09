@@ -3,6 +3,10 @@ sidebar_position: 3
 title: Python
 ---
 
+:::info
+dbt users should check out our [dbt Integration](/docs/os_diff/dbt_integration.md), where you'll find everything you need to get started.
+:::
+
 API reference: [https://data-diff.readthedocs.io/en/latest/](https://data-diff.readthedocs.io/en/latest/)
 
 Example 1: Diff tables in mysql and postgresql

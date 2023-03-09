@@ -35,19 +35,10 @@ models:
       - name: user_id
         meta:
           primary-key: true
-```
-
-In the case of a compound Primary Key, you can assign a second column (or more):
-```yaml
-models:
-  - name: users
-    columns:
-      - name: user_id
-        meta:
-          primary-key: true
-      - name: company_id
-        meta:
-          primary-key: true
+      ## for compound primary keys, set all parts of the key as a primary-key
+      # - name: company_id
+      #   meta:
+      #     primary-key: true      
 ```
 
 ### Tags
@@ -61,18 +52,10 @@ models:
       - name: user_id
         tags:
           - primary-key
-```
-In the case of a compound Primary Key, you can assign a second column (or more):
-```yaml
-models:
-  - name: users
-    columns:
-      - name: user_id
-        tags:
-          - primary-key
-      - name: company_id
-        tags:
-          - primary-key
+      ## for compound primary keys, tag all parts of the key
+      # - name: company_id
+      #   meta:
+      #     primary-key: true      
 ```
 
 ### Inferred

@@ -3,6 +3,9 @@ sidebar_position: 4
 title: Options
 ---
 
+:::info
+dbt users should check out our [dbt Integration](/docs/os_diff/dbt_integration.md), where you'll find everything you need to get started.
+:::
 
 You can use the following options to specify the configuration of a data-diff run.
 

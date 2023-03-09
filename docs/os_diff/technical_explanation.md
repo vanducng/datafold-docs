@@ -2,6 +2,10 @@
 title: Technical Explanation
 ---
 
+:::info
+dbt users should check out our [dbt Integration](/docs/os_diff/dbt_integration.md), where you'll find everything you need to get started.
+:::
+
 # Technical Explanation
 
 ### Overview

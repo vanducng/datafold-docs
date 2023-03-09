@@ -126,7 +126,7 @@ This will submit the data diff to Datafold Cloud, where you can see the summary 
 
 ```bash
 dbt run --select <model(s)>
-data-diff --dbt
+data-diff --dbt --cloud
 ```
 
 ```mdx-code-block
