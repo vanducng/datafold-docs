@@ -2,11 +2,11 @@
 sidebar_position: 2
 title: GitHub Actions
 ---
-* [Prerequisites](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#prerequisites)
-* [Basic Config](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#basic-config)
+* [Prerequisites](#prerequisites)
+* [Basic Config](#basic-config)
     * [Production Job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#production-job)
     * [Pull Request Job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#pull-request-job)
-* [Advanced Config](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#advanced-config)
+* [Advanced Config](#advanced-config)
     * [Advanced Pull Request Job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#advanced-pull-request-job)
 
 ## Prerequisites
