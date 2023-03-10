@@ -2,17 +2,6 @@
 sidebar_position: 2
 title: GitHub Actions
 ---
-* [Prerequisites](#prerequisites)
-* [Basic Config](#basic-config)
-    * [Production Job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#production-job)
-    * [Pull Request Job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#pull-request-job)
-* [Advanced Config](#advanced-config)
-    * [Advanced Pull Request Job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#advanced-pull-request-job)
-
-## Prerequisites
-- [API Key](https://docs.datafold.com/integrations/orchestration/datafold_sdk/configuration#generate-a-datafold-api-key)
-- [dbt Core Integration](https://docs.datafold.com/integrations/orchestration/dbt_core/prerequisites)
-  - [CI config ID](https://docs.datafold.com/integrations/orchestration/dbt_core/configuration#next-steps)
 
 ## Basic Config
 
