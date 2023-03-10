@@ -2,17 +2,17 @@
 sidebar_position: 2
 title: GitHub Actions
 ---
-* [Prerequisites](github_actions.md#prerequisites)
-* [Basic Config](github_actions.md#basic-config)
-    * [Production Job](github_actions.md#production-job)
-    * [Pull Request Job](github_actions.md#pull-request-job)
-* [Advanced Config](github_actions.md#advanced-config)
-    * [Advanced Pull Request Job](github_actions.md#advanced-pull-request-job)
+* [Prerequisites](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions.md#prerequisites)
+* [Basic Config](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions.md#basic-config)
+    * [Production Job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions.md#production-job)
+    * [Pull Request Job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions.md#pull-request-job)
+* [Advanced Config](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions.md#advanced-config)
+    * [Advanced Pull Request Job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions.md#advanced-pull-request-job)
 
 ## Prerequisites
-- [API Key](/integrations/orchestration/datafold_sdk/configuration.md#generate-a-datafold-api-key)
-- [dbt Core Integration](/integrations/orchestration/dbt_core/prerequisites.md)
-  - [CI config ID](/integrations/orchestration/dbt_core/configuration.md#next-steps)
+- [API Key](https://docs.datafold.com/integrations/orchestration/datafold_sdk/configuration#generate-a-datafold-api-key)
+- [dbt Core Integration](https://docs.datafold.com/integrations/orchestration/dbt_core/prerequisites)
+  - [CI config ID](https://docs.datafold.com/integrations/orchestration/dbt_core/configuration#next-steps)
 
 ## Basic Config
 
@@ -159,7 +159,7 @@ jobs:
 ## Advanced Config
 
 ### Advanced Pull Request Job
-This is similar to the [pull request job](github_actions.md#pull-request-job) above, with some added features:
+This is similar to the [pull request job](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#pull-request-job) above, with some added features:
 * [Slim CI](https://docs.getdbt.com/docs/dbt-cloud/using-dbt-cloud/cloud-enabling-continuous-integration#configuring-a-dbt-cloud-ci-job)
     * Speeds up CI by running only your changes
     * Quick primer on [state:modified](https://docs.getdbt.com/reference/node-selection/methods#the-state-method) syntax:
@@ -167,7 +167,7 @@ This is similar to the [pull request job](github_actions.md#pull-request-job) ab
         * `state:+modified` run the modified model(s) and all upstream models
         * `state:modified+n` run the modified model(s) and N downstream models
 * Concurrency
-    * [Cancel in-progress workflows](#use-concurrency-to-cancel-in-progress-workflows) for new commits pushed
+    * [Cancel in-progress workflows](https://docs.datafold.com/guides/ci_guides/dbt_core/github_actions#use-concurrency-to-cancel-in-progress-workflows) for new commits pushed
 
 ```yml
 name: dbt staging
