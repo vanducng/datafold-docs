@@ -36,4 +36,4 @@ Whether you're an individual looking to get started with **Development Testing**
 </Tabs>
 
 ### Interested?
-Check out our [quickstart guide](quickstart) to get up and running with Datafold open-source!
+Check out our [quickstart guide](development_testing/open_source) to start Development Testing with Datafold Open Source!
