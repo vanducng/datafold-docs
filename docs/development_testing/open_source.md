@@ -101,6 +101,12 @@ Add the following variables to **dbt_project.yml** and tag the primary keys for 
 
 Run your dbt model with `data-diff --dbt` to see the impact that your model change had on the data.
     
-  ```zsh
+  ```bash
+  # as one command
   dbt run --select <MODEL> && data-diff --dbt
+  ```
+  ```bash
+  # as separate commands
+  dbt run --select <MODEL>
+  data-diff --dbt
   ```
