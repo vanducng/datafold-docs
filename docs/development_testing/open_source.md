@@ -20,6 +20,7 @@ Navigate to your dbt project, and install data-diff and a database connector.
     {label: 'Redshift', value: 'redshift'},
     {label: 'PostgreSQL', value: 'postgres'},
     {label: 'Databricks', value: 'databricks'},
+    {label: 'DuckDB', value: 'duckdb'},
   ]}>
   <TabItem value="snowflake">
 
@@ -61,6 +62,13 @@ Navigate to your dbt project, and install data-diff and a database connector.
 
   ```zsh
   pip install data-diff 'data-diff[databricks]' -U
+  ```
+
+  </TabItem>
+  <TabItem value="duckdb">
+
+  ```zsh
+  pip install data-diff 'data-diff[duckdb]' -U
   ```
 
   </TabItem>
