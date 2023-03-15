@@ -98,8 +98,8 @@ const sidebars = {
     },
     {
       type: 'link',
-      label: 'Overview',
-      href: '/overview',
+      label: 'Getting Started',
+      href: '/',
     },
     {
       type: 'link',
@@ -141,8 +141,8 @@ const sidebars = {
     },
     {
       type: 'link',
-      label: 'Overview',
-      href: '/overview',
+      label: 'Getting Started',
+      href: '/',
     },
     {
       type: 'link',
