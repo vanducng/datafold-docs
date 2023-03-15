@@ -2,6 +2,7 @@
 sidebar_position: 1
 id: overview
 title: Overview
+slug: /
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
