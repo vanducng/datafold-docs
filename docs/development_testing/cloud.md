@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 Set up Datafold's [open-source data-diff](/development_testing/open_source) before configuring the cloud integration below.
 :::
 
-Looking to dig into changes even more? **Datafold Cloud** gives you insight into value changes.
+Want to see even more? **Datafold Cloud** gives you insight into value-level changes.
 
 ### Create an Account
 
