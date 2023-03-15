@@ -16,7 +16,9 @@ Whether you're an individual looking to get started with **Development Testing**
           <td width="50%">
           See the impact code changes have on the data as you develop. <a href="development_testing">Learn more &rarr;</a>
           </td>
-          <td width="50%"><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-02.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="100%" height="auto%"></video></td>
+          <td width="50%">
+          <img src={'/img/open_source_output.png'} />
+          </td>
       </tr>
     </table>
   </TabItem>
@@ -27,7 +29,7 @@ Whether you're an individual looking to get started with **Development Testing**
           <td width="50%">
           Collaborate with your team to deploy quickly and confidently. <a href="deployment_testing">Learn more &rarr;</a>
           </td>
-          <td width="50%"><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-01.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="100%" height="auto%"></video></td>
+          <td width="50%"><video src="https://datafold-public.s3.us-west-2.amazonaws.com/small-video-01.mp4" preload="metadata" autoplay="autoplay" loop="loop" muted="" width="102%" height="auto%"></video></td>
       </tr>
     </table>
   </TabItem>
