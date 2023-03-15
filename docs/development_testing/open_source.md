@@ -106,7 +106,7 @@ Run your dbt model with `data-diff --dbt` to see the impact that your model chan
   dbt run --select <MODEL> && data-diff --dbt
   ```
   ```bash
-  # as separate commands
+  # or as separate commands
   dbt run --select <MODEL>
   data-diff --dbt
   ```
