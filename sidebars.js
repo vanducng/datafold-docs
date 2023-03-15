@@ -15,7 +15,7 @@
 const sidebars = {
   docs: [
     'overview',
-    'quickstart',
+    // 'quickstart',
     {
       type: 'category',
       label: 'Development Testing',
