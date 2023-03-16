@@ -35,4 +35,4 @@ Complete the configuration by specifying the following fields:
 | Sampling confidence | The confidence to apply when sampling. |
 | Sampling Threshold | Sampling will be disabled automatically if tables are smaller than specified threshold. If unspecified, default values will be used depending on the Data Source type. |
 
-Click save. Now that you've set up the integration, Datafold will diff your impacted tables whenever you push commits to a PR. A summaryof the diff will appear in GitHub, and detailed results will appear in the Datafold app.
+Click save. Now that you've set up the integration, Datafold will diff your impacted tables whenever you push commits to a PR. A summary of the diff will appear in GitHub, and detailed results will appear in the Datafold app.
