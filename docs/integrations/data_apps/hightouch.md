@@ -37,7 +37,7 @@ When the correct credentials are entered we will begin to populate data sources 
 
 When completed, click **Submit**.
 
-It may take some time to sync all the Hightouch entities to Datafold and for Lineage to populate. When completed your Hightouch models and sync will appear in Catalog as search results and Hightouch sources in data sources filter.
+It may take some time to sync all the Hightouch entities to Datafold and for Lineage to populate. When completed your Hightouch models and sync will appear in Lineage as search results and Hightouch sources in data sources filter.
 
 ### Uninstall a Hightouch Integration
 To uninstall a Hightouch integration:

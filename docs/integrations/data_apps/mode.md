@@ -29,7 +29,7 @@ generated in the previous step.
 
 Click **Submit** when the details are correctly entered. 
 
-It can take some time to fetch all the reports, depending on the number of reports, but soon after they will begin to populate in the Datafold Catalog.
+It can take some time to fetch all the reports, depending on the number of reports, but soon after they will begin to populate in the Datafold Lineage.
 
 ### Uninstall a Mode Integration
 To uninstall a Mode integration:

@@ -226,7 +226,7 @@ models:
 
 ### dbt metadata synchronization
 
-Datafold integrates very well with dbt, and also has the ability to ingest the metadata provided by dbt automatically. dbt models have metadata that can be synchronized from the production branch into the Datafold catalog. When a table has metadata being synchronized using dbt, user editing is no longer permitted for that entire table. This is to ensure that there is a single source of truth.
+Datafold integrates very well with dbt, and also has the ability to ingest the metadata provided by dbt automatically. dbt models have metadata that can be synchronized from the production branch into the Datafold lineage graph. When a table has metadata being synchronized using dbt, user editing is no longer permitted for that entire table. This is to ensure that there is a single source of truth.
 
 Metadata can be applied both on a table and column level.
 
@@ -257,12 +257,12 @@ models:
 
 There are two special meta types:
 
-* `owner`: Used to specify the owner of the table and applies the owner of the table in the catalog view.
+* `owner`: Used to specify the owner of the table and applies the owner of the table in the Lineage view.
 * `<pk_tag>`: The tag/name that is configured to identify primary columns is not synchronized into the meta-information, but it is synchronized as a tag if it exists.
 
 So for the above table:
 
-* `description` is synchronized into the description field of the table in the catalog.
+* `description` is synchronized into the description field of the table into Lineage.
 * The `owner` of the table is set to the user identified by the `user@company.com` field. This user must exist in Datafold with that email.
 * The `foo` meta information is added to the description field with the value `bar`.
 * The tags `pii` and `bar` are applied to the table as tags.
