@@ -8,7 +8,8 @@ pagination_next: deployment_testing/data_sources
 
 ## Overview
 
-***Replace*** with a quick primer on the importance of Deployment Testing - what problem is being solved and how our solution is 10x better.
+<!-- ***Replace*** with a quick primer on the importance of Deployment Testing - what problem is being solved and how our solution is 10x better. -->
+When deploying models, it's hard to understand the impact a code changes will have on the data - especially for reviewers. With Deployment testing, you can get the full context of your changes, including downstream effects, directly within the PR.
 
 ## Getting Started
 
