@@ -10,7 +10,7 @@ If you are on an on-prem deployment, you should first create a GitHub App for th
 ::: -->
 
 :::info Prerequisites
-* Datafold admin permissions
+* Datafold Admin role
 * Your GitHub account must be a member of the GitHub organization where the Datafold app is to be installed
 * Approval of your request to add the Datafold app to your repo must be granted by a GitHub repo admin or GitHub organization owner
 :::
