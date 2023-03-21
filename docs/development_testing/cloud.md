@@ -22,7 +22,7 @@ Datafold Cloud is currently in private beta. [Let us know](mailto:support@datafo
 
 ### Configure a Data Source
 
-To configure a Data Source, navigate to **Admin** &rarr; **Settings** &rarr; **Integrations** &rarr; **Data warehouses** and click **Add new integration** and follow the prompts. For more information, check out our [Data Source configuration guides](/deployment_testing/data_sources).
+To configure a Data Source, navigate to **Settings** &rarr; **Integrations** &rarr; **Data warehouses** and click **Add new integration** and follow the prompts. For more information, check out our [Data Source configuration guides](/deployment_testing/data_sources).
 
 After you **Test and Save**, add the Data Source ID (which can be found on the Data warehouses page) to your **dbt_project_yml**.
     

@@ -14,7 +14,7 @@
 
 In order to resolve support issues, you may wish to grant Datafold Support access to your account. Granting access allows Datafold to assume a user role and see the same in-app context you see - reducing the back-and-forth required to resolve the issue.
 
-To grant Datafold access to your account, navigate to the Org Settings page (Admin &rarr; Settings &rarr; Org Settings tab) and check the box next to *"Allow Datafold access to your account for troubleshooting purposes."*
+To grant Datafold access to your account, navigate to the Org Settings page (**Settings** &rarr; **Org Settings** tab) and check the box next to *"Allow Datafold access to your account for troubleshooting purposes."*
 
 To revoke access, simply uncheck the box.
 

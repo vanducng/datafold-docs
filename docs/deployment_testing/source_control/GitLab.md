@@ -5,7 +5,7 @@ description: ""
 pagination_prev: deployment_testing/source_control
 pagination_next: deployment_testing/dbt
 ---
-To begin, navigate to **Admin** &rarr; **Settings**. Then, click on Git in the sidebar to configure a new GitLab integration.
+To configure a new GitLab integration, navigate to **Settings** &rarr; **Git** and click **Add New Integration**.
 
 ![](../../../static/img/github_setup.png)
 

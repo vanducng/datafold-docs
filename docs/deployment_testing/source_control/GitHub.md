@@ -15,7 +15,7 @@ If you are on an on-prem deployment, you should first create a GitHub App for th
 * Approval of your request to add the Datafold app to your repo must be granted by a GitHub repo admin or GitHub organization owner
 :::
 
-To begin, navigate to **Admin** &rarr; **Settings** &rarr; **Integrations** &rarr; Git and click "Add new integration".
+To begin, navigate to **Settings** &rarr; **Integrations** &rarr; Git and click "Add new integration".
 
 ![](/img/github_setup.png)
 

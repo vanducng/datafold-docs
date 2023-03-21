@@ -5,7 +5,7 @@ pagination_next: guides/guides_overview
 
 # Connect Data Apps
 
-To connect a new Data App, navigate to **Admin** &rarr; **Settings** &rarr; **Data Applications** and click **Add New Integration**.
+To connect a new Data App, navigate to **Settings** &rarr; **Data Applications** and click **Add New Integration**.
 
 ![](/img/data_apps_add_new.png)
 
