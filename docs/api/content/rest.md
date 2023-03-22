@@ -285,47 +285,85 @@ When the diff is complete, the status will be set to `success` and additional fi
 ```json
 {
     "status": "success",
-    "pks": {
-        "total_rows": [
-            1509,
-            1761
+    "pks":
+    {
+        "total_rows":
+        [
+            2410,
+            2410
         ],
-        "nulls": [
+        "nulls":
+        [
             0,
             0
         ],
-        "dupes": [
+        "dupes":
+        [
             0,
-            303
+            0
         ],
-        "exclusives": [
+        "exclusives":
+        [
             0,
-            5
+            0
         ],
-        "distincts": [
-            1509,
-            1514
+        "distincts":
+        [
+            2410,
+            2410
         ]
     },
-    "values": {
-        "total_rows": 1453,
-        "rows_with_differences": 0,
-        "total_values": 10171,
-        "values_with_differences": 0,
+    "values":
+    {
+        "total_rows": 2410,
+        "rows_with_differences": 137,
+        "total_values": 16870,
+        "values_with_differences": 137,
         "compared_columns": 7,
-        "columns_with_differences": 0
+        "columns_with_differences": 1,
+        "columns_diff_stats":
+        [
+            {
+                "column_name": "ABV",
+                "match": 100.0
+            },
+            {
+                "column_name": "IBU",
+                "match": 100.0
+            },
+            {
+                "column_name": "OUNCES",
+                "match": 100.0
+            },
+            {
+                "column_name": "BEER_NAME",
+                "match": 100.0
+            },
+            {
+                "column_name": "BEER_STYLE",
+                "match": 100.0
+            },
+            {
+                "column_name": "BITTERNESS",
+                "match": 94.32
+            },
+            {
+                "column_name": "BREWERY_ID",
+                "match": 100.0
+            }
+        ]
     },
-    "dependencies": {
-        "deps": {}
-    },
-    "schema": {
-        "columns_mismatched": [
+    "schema":
+    {
+        "columns_mismatched":
+        [
             0,
             0
         ],
         "column_type_mismatches": 0,
         "column_reorders": 0,
-        "column_counts": [
+        "column_counts":
+        [
             8,
             8
         ]
