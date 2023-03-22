@@ -5,7 +5,7 @@ description: ""
 pagination_prev: deployment_testing/data_sources
 pagination_next: deployment_testing/source_control
 ---
-**Caution** - Using Postgres **without** Cloudwatch will not be compatible with Column-level Lineage.
+**Caution** - Column-level Lineage is supported for AWS Aurora and RDS Postgres and *requires* Cloudwatch to be configured.
 
 **Steps to complete:**
 
