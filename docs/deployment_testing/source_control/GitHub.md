@@ -6,7 +6,7 @@ pagination_prev: deployment_testing/source_control
 pagination_next: deployment_testing/dbt
 ---
 <!-- :::caution
-If you are on an on-prem deployment, you should first create a GitHub App for the integration. See [GitHub integration for Datafold on-prem](on-prem/content/github_on-prem.md) before proceeding with this tutorial.
+If you are on an VPC deployment, you should first create a GitHub App for the integration. See [GitHub integration for Datafold VPC](enterprise_accounts/vpc_deployments/github_vpc) before proceeding with this tutorial.
 ::: -->
 
 :::info Prerequisites
