@@ -114,7 +114,7 @@ const sidebars = {
     {
       type: 'link',
       label: 'Reference',
-      href: '/reference/overview',
+      href: '/reference',
     },
   ],
   guides: [
@@ -135,11 +135,11 @@ const sidebars = {
     {
       type: 'link',
       label: 'Reference',
-      href: '/reference/overview',
+      href: '/reference',
     },
   ],
   references: [
-    'reference/overview',
+    {type: 'doc', id: 'reference', label: 'Overview'},
     {
       type: 'html',
       value: `
