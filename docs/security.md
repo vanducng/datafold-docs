@@ -2,9 +2,6 @@
 title: Security
 pagination_prev: deployment_testing
 ---
-
-# Security
-
 ## IP Whitelisting
 
 If access to your data source is restricted to IP addresses on an allowlist, you will need to manually add Datafold's addresses in order to use our product. Otherwise, you will receive a connection error when setting up your data source.

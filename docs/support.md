@@ -1,5 +1,6 @@
-# Support
-
+---
+title: Support
+---
 ## Datafold Open-Source
 
 - GitHub [Issues](https://github.com/datafold/data-diff/issues) and [Discussions](https://github.com/datafold/data-diff/discussions)
