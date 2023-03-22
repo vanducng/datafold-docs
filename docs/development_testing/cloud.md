@@ -51,3 +51,4 @@ Run your dbt model with `--cloud` to see the impact that your model change had o
   ```zsh
   dbt run --select <MODEL> && data-diff --dbt --cloud
   ```
+  
