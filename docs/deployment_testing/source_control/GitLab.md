@@ -5,13 +5,6 @@ description: ""
 pagination_prev: deployment_testing/source_control
 pagination_next: deployment_testing/dbt
 ---
-To configure a new GitLab integration, navigate to **Settings** &rarr; **Git** and click **Add New Integration**.
-
-![](../../../static/img/github_setup.png)
-
-To set up a new integration select the **GitLab** button.
-
-![](../../../static/img/gitlab_setup.png)
 
 To get the [project access token](https://docs.gitlab.com/ee/user/project/settings/project\_access\_tokens.html), navigate to your GitLab project settings and create a new token. Project access tokens are preferred over personal tokens for security.
 
@@ -19,4 +12,4 @@ To get the [project access token](https://docs.gitlab.com/ee/user/project/settin
 
 Datafold requires the **Maintainer** role and **API** access. 
 
-Finally, navigate back to Datafold and enter the **Project Token** and the name of your **project** before hitting **Save**.
+Finally, navigate back to Datafold and enter the **Project Token** and the name of your **Project** before hitting **Save**.
