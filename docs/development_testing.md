@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 id: development_testing
 title: Getting Started
 pagination_next: development_testing/open_source

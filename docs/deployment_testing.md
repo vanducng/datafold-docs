@@ -1,5 +1,4 @@
 ---
-sidebar_position: 1
 id: deployment_testing
 title: Getting Started
 pagination_next: deployment_testing/data_sources
