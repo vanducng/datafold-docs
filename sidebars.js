@@ -109,7 +109,7 @@ const sidebars = {
     {
       type: 'link',
       label: 'Guides',
-      href: '/guides/guides_overview',
+      href: '/guides',
     },
     {
       type: 'link',
@@ -118,7 +118,7 @@ const sidebars = {
     },
   ],
   guides: [
-    'guides/guides_overview',
+    {type: 'doc', id: 'guides', label: 'Overview'},
     {
       type: 'html',
       value: `
@@ -178,7 +178,7 @@ const sidebars = {
     {
       type: 'link',
       label: 'Guides',
-      href: '/guides/guides_overview',
+      href: '/guides',
     },
   ],
 };

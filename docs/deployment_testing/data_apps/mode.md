@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Mode
 description: ""
 pagination_prev: deployment_testing/dbt
-pagination_next: guides/guides_overview
+pagination_next: guides
 ---
 ## Configuration
 

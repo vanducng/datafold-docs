@@ -1,6 +1,6 @@
 ---
 pagination_prev: deployment_testing/dbt
-pagination_next: guides/guides_overview
+pagination_next: guides
 ---
 
 # Connect Data Apps
