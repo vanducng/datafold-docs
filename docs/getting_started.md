@@ -1,6 +1,6 @@
 ---
-id: overview
-title: Overview
+id: getting_started
+title: Getting Started
 slug: /
 ---
 import Tabs from '@theme/Tabs';

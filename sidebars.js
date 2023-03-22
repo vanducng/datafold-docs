@@ -14,7 +14,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
-    'overview',
+    {type: 'doc', id: 'getting_started', label: 'Overview'},
     // 'quickstart',
     {
       type: 'category',
